@@ -1,22 +1,18 @@
-import React from 'react';
+import React from "react";
+//import './Login.css';
 
 function Login() {
-  return (
-    <div>
-      <h2>Login Page</h2>
-      <form>
-        <div>
-          <label>Username:</label>
-          <input type="text" name="username" />
+    return (
+        <div className="login-container">
+            <h1 className="login-title">Login</h1>
+            <p className="login-desc">Please login to continue.</p>
+            <form className="login-form">
+                <input className="login-input" type="text" placeholder="Username" />
+                <input className="login-input" type="password" placeholder="Password" />
+                <button className="login-btn" type="submit">Login</button>
+            </form>
         </div>
-        <div>
-          <label>Password:</label>
-          <input type="password" name="password" />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
+    );
 }
 
-export default Login;
+export default Login; 
