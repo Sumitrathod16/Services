@@ -14,7 +14,7 @@ function Navbar() {
         <li><Link to="/signin">Sign In</Link></li>
       </ul>
       <button className="login-button">
-        <Link to="/login">Login</Link>
+        <Link to="/Login">Login</Link>
         </button>
     </nav>
   );
