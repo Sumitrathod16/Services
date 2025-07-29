@@ -8,7 +8,7 @@ function Footer()
             .Footer{
                 display: flex;
                 flex-direction: row;
-                justify-content: space-evenly;
+                justify-content: space-evenly;  
                 padding: 20px;
                 background-color: #333;
                 color: white;
