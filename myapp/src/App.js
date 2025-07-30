@@ -7,6 +7,7 @@ import Documentation from './components/Documentation';
 import Support from './components/Support';
 import Home from './components/Home';
 import Features from './components/Features';
+import Signin from './components/Sign-in'; // Assuming you have a Signin component
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Support" element={<Support />} />
         <Route path="/login" element={<Login />} />
         <Route path="/features" element={<Features />} />
+        <Route path="/signin" element={<Signin />} />
         
         </Routes>
         
