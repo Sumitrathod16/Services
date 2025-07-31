@@ -63,7 +63,7 @@ function Specialization() {
                 <li><img src={bookLogo} className="logo" alt="Book Logo"/>Made by elite authors</li>
                 <li><img src={truckLogo} className="logo" alt="Truck Logo"/> Weekly best seller</li>
                 <li><img src={authorLogo} className="logo" alt="Author logo"/> Exclusive Author</li>
-                <li><img src={trendesetterLogo} className="logo" alt="Trendsetter Logo"/> Trendsetter Products</li>
+                <li><img src={trendesetterLogo} className="logo" alt="Trendsetter Logo"/> Trendsetter playlists</li>
             </ul>
         </div>
         </>

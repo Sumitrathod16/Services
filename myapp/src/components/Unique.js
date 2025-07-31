@@ -76,7 +76,7 @@ function Unique() {
         <div class="unique">
         <div className="unique-container">
             <h1 className="number">03+</h1>
-            <h2 className="unique-title">Pre-Built Unique Demos</h2>
+            <h2 className="unique-title">Pre-Built Unique Projects</h2>
             <p className="unique-desc">Choose from stunning hero sections including video background,image cover,and main layout,
                 all designed for maximum impact and flexibility.</p>
                 <div className="unique-list">

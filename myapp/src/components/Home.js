@@ -5,6 +5,7 @@ import Exclusive from './Exclusive';
 import Unique from './Unique';
 import Inner from './Inner';
 import Accordion from './Accordion';
+import Explore from './Explore';
 
 const accordionItems = [
   { title: 'What is this application about?', content: 'This application provides a platform for users to explore various features and functionalities.' },
@@ -17,6 +18,7 @@ const Home = () => {
     <div>
       <Main />
       <Specialization />
+      <Explore/>
       <Exclusive />
       <Unique/>
       <Inner/>
