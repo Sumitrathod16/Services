@@ -13,6 +13,11 @@ function Specialization() {
                 background-color: #f4f4f4;
                 text-align: center;
                 }
+            .specialization-container:hover {
+                transform: translateY(-10px) scale(1.0);
+                box-shadow: 0 4px 8px rgba(0, 0,0, 0.2);
+                filter: drop-shadow(0 3px 3px #282829ff); 
+            }   
             .specialization-title {
                 font-size: 2.5em;   
                 color: #333;
@@ -51,6 +56,10 @@ function Specialization() {
                 transform: scale(1.1);
                 transition: transform 0.3s;
                 }
+            .specialization-list li img:hover{
+               transform: translateY(-5px);
+               box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+               filter: drop-shadow(0 0 8px #007bff);
             
             
 

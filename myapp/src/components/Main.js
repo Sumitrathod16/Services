@@ -31,8 +31,14 @@ function Main() {
                 .main-container {
                     padding: 100px 0 0 60px;
                     background-color: black;
-                    min-height: 80vh;  
+                    min-height: 30vh;  
                 }
+                .main-container:hover {
+                    transform: translateY(-10px) scale(1.0);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    filter: drop-shadow(0 3px 3px #007bff);
+                   
+                    }    
                 .main-content {
                     text-size: 1.8em;
                     max-width: 650px;

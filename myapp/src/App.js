@@ -18,6 +18,14 @@ function App() {
         <Route path="/Support" element={<Support />} />
         <Route path="/login" element={<Login />} />
         <Route path="/features" element={<Features />} />
+        <Route path="/AboutUs" element={<About />} />
+        <Route path="/Careers" element={<Careers />} />
+        <Route path="/Press" element={<Press />} />
+        <Route path="/Affilates" element={<Affilates />} />
+        <Route path="/Blog" element={<Blog />} />
+        <Route path="/StudyGuide" element={<StudyGuide />} />
+        <Route path="/PracticeSet" element={<PracticeSet />} />
+        <Route path="/Subjects" element={<Subjects />} />
         
         </Routes>
         

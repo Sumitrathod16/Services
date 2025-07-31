@@ -8,8 +8,9 @@ function Exclusive() {
         <style>
             {`
             .exclusive-container {
-            
-            
+              /*To add background image, uncomment the line below and provide a valid image URL*/
+                background-image: url("../assets/exclusive-bg.jpg");
+                background-size: cover;
                 justify-content: space-around;
                 padding: 50px 20px;
                 background-color: #f4f4f4;
@@ -23,10 +24,9 @@ function Exclusive() {
                     padding:6px 16px;
                     background-color: #333;
                     border-radius: 5px;
-                    box-shadow: 0 2px 2px rgba(0, 0,
-                        0, 0.2);
-                        max-width: 300px;
-                        margin: 0 auto;
+                    box-shadow: 0 2px 2px rgba(0, 0,0, 0.2);
+                    max-width: 300px;
+                    margin: 0 auto;
                 }
                 .Containers {
                 display: flex;
@@ -81,7 +81,7 @@ function Exclusive() {
                              }
                 .container1 h1, .container2 h1,.container3 h1 {
                     font-size: 1em;   
-                    color: black;
+                    color: black;                     
                     text-align: center; 
                 } 
                     .tech-logo {
