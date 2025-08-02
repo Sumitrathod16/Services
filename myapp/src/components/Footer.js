@@ -38,11 +38,23 @@ function Footer()
                 color: white;   
                 text-decoration: none;
             }
+                .Footer ul li :hover{
+                text-decoration: underline;
+                color: #ccc;
+                }
+                .Footer ul li a:hover {
+                text-decoration: underline;
+                color: #ccc;
+            }
                 /*-----Need to pay attention to this part-----*/
             .footer-container1 ul {
                 text-decoration: none;
                 color: white;
             }   
+                .footer-container ul li:hover {
+                text-decoration: underline;
+                color: #ccc;
+            }
             .footer-container1 {
                 display: flex;
                 flex-direction: row;
@@ -74,15 +86,14 @@ function Footer()
                 padding: 10px;
                 }
             
-            .footer    
+                
             `}
         </style>
         <div className="Footer">
-
-            <div className="footer-container1">
+           <div className="footer-container1">
                 <ul>
                     <h3>Company.</h3>
-                    <li><Link to="/AboutUs">About</Link></li>
+                    <li><Link to="/About">About</Link></li>
                     <li><Link to="/Careers">Careers</Link></li>
                     <li><Link to="/Press">Press</Link></li>
                     <li><Link to="/Affilates">Affilates</Link></li>
@@ -92,24 +103,24 @@ function Footer()
                 <ul>
                     <h3>Resources</h3>
                     <li><Link to="/Blog">Blog</Link></li>
-                    <li><Link to="/StudyGuide">Study Guide</Link></li>      
-                    <li><Link to="/PracticeSet">Practice set</Link></li>
+                    <li><Link to="/Study">Study </Link></li>      
+                    <li><Link to="/Practice">Practice</Link></li>
                     <li><Link to="/Subjects">Subjects</Link></li>
                 </ul>
              </div>
             <div className="footer-container1">
             <ul>
                 <h3>Supports</h3>
-                 <li>FAQ</li> 
-                 <li>Community</li>   
+                 <li><Link to ="/">FAQ</Link></li> 
+                 <li><Link to="/">Community</Link></li>   
             </ul>    
             </div>   
             <div className="footer-container1">
                 <ul>
                     <h3>Legal</h3>
-                    <li>Privacy Policy</li>
-                    <li>Terms of Service</li>
-                    <li>Cookie Policy</li>
+                    <li><Link to="/">Privacy Policy</Link></li>
+                    <li><Link to="/">Terms of Service</Link></li>
+                    <li><Link to="/">Cookie Policy</Link></li>
                 </ul>
             </div>
             <div className="Box1">
@@ -118,7 +129,7 @@ function Footer()
              <div className="Box1">
                 <h3>shopifyus@gmail.com</h3>
              </div>
-             </div>
+          </div>   
         </>
     );
 }

@@ -84,6 +84,12 @@ function Exclusive() {
                     color: black;                     
                     text-align: center; 
                 } 
+                    .container1:hover, .container2:hover, .container3:hover {
+                                transform: translateY(-10px);
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                                background-color: #e0e0e0;
+                                cursor: pointer;
+                            }
                     .tech-logo {
                                 transition: transform 0.3s, filter 0.3s;
                                 }

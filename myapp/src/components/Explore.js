@@ -1,4 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import htmlIcon from '../assets/html.svg'; // Assuming you have an HTML icon
+import CSS from '../assets/css.svg'; // Assuming you have a CSS icon
+import js from '../assets/js.svg'; // Assuming you have a JavaScript icon
+import nodeIcon from '../assets/nodejs.svg'; // Assuming you have a Node.js icon
+import ReactIcon from '../assets/react.svg'; // Assuming you have a React icon
+import MongodbIcon from '../assets/mongodb.svg'; // Assuming you have a MongoDB icon
+import AWSIcon from '../assets/aws.svg'; // Assuming you have an AWS icon
+import AzureIcon from '../assets/azure.svg'; // Assuming you have an Azure icon
+import GcpIcon from '../assets/gcp.svg'; // Assuming you have a GCP icon
+import FlutterIcon from '../assets/flutter.svg'; // Assuming you have a Flutter icon
+import PythonIcon from '../assets/python.svg'; // Assuming you have a Python icon
+import DjangoIcon from '../assets/django.svg'; // Assuming you have a Django icon
+import FlaskIcon from '../assets/flask.svg'; // Assuming you have a Flask icon
+import JavaIcon from '../assets/java.svg'; // Assuming you have a Java icon
+import SpringIcon from '../assets/spring.svg'; // Assuming you have a Spring icon
+import HibernateIcon from '../assets/hibernate.svg'; // Assuming you have a Hibernate icon
+import MLIcon from '../assets/ml.svg'; // Assuming you have a Machine Learning icon
+import DeepLearningIcon from '../assets/dl.svg'; // Assuming you have a Deep Learning
+import AIIcon from '../assets/ai.svg'; // Assuming you have an AI icon
+import ProjectsIcon from '../assets/projects.svg'; // Assuming you have a Projects icon
+import PortfolioIcon from '../assets/portfolio.svg'; // Assuming you have a Portfolio icon
+import GitHubIcon from '../assets/github.svg'; // Assuming you have a GitHub icon
 function Explore(){
 return(
     <>
@@ -39,10 +62,15 @@ body {
         /* --- Card Grid Layout --- */
         .card-grid {
             display: grid;
+            border-radius: 0.75rem;
             gap: 2rem; /* 32px */
             grid-template-columns: 1fr; /* Default to 1 column on small screens */
         }
-
+        .card-grid .hover {
+            transition:  ease-in-out;
+             color:black;
+             drop-shadow: 0 0 10px black;
+            }
         /* Responsive grid columns for 3x3 layout */
         @media (min-width: 768px) { /* md */
             .card-grid {
@@ -62,10 +90,11 @@ body {
             height: 14rem; /* 224px */
             display: flex;
             flex-direction: column;
+
         }
 
         .card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            box-shadow: 15px 10px 15px 10px rgba(0, 0, 0, 0.1);
         }
 
         /* Decorative background circle */
@@ -78,25 +107,17 @@ body {
             border-radius: 9999px; /* full circle */
             opacity: 0.5;
         }
-
-        /* Background color variations */
-        .bg-red { background-color: var(--color-red-100); }
-        .bg-orange { background-color: var(--color-orange-100); }
-        .bg-yellow { background-color: var(--color-yellow-100); }
-        .bg-indigo { background-color: var(--color-indigo-100); }
-        .bg-blue { background-color: var(--color-blue-100); }
-        .bg-gray { background-color: var(--color-gray-100); }
-        .bg-teal { background-color: var(--color-teal-100); }
-        .bg-purple { background-color: var(--color-purple-100); }
-        .bg-pink { background-color: var(--color-pink-100); }
-
+        
         /* Card Content Wrapper */
         .card-content {
             position: relative;
             z-index: 10;
             display: flex;
             flex-direction: column;
+            gap:10px;
             height: 100%;
+            margin-right:20px;
+        
         }
 
         .card-title {
@@ -106,11 +127,15 @@ body {
             margin: 0 0 0.75rem 0; /* 12px */
         }
 
-        .card-tags {
+        .card-tags ul  {
             display: flex;
+            flex-direction: row;
+            gap: 0.5rem; /* 8px */
             flex-wrap: wrap;
             gap: 0.5rem; /* 8px */
             margin-bottom: 1rem; /* 16px */
+            text-decoration: none;
+
         }
 
         .card-tags .tag {
@@ -121,6 +146,28 @@ body {
             border: 1px solid var(--color-gray-300);
             border-radius: 9999px;
             padding: 0.25rem 0.75rem; /* 4px 12px */
+            align-items:flex-end;
+            display: inline-flex;
+        
+        
+        }
+            .card-tags ul li {
+            margin-right: 0.5rem; /* 8px */
+            margin-bottom: 0.5rem; /* 8px */
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+            color: var(--color-gray-700);
+            
+            list-style:none;
+        
+        }
+            .card-tags ul li a {
+            color: var(--color-gray-700);
+            text-decoration: none;
+        }
+            .card-tags ul li a:hover {
+            text-decoration: underline;
+            color: var(--color-blue-600);
         }
 
         /* Explore Link */
@@ -152,115 +199,218 @@ body {
             transform: translateY(-50%);
             z-index: 10;
         }
+            .img{
+                          padding: 5px;
+                            display: flex;
+                            flex-direction: row;
+                            gap: 10px;
+                            max-width: 600px;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            margin-top: 20px;
+                            margin-right: 150px;
+            }
+        .Explore-icon {
+            width: 60px; /* 60px */
+            height: 60px; /* 60px */
+            border-radius: 50%;
+            margin-right:20px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+            .Explore-icon:hover{
+            transform:scale(1.1);
+            }
+            .Explore-icon:active{
+            transform:scale(0.9);
+            }
 
     `}
     </style>
 
 
-    <div class="container">
+    <div className="container">
 
-        <div class="header-text">
-            <h1>Explore Our Categories</h1>
-            <p>PW is preparing students for 35+ exam categories. Scroll down to find the one you are preparing for</p>
+        <div className="header-text">
+            <h1>Explore Our Courses</h1>
+            <p>Preparing students for different coding languages. Scroll down to find the one you are preparing for</p>
         </div>
         
 
-        <div class="card-grid">
+        <div className="card-grid">
         
-            <div class="card">
-                <div class="card-bg bg-red"></div>
-                <div class="card-content">
-                    <h3 class="card-title">NEET</h3>
-                    <div class="card-tags"><span class="tag">class 11</span><span class="tag">class 12</span><span class="tag">Dropper</span></div>
-                    <a href="#" class="card-explore-link">Explore Category<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            <div className="card">
+                <div className="card-bg bg-red"></div>
+                <div className="card-content">
+                    <h3 className="card-title">Frontend Developer</h3>
+                    <div className="card-tags">
+                    <ul>
+                         <li> <Link to="/HTML">HTML</Link></li>
+                         <li> <Link to="/CSS">CSS</Link></li>
+                         <li> <Link to="/JavaScript">JavaScript</Link></li>
+                    </ul> 
+                   </div> 
                 </div>
-                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 5.64a9 9 0 1 1-12.73 0" /><line x1="12" y1="2" x2="12" y2="8" /><line x1="4.93" y1="4.93" x2="9.17" y2="9.17" /><line x1="2" y1="12" x2="8" y2="12" /><line x1="4.93" y1="19.07" x2="9.17" y2="14.83" /><line x1="12" y1="22" x2="12" y2="16" /><line x1="19.07" y1="19.07" x2="14.83" y2="14.83" /><line x1="22" y1="12" x2="16" y2="12" /><line x1="19.07" y1="4.93" x2="14.83" y2="9.17" /><circle cx="12" cy="12" r="2" fill="#fde047"/></svg></div>
-            </div>
+                <div className="img">
+                    <img src={htmlIcon} alt="HTML" className="Explore-icon" />
+                    <img src={CSS} alt="CSS" className="Explore-icon" />
+                    <img src={js} alt="JavaScript" className="Explore-icon" />
+                </div>
+                </div>
 
         
-            <div class="card">
-                <div class="card-bg bg-orange"></div>
-                <div class="card-content">
-                    <h3 class="card-title">IIT JEE</h3>
-                    <div class="card-tags"><span class="tag">class 11</span><span class="tag">class 12</span><span class="tag">Dropper</span></div>
-                    <a href="#" class="card-explore-link">Explore Category<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            <div className="card">
+                <div className="card-bg bg-orange"></div>
+                <div className="card-content">
+                    <h3 className="card-title">Backend Developer</h3>
+                   <div className="card-tags">
+                    <ul>
+                            <li> <Link to="/NodeJS">NodeJS</Link></li>
+                            <li> <Link to="/ReactJS">ReactJS</Link></li>
+                            <li> <Link to="/MongoDB">MongoDB</Link></li>
+                    </ul>
+                   </div> 
+                </div>   
+                <div className="img">
+                    <img src={nodeIcon} alt="Node js" className="Explore-icon" />
+                    <img src={ReactIcon} alt="React js" className="Explore-icon" />
+                    <img src={MongodbIcon} alt="Mongodb" className="Explore-icon" />
                 </div>
-                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><circle cx="12" cy="12" r="1.5" fill="#60a5fa" /></svg></div>
             </div>
 
 
-            <div class="card">
-                <div class="card-bg bg-yellow"></div>
-                <div class="card-content">
-                    <h3 class="card-title">School Prep</h3>
-                    <div class="card-tags"><span class="tag">class 6</span><span class="tag">class 7</span><span class="tag">class 8</span><span class="tag">More +</span></div>
-                    <a href="#" class="card-explore-link">Explore Category<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                </div>
-                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8z" fill="#fcd34d"></path><path d="M12 2a4 4 0 0 1 4 4v4H8V6a4 4 0 0 1 4-4z" fill="#fb923c"></path><path d="M8 2v2"></path><path d="M16 2v2"></path></svg></div>
+            <div className="card">
+                <div className="card-bg bg-yellow"></div>
+                <div className="card-content">
+                    <h3 className="card-title">Cloud-Computing</h3>
+                    <div className="card-tags">
+                        <ul>
+                            <li> <Link to="/AWS">AWS</Link></li>
+                            <li> <Link to="/Azure">Azure</Link></li> 
+                            <li> <Link to="/GCP">GCP</Link></li>
+                        </ul>
+</div>
+                                   </div>
+    <div className="img">
+        <img src={AWSIcon} alt="AWS" className="Explore-icon" />
+        <img src={AzureIcon} alt="Azure" className="Explore-icon" />
+        <img src={GcpIcon} alt="GCP" className="Explore-icon" />
+    </div>
+     </div>
+            <div className="card">
+                <div className="card-bg bg-indigo"></div>
+                <div className="card-content">
+                    <h3 className="card-title">Flutter</h3>
+                   <div className="card-tags">
+                    <ul>
+                            <li> <Link to="/Flexbox">Flexbox</Link></li>
+                            <li> <Link to="/Grid">Grid</Link></li>
+                            <li> <Link to="/Animations">Animations</Link></li>
+                    </ul>
+                    </div>
+                 </div>
+                 
+                <div className="img">
+                    <img src={FlutterIcon} alt="Flutter" className="Explore-icon" />
             </div>
-            <div class="card">
-                <div class="card-bg bg-indigo"></div>
-                <div class="card-content">
-                    <h3 class="card-title">UPSC</h3>
-                    <div class="card-tags"></div>
-                    <a href="#" class="card-explore-link">Explore Category<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                </div>
-                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="#c7d2fe"></path><circle cx="9" cy="7" r="4" fill="#a5b4fc"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-            </div>
-
-            
-            <div class="card">
-                <div class="card-bg bg-blue"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Govt Jobs</h3>
-                    <div class="card-tags"><span class="tag">SSC</span><span class="tag">Banking</span><span class="tag">Teaching</span></div>
-                    <a href="#" class="card-explore-link">Explore Category<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                </div>
-                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22v-13h18v13" fill="#93c5fd"></path><path d="m3 9 9-7 9 7" fill="#60a5fa"></path><path d="M5 22v-8h14v8"></path><path d="M9 22v-5h6v5"></path></svg></div>
-            </div>
-
-            
-            <div class="card">
-                <div class="card-bg bg-gray"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Defence</h3>
-                    <div class="card-tags"><span class="tag">NDA</span><span class="tag">CDS</span><span class="tag">AFCAT</span><span class="tag">Agniveer</span></div>
-                    <a href="#" class="card-explore-link">Explore Category<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                </div>
-                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#e5e7eb"></path><path d="M12 2l1.54 3.13L16.5 6l-2.5 2.44.59 3.44L12 10.5l-2.59 1.37.59-3.44L7.5 6l2.96-.5L12 2z" fill="#9ca3af"></path></svg></div>
-            </div>
-
-            
-            <div class="card">
-                <div class="card-bg bg-teal"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Photography</h3>
-                    <div class="card-tags"><span class="tag">Portrait</span><span class="tag">Landscape</span><span class="tag">Street</span></div>
-                    <a href="#" class="card-explore-link">Explore Category<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                </div>
-                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#14b8a6" stroke-width="1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" fill="#99f6e4"></path><circle cx="12" cy="13" r="4" fill="#5eead4"></circle></svg></div>
             </div>
 
             
-            <div class="card">
-                <div class="card-bg bg-purple"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Music</h3>
-                    <div class="card-tags"><span class="tag">DAW</span><span class="tag">Mixing</span><span class="tag">Mastering</span></div>
-                    <a href="#" class="card-explore-link">Explore Category<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            <div className="card">
+                <div className="card-bg bg-blue"></div>
+                <div className="card-content">
+                    <h3 className="card-title">Python</h3>
+                  <div className="card-tags">
+                    <ul>
+                            <li> <Link to="/Python">Python</Link></li>
+                            <li> <Link to="/Django">Django</Link></li>
+                            <li> <Link to="/Flask">Flask</Link></li>
+                    </ul>
+                   </div>
+                   </div>
+                <div className="img">
+                    <img src={PythonIcon} alt="Python" className="Explore-icon" />
+                    <img src={DjangoIcon} alt="Django" className="Explore-icon" />
+                    <img src={FlaskIcon} alt="Flask" className="Explore-icon" />
+                    </div>            </div>
+
+            
+            <div className="card">
+                <div className="card-bg bg-gray"></div>
+                <div className="card-content">
+                    <h3 className="card-title">Java</h3>
+                    <div className="card-tags">
+                    <ul>
+                        <li> <Link to="/Java">Java</Link></li>
+                        <li> <Link to="/Spring">Spring</Link></li>
+                        <li> <Link to="/Hibernate">Hibernate</Link></li>
+                    </ul>
+                    </div>
                 </div>
-                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1"><path d="M9 18V5l12-2v13" fill="#e9d5ff"></path><circle cx="6" cy="18" r="3" fill="#d8b4fe"></circle><circle cx="18" cy="16" r="3" fill="#d8b4fe"></circle></svg></div>
-            </div>
-<div class="card">
-                <div class="card-bg bg-pink"></div>
-                <div class="card-content">
-                    <h3 class="card-title">Writing</h3>
-                    <div class="card-tags"><span class="tag">Fiction</span><span class="tag">Poetry</span><span class="tag">Screenwriting</span></div>
-                    <a href="#" class="card-explore-link">Explore Category<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                </div>
-                <div class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1"><path d="M12 20h9" fill="none"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" fill="#fbcfe8"></path></svg></div>
+                <div className="img">
+                    <img src={JavaIcon} alt="Java" className="Explore-icon" />
+                    <img src={SpringIcon} alt="Spring" className="Explore-icon" />
+                    <img src={HibernateIcon} alt="Hibernate" className="Explore-icon" />
+</div>
+
             </div>
 
+            
+            <div className="card">
+                 <div className="card-bg bg-teal"></div>
+                 <div className="card-content">
+                    <h3 className="card-title">Machine Learning</h3>
+                    <div className="card-tags">
+                    <ul>
+                        <li> <Link to="/ML">ML</Link></li>
+                        <li> <Link to="/DeepLearning">Deep Learning</Link></li>
+                        <li> <Link to="/AI">AI</Link></li>
+                    </ul>
+                    </div>
+                 </div>
+                <div className="img">
+                    <img src={MLIcon} alt="Machine Learning" className="Explore-icon" />
+                    <img src={DeepLearningIcon} alt="Deep Learning" className="Explore-icon" />
+                    <img src={AIIcon} alt="AI" className="Explore-icon" />
+                        </div>
+            </div>
+
+            
+            <div className="card">
+                <div className="card-bg bg-purple"></div>
+                <div className="card-content">
+                    <h3 className="card-title">AI</h3>
+                    <div className="card-tags">
+                    <ul>
+                        <li> <Link to="/AI">AI</Link></li>
+                        <li> <Link to="/ChatGPT">ChatGPT</Link></li>
+                        <li> <Link to="/GPT-4">GPT-4</Link></li>
+                    </ul>
+                    </div>
+                </div>
+                <div className="img">
+                    <img src={AIIcon} alt="AI" className="Explore-icon" />
+                    
+                    </div>
+            </div>
+<div className="card">
+                <div className="card-bg bg-pink"></div>
+                <div className="card-content">
+                    <h3 className="card-title">Projects</h3>
+                    <div className="card-tags">
+                    <ul>
+                        <li> <Link to="/Projects">Projects</Link></li>
+                        <li> <Link to="/Portfolio">Portfolio</Link></li>
+                        <li> <Link to="/GitHub">GitHub</Link></li>
+                    </ul>
+                    </div>                   
+                </div>
+                <div className="img">
+                    <img src={ProjectsIcon} alt="Projects" className="Explore-icon" />
+                    <img src={PortfolioIcon} alt="Portfolio" className="Explore-icon" />
+                    <img src={GitHubIcon} alt="GitHub" className="Explore-icon" />
+            </div>
+</div>
         </div>
     </div>
     </>
