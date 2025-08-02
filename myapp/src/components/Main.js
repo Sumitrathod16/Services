@@ -31,14 +31,8 @@ function Main() {
                 .main-container {
                     padding: 100px 0 0 60px;
                     background-color: black;
-                    min-height: 30vh;  
+                    min-height: 80vh;  
                 }
-                .main-container:hover {
-                    transform: translateY(-10px) scale(1.0);
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                    filter: drop-shadow(0 3px 3px #007bff);
-                   
-                    }    
                 .main-content {
                     text-size: 1.8em;
                     max-width: 650px;
@@ -115,10 +109,10 @@ function Main() {
             <div className="main-container">
                 <div className="main-content">
                     <div className="box_container">
-                        <h1 className="box_title">Clean & flexible responsive design</h1>
+                        <h1 className="box_title">Best way for learning</h1>
                         </div>
-                    <h1 className="main-title">AI Agency & Technology HTML Template</h1>
-                    <p className="main-desc">Built and beautifully suited for AI agencies,tech startups,AI image generator and AI chatbot agency.</p>
+                    <h1 className="main-title">The better way to learn Web-development</h1>
+                    <p className="main-desc">We provide you the roadmap of web-development and web-connections. The better way to learn.</p>
             
                 </div>
                 <div className="buttons">

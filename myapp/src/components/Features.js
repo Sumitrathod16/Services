@@ -1,108 +1,185 @@
-import React from "react";
-function Features() {
-    return (
+import React from 'react';
+function Features(){
+    return(
         <>
-            <style>
-                {`
-                .features-container {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    padding: 50px 20px;
-                    background-color: #f9f9f9;
-                }
-                .features-title {
-                    font-size: 2em;
-                    color: #333;
-                    margin-bottom: 20px;
-                }
-                .features-desc {
-                    font-size: 1.2em;
-                    color: #666;
-                    text-align: center;
-                    max-width: 600px;
-                    margin-bottom: 30px;
-                }
-                .features-list {
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 0;
-                    font-size: 1em;
-                    color: #444;
-                }
-                .features-list li {
-                    margin: 10px 0;
-                }
-                .features-footer {
-                    width: 100%;
-                    background: #181818;
-                    color: #fff;
-                    padding: 32px 0 16px 0;
-                    border-top: 1px solid #333;
-                    margin-top: 50px;
-                    font-size: 0.95em;
-                }
-                .footer-content {
-                    max-width: 900px;
-                    margin: 0 auto;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 16px;
-                }
-                .footer-links a {
-                    color: #bbb;
-                    text-decoration: none;
-                    align-items:evenly;
-                    transition: color 0.2s;
-
-                }
-                .footer-links a:last-child {
-                    margin-right: 0;
-                }
-                .footer-links a:hover {
-                    color: #fff;
-                    text-decoration: underline;
-                }
-                .footer-copy {
-                    color: #bbb;
-                    font-size: 0.92em;
-                }
-                @media (max-width: 600px) {
-                    .footer-content {
-                        flex-direction: column;
-                        align-items: flex-start;
-                        gap: 8px;
-                    }
-                    .footer-links {
-                        margin: 8px 0;
-                    }
-                }
-                `}
-            </style>
-            <div className="features-container">
-                <h1 className="features-title">Features</h1>
-                <p className="features-desc">Explore the amazing features of our application.</p>
-                <ul className="features-list">
-                    <li>Feature 1: User-friendly interface</li>
-                    <li>Feature 2: High performance</li>
-                    <li>Feature 3: Secure and reliable</li>
-                </ul>
-            </div>
-            <footer className="features-footer">
-                <div className="footer-content">                         
-        
-                    <div className="footer-links">
-                        <a href="/privacy">Privacy Policy</a>
-                        <a href="/terms">Terms of Service</a>
-                        <a href="/contact">Contact</a>
-                    </div>
-                    <div className="footer-copy">
-                        © {new Date().getFullYear()} MyApp. All rights reserved.
-                    </div>
+        <div className="features">
+            <h1 className="title">Features</h1>
+            <div className="feature-list">
+                <div className="feature-item">  
+                    <h2>Core Learning Experience</h2>
+                    <p>
+                        <ul>
+                            <li>User Dashboard</li>
+                            <li>Course Player</li>
+                            <li>Diverse Content Support</li>
+                            <li>Progress Tracking</li>
+                            <li>Powerful Search</li>
+                            <li>Mobile Experience</li>
+                        </ul>
+                    </p>
                 </div>
-            </footer>
+                <div className="feature-item">
+                    <h2>Community & Collaboration</h2>
+                    <p>
+                        <ul>
+                            <li>Q&A Discussion forum</li>
+                            <li>Direct Messaging</li>
+                            <li>Announcements</li>
+                            <li>Study Groups</li>
+                            <li>Peer Review System</li>
+                        </ul>
+                    </p>
+                </div>
+                <div className="feature-item">
+                    <h2>Assements & Evaluation</h2>
+                    <p>
+                        <ul>
+                            <li>Quiz & Test engine</li>
+                            <li>Assignments</li>
+                            <li>Grading Interface</li>
+                            <li>Certificates of Completion</li>
+                        </ul>
+                    </p>
+                    </div>
+                    <div className="feature-item">
+                        <h2>Content Management</h2>
+                        <p>
+                            <ul>
+                                <li>Course Creation Tools</li>
+                                <li>Content Library</li>
+                                <li>Analytics Dashboard</li>
+                                <li>Content Moderation</li>
+                            </ul>
+                            </p>
+                            </div>
+                <div className="feature-item">
+                    <h2>Personalization & Motivation</h2>    
+                    <p>
+                        <ul>
+                            <li>Gamification</li>
+                            <li>Points & Badges</li>
+                            <li>Leaderboards</li>
+                            <li>Streaks</li>
+                            <li>Learning Paths</li>
+                            <li>Goal Setting & Reminders</li>
+                        </ul>
+                    </p>
+                        </div>
+                <div className="feature-item">
+                    <h2>Administrative & Monetization</h2>
+                    <p>
+                        <ul>
+                            <li>User Management</li>
+                            <li>One time purchase</li>
+                            <li>Subscriptions</li>
+                            <li>Course bundles</li>
+                            <li>Corporate/Team plans</li>
+                            <li>Payment Gateway Integration</li>
+                            <li>Coupon & Discount System</li>
+                            <li>Accessibility</li>
+                        </ul>
+                    </p>
+                    </div>
+                
+            </div>
+            <div className="feature-image">
+                <img src="https://via.placeholder.com/400" alt="Feature illustration" />
+            </div>
+        </div>
+        <style jsx>{`
+            .features {
+                text-align: center;
+                padding: 20px;
+                background-color: #f9f9f9;
+            }
+            .feature-list {
+                display:flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                margin-bottom: 20px;
+                align-items: flex-start;
+            }
+            .feature-item {
+                width: 30%;
+                min-width: 250px;
+                margin: 10px;
+                border: 1px solid #ddd;
+                padding: 10px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .feature-image img {
+                max-width: 100%;
+                height: auto;
+            }
+            .title {
+                font-size: 2em;
+                margin-bottom: 20px;
+                color: #333;
+            }
+            .feature-item h2 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+                color:black;
+            }
+            .feature-item p {
+                font-size: 1em;
+                color: #555;
+            }
+            .feature-item ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            .feature-item li {
+                margin: 5px 0;
+            }
+            .feature-item li::before {
+                content: "✔️";
+                margin-right: 5px;
+                color: black;
+            }
+            .feature-item ul li {
+                text-align: left;
+            }
+            .feature-item ul li::before {
+                content: "•";
+                color: black;
+                font-weight: bold;
+            }
+            .feature-item ul li {
+            text-align: center;
+               font-weight:bold;
+                margin: 5px 0;
+            }
+            .feature-item ul li::before {
+                content: "✔️";
+                margin-right: 5px;
+                color: black;
+            }
+            .feature-item ul li {
+                text-align: left;
+            }
+            .feature-item ul li::before {
+                content: "•";
+                color: black;
+                font-weight: bold;
+            }
+            .feature-item ul li {
+                margin: 5px 0;
+            }
+            .feature-item ul li::before {
+                content: "✔️";
+                margin-right: 5px;
+                color: black;
+            }
+            .feature-item ul li {
+                text-align: left;
+            }
+
+                .feature-item ul li::h {
+                
+        `}</style>
         </>
     );
 }
