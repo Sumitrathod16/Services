@@ -8,8 +8,9 @@ function Exclusive() {
         <style>
             {`
             .exclusive-container {
-            
-            
+              /*To add background image, uncomment the line below and provide a valid image URL*/
+                background-image: url("../assets/exclusive-bg.jpg");
+                background-size: cover;
                 justify-content: space-around;
                 padding: 50px 20px;
                 background-color: #f4f4f4;
@@ -23,10 +24,9 @@ function Exclusive() {
                     padding:6px 16px;
                     background-color: #333;
                     border-radius: 5px;
-                    box-shadow: 0 2px 2px rgba(0, 0,
-                        0, 0.2);
-                        max-width: 300px;
-                        margin: 0 auto;
+                    box-shadow: 0 2px 2px rgba(0, 0,0, 0.2);
+                    max-width: 300px;
+                    margin: 0 auto;
                 }
                 .Containers {
                 display: flex;
@@ -57,15 +57,51 @@ function Exclusive() {
                 margin-bottom: 100px;
                 }
                 .container1, .container2, .container3{
-                height:300px;
-                width:200px;
-                background-color: #ccc;
+                    height:350px;
+                    width:250px;
+                    background-color: #ccc;
                     display: flex;
+                    flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    margin: 20px;
-                }
+                    justify-content: center;
+                    margin: 25px;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 8px rgba(0, 0,0,0.2);
+                    transition: transform 0.3s ease;
+                    border:2px solid rgba(0,0,0,0.2);
+                  }
+                .container1 p,.container2 p,.container3 p {
+                       font-size: 1rem;
+                       align-items: center;
+                       text-align: center;
+                    
+                       margin:20px;
+                             }
+                .container1 h1, .container2 h1,.container3 h1 {
+                    font-size: 1em;   
+                    color: black;                     
+                    text-align: center; 
+                } 
+                    .container1:hover, .container2:hover, .container3:hover {
+                                transform: translateY(-10px);
+                                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                                background-color: #e0e0e0;
+                                cursor: pointer;
+                            }
+                    .tech-logo {
+                                transition: transform 0.3s, filter 0.3s;
+                                }
+                    .tech-logo:hover {
+                                    transform: scale(1.1);
+                                     filter: drop-shadow(0 0 8px #007bff);
+                                    
+                                     }
+                      
+                    }             
                     `}
+                
             
                     </style>
     
@@ -77,18 +113,20 @@ function Exclusive() {
             <div className="container1">
 
                 <img src={Seo} alt="SEO" className="tech-logo" />
-                <h1>SEO friendly makeup</h1>
+                <h1>Bootstrap 5.x framework</h1>
+                <p>Build it on the latest bootstrap version for responsive,mobile-first and consistent design.</p>
                 
 
             </div>
             <div className="container2">
                 <img src={Code} alt="Code" className="tech-logo" />
                 <h1> Crafted Code Excellence</h1>
-                
-       </div>
+                <p>Clean,well-organized and developer-friendly code that's easy to customize and scale</p>                
+            </div>
         <div className="container3">
                 <img src={bootstrap} alt="Bootstrap" className="tech-logo" />
-                <h1>Bootstrap 5X framework</h1>
+                <h1>SEO-Friendly Markup</h1>
+                <p>Semantic HTML structure ensures better indexing,faster load time and top SEO performance</p>
             </div>
             </div>
             

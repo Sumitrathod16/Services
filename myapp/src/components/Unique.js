@@ -38,20 +38,20 @@ function Unique() {
 .unique-container .number {
                 font-family: Irish Grover;
                 font-size: 6rem;
-                color: grey;
+                color: black;
                 font-weight: bold;
                 margin-bottom: 120px;
             }
                 .unique-title {
                 font-size: 3rem;
-                color: #333;
+                color: black;
                 font-weight: bold;
                 text-align: center;
                 margin-top: -120px;
             }
  .unique-desc { 
                 font-size: 0.9rem;
-                color: #666;
+                color: black;
                 text-align: center;
                 margin-top: 20px;
                 max-width: 600px;
@@ -66,14 +66,16 @@ function Unique() {
                 }
                 .unique-list .p{
                 font-size:0.9rem
-                font-weight:bold;}
+                font-weight:bold;
+                color: black;
+                }
 
 
                 
             
             `    }
         </style>
-        <div class="unique">
+        <div className="unique">
         <div className="unique-container">
             <h1 className="number">03+</h1>
             <h2 className="unique-title">Pre-Built Unique Projects</h2>

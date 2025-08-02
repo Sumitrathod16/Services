@@ -31,7 +31,7 @@ function Main() {
                 .main-container {
                     padding: 100px 0 0 60px;
                     background-color: black;
-                    min-height: 50vh;  
+                    min-height: 80vh;  
                 }
                 .main-content {
                     text-size: 1.8em;
@@ -74,15 +74,15 @@ function Main() {
                     font-size: 1em;
                 }   
                 .logo-container {
-                    padding: 5px;
-                    display: flex;
-                    flex-direction: row;
-                    gap: 10px;
-                    max-width: 600px;
-                    justify-content: space-evenly;
-                    align-items: center;
-                    margin-top: 20px;
-                    margin-left: 0 auto;
+                            padding: 5px;
+                            display: flex;
+                            flex-direction: row;
+                            gap: 10px;
+                            max-width: 600px;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            margin-top: 20px;
+                            margin-left: 0 auto;
                 }
                     
                     .tech-logo {
@@ -125,7 +125,7 @@ function Main() {
                     <img src={CSS} alt="CSS" className="tech-logo" />
                     <img src={HTML} alt="JavaScript" className="tech-logo" />
                     <img src={js} alt="React" className="tech-logo" />
-                    <img src={react} alt="SQL" className="tech-logo" />
+                    <img src={react} alt="SQL" className="tech-logo" /> 
                 </div>
             </div>
         </>
