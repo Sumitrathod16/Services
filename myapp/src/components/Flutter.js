@@ -2,58 +2,126 @@ import React, { useState } from 'react';
 
 const coursesData = [
   {
-    title: "Introduction to Html",
+    title: "1.Introduction to Flutter",
     description: "Brief history of the internet",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "What is HTML?",
-      "History of the Web",
-      "Importance of HTML"
+      "Learn to setup new material app using android studio",
+    "Overview of Flutter",
+    "Basic Dart Programming concepts",
+    "Understanding the widgets",
+    "Displaying the content on screen",
+    "Debugging and testing app with flutter"
+      
     ]
   },
   {
-    title: "HTML document structure",
-    description: "Basic structure of an HTML document.",
+    title: "2.Stateful and stateless Widgets",
+    description: "",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "DOCTYPE and HTML tag",
-      "Head and Body",
-      "Meta tags"
+    "Stateless vs Stateful widgets",
+    "Define State",
+    "The setState() method"
     ]
   },
   {
-    title: "Text Formatting and Content",
+    title: "3.Forms",
     description: "Text formatting.",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Headings",
-      "Paragraphs",
-      "Bold and Italics"
+   "Creating login and signup forms",
+   "Handling User input",
+   "Form Validation",
+   "Submitting form and retrieve data"
     ]
   },
   {
-    title: "Links and Images",
+    title: "4.Widgets",
     description: "Creating hyperLinks",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Anchor Tag",
-      "Image Tag",
-      "Relative vs Absolute Paths"
+    "Material App and Scaffold wigets",
+    "Appbar",
+    "FloatingActionButton"
     ]
   },
   {
-    title: "Tables and Forms",
+    title: "5.User Interface",
     description: "Creating tables",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Table Structure",
-      "Form Inputs",
-      "Submit Button"
+      "Applying theme data",
+      "Applying custom font"
+    ]
+  },{
+    title: "6.Asynchronous Function",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Future Function",
+      "Async and Await"
+    ]
+  },{
+    title: "7.Working with App data",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Http Package",
+      "Model class and json Parsing",
+      "Displaying API data"
+    ]
+  },{
+    title: "8.Navigation",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Navigator and Routes",
+      "Applying push() and pop()"
+    ]
+  },
+  {
+    title: "9.Container",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Container",
+      "Card",
+      "Importing images from network",
+      "Importing images as assets",
+      "Understanding row and columns",
+      "Listview and ListTile",
+      "GridView",
+      "Alert dialogbox",
+      "Building views using listview.builder"
+    ]
+  },
+  {
+    title:"10.Offline Storage",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+    "Basic concept of sqlite database",
+    "Database Connection",
+    "CRUD operation on flutter database"
+    ]
+  },{
+    title: "11.Basic GIT",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      
     ]
   }
 ];

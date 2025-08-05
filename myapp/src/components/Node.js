@@ -2,58 +2,135 @@ import React, { useState } from 'react';
 
 const coursesData = [
   {
-    title: "Introduction to Html",
+    title: "1.Introduction to Node js",
     description: "Brief history of the internet",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "What is HTML?",
-      "History of the Web",
-      "Importance of HTML"
+      "Introduction to node js",
+      "What is Node Js,Node.js Process Model",
+      "Advantages of Node js ",
+      "Traditional Web Server Model"
     ]
   },
   {
-    title: "HTML document structure",
-    description: "Basic structure of an HTML document.",
+    title: "2.Setup  Development Environment",
+    description: "Node js environment setup.",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "DOCTYPE and HTML tag",
-      "Head and Body",
-      "Meta tags"
+      "Install Node.js on Windows",
+      "Working in REPL,Node js Console"
     ]
   },
   {
-    title: "Text Formatting and Content",
-    description: "Text formatting.",
+    title: "3.Node js Modules",
+    description: "Modules.",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Headings",
-      "Paragraphs",
-      "Bold and Italics"
+      "Functions,Buffer,Module",
+      "Core Modules, Local Modules",
+      "Modules Types",
+      "Modules Exports"
     ]
   },
   {
-    title: "Links and Images",
+    title: "4.Node Package Manager",
     description: "Creating hyperLinks",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Anchor Tag",
-      "Image Tag",
-      "Relative vs Absolute Paths"
+      "What is NPM,Installing Package locally",
+      "Adding dependency in package Json",
+      "Installing package globally",
+      "Updating package"
     ]
   },
   {
-    title: "Tables and Forms",
+    title: "5.Creating Web Server",
+    description: "Creating server",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Creating web server",
+      "Handling http requests",
+      "Sending requests"
+    ]
+  },
+  {
+    title: "6.File System",
     description: "Creating tables",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Table Structure",
-      "Form Inputs",
-      "Submit Button"
+      "Fs.readFile, writing a file",
+      "Writing a file asynchronously",
+      "Opening a file, Deleting a file",
+      "Other IO Operations"
+    ]
+  },
+  {
+    title: "7.Debugging Node js Application",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Core node JS debugger"
+    ]
+  },
+  {
+    title: "8.Events",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Event Emitter class",
+      "Returning Event emitter",
+      "Inheriting events"
+    ]
+  },
+  {
+    title: "9.Express Js",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Configuring Routes",
+      "Working With express",
+    
+    ]
+  },
+  {
+    title: "10.Serving Static Resources",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Serving static files",
+      "Working with middle Ware",
+      
+    ]
+  },
+  {
+    title: "11.Database Connectivity",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Connecting String,Configuring",
+      "Working with Select command",
+      "Updating records",
+      "Deleting records"
+    ]
+  },
+  {
+    title: "12.Project Development",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Project Development using node js"
     ]
   }
 ];

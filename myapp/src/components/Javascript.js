@@ -2,58 +2,142 @@ import React, { useState } from 'react';
 
 const coursesData = [
   {
-    title: "Introduction to Html",
-    description: "Brief history of the internet",
+    title: "1.Introduction to Javascript",
+    description: "Brief history of the Javascript",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "What is HTML?",
-      "History of the Web",
-      "Importance of HTML"
+      "What is Javascript?",
+      "History and evolution",
+      "Javascript vs ECMAscript",
+      "Setting up the environment"
     ]
   },
   {
-    title: "HTML document structure",
-    description: "Basic structure of an HTML document.",
+    title: "2.Basics of Javascript",
+    description: "Basic structure of Javascript.",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "DOCTYPE and HTML tag",
-      "Head and Body",
-      "Meta tags"
+      "Syntax and structure",
+      "Variable(var,let,const)",
+      "Data types(Primitive and Reference types",
+      "Operators(Arithmetic,Logical comparison",
+      "Type conversion and coericon"
     ]
   },
   {
-    title: "Text Formatting and Content",
-    description: "Text formatting.",
+    title: "3.Control Structures",
+    description: "Using statements.",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Headings",
-      "Paragraphs",
-      "Bold and Italics"
+      "Conditional Statements",
+      "Loops(for,while,do-while)",
+      "Break and Continue"
     ]
   },
   {
-    title: "Links and Images",
-    description: "Creating hyperLinks",
+    title: "4.Functions",
+    description: "It is the block of code which is reusable",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Anchor Tag",
-      "Image Tag",
-      "Relative vs Absolute Paths"
+      "Function declaration and expression",
+      "Arrow functions",
+      "Parameters and arguments",
+      "Scope(Global,Local,Block)"
     ]
   },
   {
-    title: "Tables and Forms",
-    description: "Creating tables",
+    title: "5.Objects and Arrays",
+    description: "",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Table Structure",
-      "Form Inputs",
-      "Submit Button"
+      "Object creation and Manipulation",
+      "Arrays and their methods",
+      "Iterating over objects and arrays",
+      "Destructing"
+
+    ]
+  },
+  {
+    title: "6.DOM Manipulation",
+    description: "Document Object model",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Document object model(DOM) overview",
+      "Selecting elements(getElementById,querySelector)",
+      "Modifying Elements",
+      "Event handling(addEventListener,eventTypes)"
+
+    ]
+  },
+  {
+    title: "7.Advanced Javascript",
+    description: "Enhanced javascript",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Prototypes and inheritance",
+      "Classes and Objects",
+      "Modules(Import/Export)",
+      "Promises and async/await",
+      "Error handling(try,catch,finally) "
+
+    ]
+  },
+  {
+    title: "8.Browser and APIs",
+    description: "",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "LocalStorage and SessionStorage",
+      "Fetch API and AJAX",
+      "Geolocation API",
+      "Web APIs(Canvas,Notifications)"
+
+    ]
+  } ,
+  {
+    title: "9.ES6+ Features",
+    description: "",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Template Literals",
+      "Default Parameters",
+      "Spread/rest operators",
+      "Destructing assignment",
+      "New data Structures(Map,Set)"
+
+    ]
+  },
+  {
+    title: "10.Debugging and testing",
+    description: "",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Debugging tools(Browser,webtools)",
+      "Writing test cases(Jest,Mocha)",
+      "Common debugging techniques"
+
+    ]
+  },
+  {
+    title: "11.Framework and Libraries",
+    description: "",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Intoduction to popular libraries(e.g.,jQuery)",
+      "Overview of frameworks(React, Angular,Vue)"
+      
+
     ]
   }
 ];

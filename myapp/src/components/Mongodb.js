@@ -2,58 +2,143 @@ import React, { useState } from 'react';
 
 const coursesData = [
   {
-    title: "Introduction to Html",
+    title: "1.Overview of MongoDB",
     description: "Brief history of the internet",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "What is HTML?",
-      "History of the Web",
-      "Importance of HTML"
+      "Introduction to MongoDb",
+      "NO SQl Database",
+      "Advantages over RDBMS",
+      "Install MongoDB",
+      "MongoDb data modelling"
     ]
   },
   {
-    title: "HTML document structure",
-    description: "Basic structure of an HTML document.",
+    title: "2.MongoDb Operators",
+    description: "",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "DOCTYPE and HTML tag",
-      "Head and Body",
-      "Meta tags"
+      " Query & Projection Operator",
+      "MongoDb Update operator",
+      "Aggregation pipeline Stages",
+      "MongoDb limit",
+      "MongoDb sort",
+      "Query Modifiers"
     ]
   },
   {
-    title: "Text Formatting and Content",
+    title: "3.Database Commands",
     description: "Text formatting.",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Headings",
-      "Paragraphs",
-      "Bold and Italics"
+      "Aggregation Commands",
+      "Geospatial Command",
+      "Query and  write operation  Commands",
+      "Query plan  Cache Commands",
+      "Authentication Commands",
+      "User Management Commands",
+      "Role Management Commands",
+      "Replication Command",
+      "Shading Commands",
+      "Session Commands"
     ]
   },
   {
-    title: "Links and Images",
+    title: "4.Database",
     description: "Creating hyperLinks",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Anchor Tag",
-      "Image Tag",
-      "Relative vs Absolute Paths"
+      "Create Database",
+      "Drop Database"
     ]
   },
   {
-    title: "Tables and Forms",
+    title: "5.Collection",
     description: "Creating tables",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Table Structure",
-      "Form Inputs",
-      "Submit Button"
+      "Create Collection",
+      "Drop Collection"
+    ]
+  },
+  {
+    title: "6.CRUD :Documents",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Inset Documents",
+      "Update Documents",
+      "Delete Documents",
+      "Query Documents",
+      "SQL to MongoDb Mapping",
+      "MongoDb text search",
+      "Partial updates & Documents Limits",
+      "Removing Documents",
+      "Multi update",
+      "Wire Protocol",
+      "Bulk() operations and methods",
+      "Common Commands",
+      "db.runCommand()",
+      "db.isMaster()",
+      "db.serverStatus()",
+      "db.currentOp() & db.killOp()",
+      "collection.stats() & collection.drop()"
+
+    ]
+  },
+  {
+    title: "7.MongoDb shell",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "MongoDb shell",
+      "Shell collection Methods",
+      "Cursor Methods",
+      "MongoDb database commands",
+      "Query plan cache Methods",
+      "User management  Method",
+      "Role management method",
+      "MongoDb replication Methods"
+    ]
+  },
+  {
+    title: "8.MongoDb cloud",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "MongoDb stitch",
+      "MongoDb Atlas",
+      "MongoDb cloud Manager",
+      "MongoDb Ops Manager" 
+    ]
+  },
+  {
+    title: "9.MongoDb Tools",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "MongoDb Compass",
+      "MongoDb BI connector"
+    ]
+  },
+  {
+    title:"10.Connectivity",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Java MongoDb",
+      "PHP MongoDb",
+      "Python MongoDb"
     ]
   }
 ];

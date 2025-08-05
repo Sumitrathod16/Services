@@ -303,9 +303,8 @@ body {
                     <h3 className="card-title">Flutter</h3>
                    <div className="card-tags">
                     <ul>
-                            <li> <Link to="/Flexbox">Flexbox</Link></li>
-                            <li> <Link to="/Grid">Grid</Link></li>
-                            <li> <Link to="/Animations">Animations</Link></li>
+                            <li> <Link to="/Flutter">Flutter</Link></li>
+                
                     </ul>
                     </div>
                  </div>
@@ -363,7 +362,7 @@ body {
                     <div className="card-tags">
                     <ul>
                         <li> <Link to="/ML">ML</Link></li>
-                        <li> <Link to="/DeepLearning">Deep Learning</Link></li>
+                        <li> <Link to="/Dl">Deep Learning</Link></li>
                         <li> <Link to="/AI">AI</Link></li>
                     </ul>
                     </div>

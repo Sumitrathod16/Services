@@ -13,9 +13,8 @@ const Home = () => {
       <Explore/>
       <Exclusive />
       <Unique/>
-     
-    
-    </div>
+      
+     </div>
   );
 }
 export default Home;

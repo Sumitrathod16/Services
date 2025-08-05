@@ -2,58 +2,101 @@ import React, { useState } from 'react';
 
 const coursesData = [
   {
-    title: "Introduction to Html",
+    title: "1.Introduction ",
     description: "Brief history of the internet",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "What is HTML?",
-      "History of the Web",
-      "Importance of HTML"
+      "Introduction to machine learning",
+      "Performance of measures of classification",
+      "Bias-Variance Tradeoff",
+      "Regression"
     ]
   },
   {
-    title: "HTML document structure",
+    title: "2.Bayesian Decision Theory",
     description: "Basic structure of an HTML document.",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "DOCTYPE and HTML tag",
-      "Head and Body",
-      "Meta tags"
+      "Bayesian Belief Networks"
     ]
   },
   {
-    title: "Text Formatting and Content",
+    title: "3.Parametric Approaches and Non-parametric Approaches",
     description: "Text formatting.",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Headings",
-      "Paragraphs",
-      "Bold and Italics"
+      "Parameter Estimation and Maximum likelihood Estimation",
+      "Parameter Estimation and Bayesian Estimation",
+      "Concept of non-parametric techniques",
+      'Density Estimation by Parzen window',
+      "Parzon window and k-nearest neighbor algorithm",
+
     ]
   },
   {
-    title: "Links and Images",
+    title: "4.Perceptron Criteria and Discriminative Models",
     description: "Creating hyperLinks",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Anchor Tag",
-      "Image Tag",
-      "Relative vs Absolute Paths"
+      "Linear discriminant Functions and perceptron Criteria",
+      "Support Vector Machine"
     ]
   },
   {
-    title: "Tables and Forms",
+    title: "5.Logistic Regression, Decision trees and Hidden Markov Model",
     description: "Creating tables",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Table Structure",
-      "Form Inputs",
-      "Submit Button"
+      "Logisitc Regression ",
+      "Decision tree",
+      "Hidden Markov Model(HMM)"
+    ]
+  },
+  {
+    title: "6.Ensemble Methods",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Ensemble Classifiers",
+    
+    ]
+  },
+  {
+    title: "7.Dimensionality Problems",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Dimensionality Problem and Principal Component analysis",
+      "Principal Component analysis",
+      "Linear Discriminant analysis"
+    ]
+  },
+  {
+    title: "8.Mixture model and clustering",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Gaussian Mixture Model and EM algorithm",
+      "K-means clustering",
+      ""
+    ]
+  },
+  {
+    title: "9.Clustering",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Fuzzy k-means clustering",
+      "Hierarchical Agglomorative clustering and Mean-shift Clustering"
     ]
   }
 ];
@@ -139,7 +182,7 @@ const AccordionCourses = () => {
     `}
     </style>  
     <div className="accordion-container">
-      <h2 className="accordion-title">Available Courses</h2>
+      <h2 className="accordion-title">Syllabus</h2>
       {coursesData.map((course, index) => (
         <div key={index} className="accordion-item">
           <button

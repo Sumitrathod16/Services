@@ -2,58 +2,131 @@ import React, { useState } from 'react';
 
 const coursesData = [
   {
-    title: "Introduction to Html",
+    title: "1.Introduction to Django",
     description: "Brief history of the internet",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "What is HTML?",
-      "History of the Web",
-      "Importance of HTML"
+     "Understanding web development frameworks",
+     "Introduction to Django and its features",
+    "Installing Django and setting up a development environment",
+     "Creating a simple Django project and app"
     ]
   },
   {
-    title: "HTML document structure",
+    title: "2.Django models and Database Integration",
     description: "Basic structure of an HTML document.",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "DOCTYPE and HTML tag",
-      "Head and Body",
-      "Meta tags"
+      "Creating models and defining database tables",
+      "Working with Django’s Object-Relational Mapping (ORM)",
+      "Performing database queries using Django’s QuerySet API",
+      "Migrations and database schema evolution"  
     ]
   },
   {
-    title: "Text Formatting and Content",
+    title: "3.Views and Templates",
     description: "Text formatting.",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Headings",
-      "Paragraphs",
-      "Bold and Italics"
+      "Building views to handle HTTP requests",
+      "Creating templates for dynamic HTML generation",
+       "Routing and URL patterns in Django",
+       "Passing data from views to templates"
     ]
   },
   {
-    title: "Links and Images",
+    title: "4.Django Forms",
     description: "Creating hyperLinks",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Anchor Tag",
-      "Image Tag",
-      "Relative vs Absolute Paths"
+      "Creating HTML forms in Django",
+      "Form validation and handling form submissions",
+       "Customizing form behavior with Django form classes",
+       "Integrating forms with models"
     ]
   },
   {
-    title: "Tables and Forms",
+    title: "5.Django admin and Panel",
     description: "Creating tables",
     duration: "1 Week",
     instructor: "Areen Phadtare",
     chapters: [
-      "Table Structure",
-      "Form Inputs",
-      "Submit Button"
+      "Utilizing the Django admin interface for content management",
+      "Customizing the admin panel for specific models",
+       "Adding custom actions and filters"
+    ]
+  },
+  {
+    title: "6.Authentication and Autherization",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+           "Implementing user authentication in Django",
+          "Managing user sessions and passwords",
+          "Configuring permissions and authorization"
+    ]
+  },
+  {
+    title: "7.Django REST framework",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Introduction to RESTful APIs",
+       "Building APIs with Django REST Framework",
+       "Serializers, views, and authentication for APIs",
+       "Consuming APIs in Django applications"
+    ]
+  },
+  {
+    title: "8.Frontend Integration with Django",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Integrating frontend frameworks (e.g., Bootstrap) with Django",
+      "Using static files and media in Django projects",
+      "AJAX and asynchronous behavior in Django applications"
+    ]
+  },
+  {
+    title: "9.Testing and Debugging in Django",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Writing unit tests for Django applications",
+      "Debugging techniques and tools",
+       "Best practices for testing in Django"
+    ]
+  },
+  {
+    title: "10.Deployment and scaling",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Preparing a Django application for deployment",
+      "Choosing a hosting platform (e.g., Heroku, AWS)",
+       "Configuring production settings",
+        "Scaling Django applications"
+    ]
+  },
+  {
+    title: "11.Advanced Topics",
+    description: "Creating tables",
+    duration: "1 Week",
+    instructor: "Areen Phadtare",
+    chapters: [
+      "Signals and event handling in Django",
+     "Building custom middleware",
+      "Caching strategies in Django",
+      "Internationalization and localization"
     ]
   }
 ];
