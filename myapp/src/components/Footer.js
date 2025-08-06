@@ -111,7 +111,7 @@ function Footer()
             <div className="footer-container1">
             <ul>
                 <h3>Supports</h3>
-                 <li><Link to ="/">FAQ</Link></li> 
+                 <li><Link to ="/FAQ">FAQ</Link></li> 
                  <li><Link to="/">Community</Link></li>   
             </ul>    
             </div>   

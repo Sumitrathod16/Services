@@ -1,258 +1,266 @@
 import React, { useState } from 'react';
 
-const coursesData = [
+const syllabusData = [
   {
-    title: "1.Overview of MongoDB",
-    description: "Brief history of the internet",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 1,
+    title: 'MongoDB Basics',
+    description: 'Fundamental concepts of  learning and its applications',
+    details: 'This section covers the foundations of  learning, including definitions, types, and how it’s used in modern applications.',
+    icon: '🧠',
     chapters: [
-      "Introduction to MongoDb",
-      "NO SQl Database",
-      "Advantages over RDBMS",
-      "Install MongoDB",
-      "MongoDb data modelling"
+    "What is MongoDB?",
+    "NoSQL vs SQL databases",
+    "Documents, Collections, and Databases",
+    "BSON vs JSON",
+    "Installing MongoDB locally",
+    "Using MongoDB Atlas (Cloud MongoDB)",
+    "MongoDB Compass (GUI Tool)",
+    "Basic MongoDB Shell Commands:",
+    "show dbs, use db, show collections,db.collection.insertOne(), insertMany()",
+    "db.collection.find(), findOne()",
+    "Understanding _id field"
     ]
   },
   {
-    title: "2.MongoDb Operators",
-    description: "",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 2,
+    title: ' CRUD Operations',
+    description: 'Understanding the architecture and function of ANNs',
+    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
+    icon: '🔗',
     chapters: [
-      " Query & Projection Operator",
-      "MongoDb Update operator",
-      "Aggregation pipeline Stages",
-      "MongoDb limit",
-      "MongoDb sort",
-      "Query Modifiers"
+    "Create:",
+    "insertOne(), insertMany()",
+    "Read:",
+    "find(), findOne()",
+    "Projections (include/exclude fields)",
+    "Filtering using query operators ($eq, $gt, $lt, etc.)",
+    "Sorting, Limiting, and Skipping results",
+    "Update:",
+    "updateOne(), updateMany()",
+    "$set, $inc, $unset",
+    "Upserts (update + insert)",
+    "Delete:",
+    "deleteOne(), deleteMany()"
+        ]
+  },
+  {
+    id: 3,
+    title: ' Advanced Querying & Indexing',
+    description: 'Exploring multi-layered neural networks and their power',
+    details: 'This module explains how deep architectures differ and how to train them effectively.',
+    icon: '🧱',
+    chapters: [
+    "Query Operators:",
+    "$in, $nin, $and, $or, $not, $exists, $regex",
+    "Array Queries:",
+    "$elemMatch, $size, $all",
+    "Embedded Documents and Nested Queries",
+    "Aggregation Framework:",
+    "$match, $group, $project, $sort, $limit, $lookup",
+    "Indexing:",
+    "Single Field, Compound, and Text Indexes",
+    "Creating and using Indexes",
+    "Index Performance (Explain Plan)",
+    "Data Modeling Best Practices (embedded vs referenced"  
     ]
   },
   {
-    title: "3.Database Commands",
-    description: "Text formatting.",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 4,
+    title: ' MongoDB with Node.js (Mongoose)',
+    description: 'Use MongoDB in real-world backend projects',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    icon: '📈',
     chapters: [
-      "Aggregation Commands",
-      "Geospatial Command",
-      "Query and  write operation  Commands",
-      "Query plan  Cache Commands",
-      "Authentication Commands",
-      "User Management Commands",
-      "Role Management Commands",
-      "Replication Command",
-      "Shading Commands",
-      "Session Commands"
-    ]
+    "Introduction to Mongoose ORM",
+    "Defining Mongoose Schemas and Models",
+    "CRUD operations using Mongoose",
+     "Schema Types and Validations",
+     "Mongoose Middleware (Pre/Post Hooks)",
+     "Relationships in MongoDB (References & Population)",
+     "Query Building with Mongoose",
+     "Error handling and validation",
+     "Connecting MongoDB to Express apps",
+     "Environment Variables and Configs with MongoDB URI"
+     ]
   },
   {
-    title: "4.Database",
-    description: "Creating hyperLinks",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Create Database",
-      "Drop Database"
-    ]
-  },
-  {
-    title: "5.Collection",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Create Collection",
-      "Drop Collection"
-    ]
-  },
-  {
-    title: "6.CRUD :Documents",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Inset Documents",
-      "Update Documents",
-      "Delete Documents",
-      "Query Documents",
-      "SQL to MongoDb Mapping",
-      "MongoDb text search",
-      "Partial updates & Documents Limits",
-      "Removing Documents",
-      "Multi update",
-      "Wire Protocol",
-      "Bulk() operations and methods",
-      "Common Commands",
-      "db.runCommand()",
-      "db.isMaster()",
-      "db.serverStatus()",
-      "db.currentOp() & db.killOp()",
-      "collection.stats() & collection.drop()"
-
-    ]
-  },
-  {
-    title: "7.MongoDb shell",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "MongoDb shell",
-      "Shell collection Methods",
-      "Cursor Methods",
-      "MongoDb database commands",
-      "Query plan cache Methods",
-      "User management  Method",
-      "Role management method",
-      "MongoDb replication Methods"
-    ]
-  },
-  {
-    title: "8.MongoDb cloud",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "MongoDb stitch",
-      "MongoDb Atlas",
-      "MongoDb cloud Manager",
-      "MongoDb Ops Manager" 
-    ]
-  },
-  {
-    title: "9.MongoDb Tools",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "MongoDb Compass",
-      "MongoDb BI connector"
-    ]
-  },
-  {
-    title:"10.Connectivity",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Java MongoDb",
-      "PHP MongoDb",
-      "Python MongoDb"
+    id: 1,
+    title: '. Production, Security & Tools',
+    description: 'Fundamental concepts of  learning and its applications',
+    details: 'This section covers the foundations of  learning, including definitions, types, and how it’s used in modern applications.',
+    icon: '🧠',
+    chapters:[
+     "MongoDB Atlas Cloud Setup",
+     "Connection URI and Environment Configs",
+     "Authentication & Role-Based Access Control",
+     "Backup & Restore Databases",
+     "Replica Sets and Sharding Basics (High Availability & Scaling)",
+     "Database Security Best Practices:",
+     "IP Whitelisting",
+     "SSL/TLS Encryption",
+     "User Roles & Permissions",
+     "Monitoring & Performance Tools:",
+     "MongoDB Atlas Dashboard",
+     "Compass Performance Tab",
+     "Data Migration Techniques",
+     "Export/Import Data using mongoexport, mongoimport"
     ]
   }
 ];
 
-const AccordionCourses = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+const Syllabus = () => {
+  const [openId, setOpenId] = useState(null);
 
-  const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+  const toggleInfo = (id) => {
+    setOpenId(openId === id ? null : id);
   };
 
   return (
-  <>
-<style>
-    {`
-    .accordion-container {
-  max-width: 90%;
-  margin: 40px auto;
-  font-family: Arial, sans-serif;
-}
+    <>
+      <style>
+        {`
+        body {
+          margin: 0;
+          font-family: 'Segoe UI', sans-serif;
+          background-color: #f3f4f6;
+        }
+        .main-container {
+          display: flex;
+          height: 100vh;
+        }
+        .sidebar {
+          width: 220px;
+          background-color: #1c1f2e;
+          color: white;
+          padding: 1rem;
+        }
+        .sidebar h2 {
+          margin-bottom: 1rem;
+        }
+        .sidebar ul {
+          list-style: none;
+          padding: 0;
+        }
+        .sidebar li {
+          padding: 0.75rem 1rem;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-bottom: 0.5rem;
+        }
+        .sidebar li.active, .sidebar li:hover {
+          background-color: #2c2f3e;
+        }
+        .content {
+          flex: 1;
+          background-color: white;
+          padding: 2rem;
+          overflow-y: auto;
+        }
+        .syllabus-card {
+          display: flex;
+          padding: 1rem;
+          border: 1px solid #e5e7eb;
+          border-radius: 12px;
+          margin-bottom: 1rem;
+          background-color: #f9fafb;
+          transition: background 0.2s;
+        }
+        .syllabus-card:hover {
+          background-color: #f3f4f6;
+        }
+        .icon {
+          font-size: 1.8rem;
+          margin-right: 1rem;
+          align-self: flex-start;
+        }
+        .info h3 {
+          margin: 0;
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+        .info p {
+          margin: 0.4rem 0 0.6rem 0;
+          font-size: 0.9rem;
+          color: #4b5563;
+        }
+        .progress-bar {
+          height: 6px;
+          background-color: #d1d5db;
+          border-radius: 3px;
+          overflow: hidden;
+          width: 100%;
+          margin-top: 0.5rem;
+        }
+        .bar-fill {
+          height: 100%;
+          width: 60%;
+          background-color: #4f46e5;
+        }
+        .clickable {
+          cursor: pointer;
+        }
+        .extra-info {
+          margin-top: 0.5rem;
+          font-size: 0.85rem;
+          color: #374151;
+          background-color: #e5e7eb;
+          padding: 0.8rem;
+          border-radius: 8px;
+        }
+        .chapter-list {
+          margin-top: 0.5rem;
+          padding-left: 1.2rem;
+        }
+        .chapter-list li {
+          margin-bottom: 0.3rem;
+          color: #22223b;
+        }
+        `}
+      </style>
+      <div className="main-container">
+        <aside className="sidebar">
+          <h2>Syllabus</h2>
+          <ul>
+            <li className="active">Syllabus</li>
+            <li>Modules</li>
+            <li>Assignments</li>
+            <li>Grades</li>
+          </ul>
+        </aside>
 
-.accordion-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.accordion-item {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-
-.accordion-button {
-  width: 100%;
-  padding: 15px;
-  background-color: #f2f2f2;
-  border: none;
-  text-align: left;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s ease;
-}
-
-.accordion-button:hover {
-  background-color: #e0e0e0;
-}
-
-.accordion-content {
-  padding: 15px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-  .accordion-chapters {
-  margin-top: 10px;
-}
-
-.accordion-chapters ol {
-  margin-left: 20px;
-  padding-left: 10px;
-}
-
-.accordion-chapters li {
-  margin-bottom: 6px;
-  list-style-type: decimal;
-}
-    `}
-    </style>  
-    <div className="accordion-container">
-      <h2 className="accordion-title">Available Courses</h2>
-      {coursesData.map((course, index) => (
-        <div key={index} className="accordion-item">
-          <button
-            onClick={() => toggleAccordion(index)}
-            className="accordion-button"
-          >
-            {course.title}
-          </button>
-          {activeIndex === index && (
-            <div className="accordion-content">
-              <p>{course.description}</p>
-              <p><strong>Duration:</strong> {course.duration}</p>
-              <p><strong>Instructor:</strong> {course.instructor}</p>
-              <div className="accordion-chapters">
-                <p><strong>Chapters:</strong></p>
-                <ol>
-                  {course.chapters.map((chapter, idx) => (
-                    <li key={idx}>{chapter}</li>
-                  ))}
-                </ol>
+        <section className="content">
+          {syllabusData.map((item) => (
+            <div
+              key={item.id}
+              className="syllabus-card clickable"
+              onClick={() => toggleInfo(item.id)}
+            >
+              <div className="icon">{item.icon}</div>
+              <div className="info">
+                <h3>{item.id}. {item.title}</h3>
+                <p>{item.description}</p>
+                {item.id === 1 && (
+                  <div className="progress-bar">
+                    <div className="bar-fill" />
+                  </div>
+                )}
+                {openId === item.id && (
+                  <div className="extra-info">
+                    <p>{item.details}</p>
+                    <ul className="chapter-list">
+                      {item.chapters.map((chapter, idx) => (
+                        <li key={idx}>{chapter}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
-          )}
-        </div>
-      ))}
-    </div>
+          ))}
+        </section>
+      </div>
     </>
   );
 };
 
-export default AccordionCourses;
+export default Syllabus;

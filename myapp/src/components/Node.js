@@ -1,250 +1,261 @@
 import React, { useState } from 'react';
 
-const coursesData = [
+const syllabusData = [
   {
-    title: "1.Introduction to Node js",
-    description: "Brief history of the internet",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 1,
+    title: 'Introduction to Nodejs',
+    description:'Understand the core of how Node.js works',
+    details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
+    icon: '🧠',
     chapters: [
-      "Introduction to node js",
-      "What is Node Js,Node.js Process Model",
-      "Advantages of Node js ",
-      "Traditional Web Server Model"
+    "What is Node.js and why use it?",
+    "Node.js Architecture (Event Loop, Call Stack, Libuv)",
+    "V8 JavaScript Engine",
+    "Synchronous vs Asynchronous programming",
+    "Node.js Global Objects (__dirname, __filename, process, global)",
+    "CommonJS Modules vs ES Modules",
+    "REPL (Read-Eval-Print Loop)",
+    "NPM (Node Package Manager) and package.json",
+    "Installing and updating Node.js and NPM " 
     ]
   },
   {
-    title: "2.Setup  Development Environment",
-    description: "Node js environment setup.",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 2,
+    title: ' Core Modules & File System',
+    description: 'Learn to work with built-in modules and file operations',
+    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
+    icon: '🔗',
     chapters: [
-      "Install Node.js on Windows",
-      "Working in REPL,Node js Console"
+    "fs (File System)",
+    "path",
+    "os",
+    "url",
+    "events",
+    "util",
+    "stream",
+    "buffer",
+    "Creating and reading files (sync/async)",
+    "Working with directories",
+    "EventEmitter and custom events",
+    "Streams and piping",
+    "Understanding Buffers and handling binary data"
     ]
   },
   {
-    title: "3.Node js Modules",
-    description: "Modules.",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 3,
+    title: ' Networking and HTTP',
+    description: 'Build servers and handle requests/responses',
+    details: 'This module explains how deep architectures differ and how to train them effectively.',
+    icon: '🧱',
     chapters: [
-      "Functions,Buffer,Module",
-      "Core Modules, Local Modules",
-      "Modules Types",
-      "Modules Exports"
+    "Creating a basic HTTP server",
+    "Request and response handling",
+    "Routing manually without a framework",
+    "Handling form data (GET & POST)",
+    "Working with query strings and URL parsing",
+    "Setting response headers and status codes",
+    "Introduction to HTTPS and TLS",
+    "Introduction to WebSockets"  
     ]
   },
   {
-    title: "4.Node Package Manager",
-    description: "Creating hyperLinks",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 4,
+    title: 'Express.js & Middleware',
+    description: 'Use the most popular framework for building apps with Node.js',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    icon: '📈',
     chapters: [
-      "What is NPM,Installing Package locally",
-      "Adding dependency in package Json",
-      "Installing package globally",
-      "Updating package"
+      "What is Express.js?",
+     "Creating routes (GET, POST, PUT, DELETE)",
+     "Route parameters and query strings",
+     "Express middleware (built-in, third-party, custom)",
+     "Static file serving",
+     "Error handling middleware",
+     "Express Router (modular routing)",
+     "Working with forms and JSON",
+     "Using Postman for testing APIs",
+     "Handling CORS in Express",
+    "RESTful API structure using Express"
     ]
-  },
-  {
-    title: "5.Creating Web Server",
-    description: "Creating server",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+  },{
+  id: 5,
+    title: ' Advanced Concepts & Tooling',
+    description: 'Deepen your knowledge and explore production-ready practices',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    icon: '📈',
     chapters: [
-      "Creating web server",
-      "Handling http requests",
-      "Sending requests"
-    ]
-  },
-  {
-    title: "6.File System",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Fs.readFile, writing a file",
-      "Writing a file asynchronously",
-      "Opening a file, Deleting a file",
-      "Other IO Operations"
-    ]
-  },
-  {
-    title: "7.Debugging Node js Application",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Core node JS debugger"
-    ]
-  },
-  {
-    title: "8.Events",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Event Emitter class",
-      "Returning Event emitter",
-      "Inheriting events"
-    ]
-  },
-  {
-    title: "9.Express Js",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Configuring Routes",
-      "Working With express",
+      "MongoDB using Mongoose",
+      "MySQL or PostgreSQL",
+      "Environment Variables with dotenv",
+      "Authentication & Authorization (JWT, OAuth)",
+      "File Uploads with multer",
+      "Async/Await and Promises in-depth",
+      "Error Handling & Logging (Winston, Morgan)", 
+      "Using Nodemon and debugging techniques",
+      "Writing Unit Tests (Mocha, Chai, Jest)",
+      "Building and consuming REST APIs",
+      "Introduction to GraphQL with Node.js",
+      "Deploying Node.js Apps (Heroku, Vercel, DigitalOcean, etc.)",
+      "Performance optimization (Clustering, Load balancing)"
     
     ]
-  },
-  {
-    title: "10.Serving Static Resources",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Serving static files",
-      "Working with middle Ware",
-      
-    ]
-  },
-  {
-    title: "11.Database Connectivity",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Connecting String,Configuring",
-      "Working with Select command",
-      "Updating records",
-      "Deleting records"
-    ]
-  },
-  {
-    title: "12.Project Development",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
-    chapters: [
-      "Project Development using node js"
-    ]
   }
+  
 ];
 
-const AccordionCourses = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+const Syllabus = () => {
+  const [openId, setOpenId] = useState(null);
 
-  const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+  const toggleInfo = (id) => {
+    setOpenId(openId === id ? null : id);
   };
 
   return (
-  <>
-<style>
-    {`
-    .accordion-container {
-  max-width: 90%;
-  margin: 40px auto;
-  font-family: Arial, sans-serif;
-}
+    <>
+      <style>
+        {`
+        body {
+          margin: 0;
+          font-family: 'Segoe UI', sans-serif;
+          background-color: #f3f4f6;
+        }
+        .main-container {
+          display: flex;
+          height: 100vh;
+        }
+        .sidebar {
+          width: 220px;
+          background-color: #1c1f2e;
+          color: white;
+          padding: 1rem;
+        }
+        .sidebar h2 {
+          margin-bottom: 1rem;
+        }
+        .sidebar ul {
+          list-style: none;
+          padding: 0;
+        }
+        .sidebar li {
+          padding: 0.75rem 1rem;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-bottom: 0.5rem;
+        }
+        .sidebar li.active, .sidebar li:hover {
+          background-color: #2c2f3e;
+        }
+        .content {
+          flex: 1;
+          background-color: white;
+          padding: 2rem;
+          overflow-y: auto;
+        }
+        .syllabus-card {
+          display: flex;
+          padding: 1rem;
+          border: 1px solid #e5e7eb;
+          border-radius: 12px;
+          margin-bottom: 1rem;
+          background-color: #f9fafb;
+          transition: background 0.2s;
+        }
+        .syllabus-card:hover {
+          background-color: #f3f4f6;
+        }
+        .icon {
+          font-size: 1.8rem;
+          margin-right: 1rem;
+          align-self: flex-start;
+        }
+        .info h3 {
+          margin: 0;
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+        .info p {
+          margin: 0.4rem 0 0.6rem 0;
+          font-size: 0.9rem;
+          color: #4b5563;
+        }
+        .progress-bar {
+          height: 6px;
+          background-color: #d1d5db;
+          border-radius: 3px;
+          overflow: hidden;
+          width: 100%;
+          margin-top: 0.5rem;
+        }
+        .bar-fill {
+          height: 100%;
+          width: 60%;
+          background-color: #4f46e5;
+        }
+        .clickable {
+          cursor: pointer;
+        }
+        .extra-info {
+          margin-top: 0.5rem;
+          font-size: 0.85rem;
+          color: #374151;
+          background-color: #e5e7eb;
+          padding: 0.8rem;
+          border-radius: 8px;
+        }
+        .chapter-list {
+          margin-top: 0.5rem;
+          padding-left: 1.2rem;
+        }
+        .chapter-list li {
+          margin-bottom: 0.3rem;
+          color: #22223b;
+        }
+        `}
+      </style>
+      <div className="main-container">
+        <aside className="sidebar">
+          <h2>Syllabus</h2>
+          <ul>
+            <li className="active">Syllabus</li>
+            <li>Modules</li>
+            <li>Assignments</li>
+            <li>Grades</li>
+          </ul>
+        </aside>
 
-.accordion-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.accordion-item {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-
-.accordion-button {
-  width: 100%;
-  padding: 15px;
-  background-color: #f2f2f2;
-  border: none;
-  text-align: left;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s ease;
-}
-
-.accordion-button:hover {
-  background-color: #e0e0e0;
-}
-
-.accordion-content {
-  padding: 15px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-  .accordion-chapters {
-  margin-top: 10px;
-}
-
-.accordion-chapters ol {
-  margin-left: 20px;
-  padding-left: 10px;
-}
-
-.accordion-chapters li {
-  margin-bottom: 6px;
-  list-style-type: decimal;
-}
-    `}
-    </style>  
-    <div className="accordion-container">
-      <h2 className="accordion-title">Available Courses</h2>
-      {coursesData.map((course, index) => (
-        <div key={index} className="accordion-item">
-          <button
-            onClick={() => toggleAccordion(index)}
-            className="accordion-button"
-          >
-            {course.title}
-          </button>
-          {activeIndex === index && (
-            <div className="accordion-content">
-              <p>{course.description}</p>
-              <p><strong>Duration:</strong> {course.duration}</p>
-              <p><strong>Instructor:</strong> {course.instructor}</p>
-              <div className="accordion-chapters">
-                <p><strong>Chapters:</strong></p>
-                <ol>
-                  {course.chapters.map((chapter, idx) => (
-                    <li key={idx}>{chapter}</li>
-                  ))}
-                </ol>
+        <section className="content">
+          {syllabusData.map((item) => (
+            <div
+              key={item.id}
+              className="syllabus-card clickable"
+              onClick={() => toggleInfo(item.id)}
+            >
+              <div className="icon">{item.icon}</div>
+              <div className="info">
+                <h3>{item.id}. {item.title}</h3>
+                <p>{item.description}</p>
+                {item.id === 1 && (
+                  <div className="progress-bar">
+                    <div className="bar-fill" />
+                  </div>
+                )}
+                {openId === item.id && (
+                  <div className="extra-info">
+                    <p>{item.details}</p>
+                    <ul className="chapter-list">
+                      {item.chapters.map((chapter, idx) => (
+                        <li key={idx}>{chapter}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
-          )}
-        </div>
-      ))}
-    </div>
+          ))}
+        </section>
+      </div>
     </>
   );
 };
 
-export default AccordionCourses;
+export default Syllabus;
