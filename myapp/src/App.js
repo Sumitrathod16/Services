@@ -36,6 +36,8 @@ import Dl from './components/Dl';
 import AI from './components/Ai';
 import Projects from './components/Projects';
 import Portfolio from './components/Portfolio';
+import Modules from './components/Modules';
+
 function App() {
   return (
     <Router>
@@ -75,6 +77,9 @@ function App() {
         <Route path="/Ai" element={<AI/>}/>
         <Route path="/Projects" element={<Projects/>}/>
         <Route path="/Portfolio" element={<Portfolio/>}/>
+        <Route path="/Modules" element={<Modules/>}/>
+        
+
 
         </Routes>
         <Footer/>

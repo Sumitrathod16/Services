@@ -1,107 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 const syllabusData = [
   {
     id: 1,
-    title: 'Introuction to hibernate & ORM Concepts ',
+    title: 'Introduction to Machine Learning',
     description: '',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
     icon: '🧠',
     chapters: [
-"What is hibernate",
-"ORM basics",
-"JPA vs Hibernate",
-"Hibernate architecture"
-],
-notes:"notes.pdf"
-  },
-  {
-    id: 2,
-    title: 'Hibernate Configuration & setup',
-    description: 'Understanding the architecture and function of ANNs',
-    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
-    chapters: [
-     "Hibernate dependencies",
-     "Configuration Files",
-     "Database Connectivity",
-     "Annotation vs XML mapping"
-],
-notes:"notes.pdf"
-  },
-  {
-    id: 3,
-    title: 'Entity Mapping',
-    description: '',
-    details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
-    chapters: [
-"Defining entities",
-"Primary key strategies",
-"Data types & attributee mapping",
-"Embedded and transient fields"
-],
-notes:"notes.pdf"
-  },
-  {
-    id: 4,
-    title: 'Relationships Mapping',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
-    chapters: [
-      "One-to-one",
-      "One-to-Many",
-      "Many-to-Many",
-      "Cascade operations & Fetch types"
-],
-notes:"notes.pdf"
-  },
-  {
-    id: 5,
-    title: 'CRUD operations & session Management',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
-    chapters: [
-       "Basic CRUD",
-       "Session lifecycle",
-       "Transaction Management",
-       "Detaching and merging objects"
+      "Introduction to machine learning",
+      "Performance of measures of classification",
+      "Bias-Variance Tradeoff",
+      "Regression"
     ],
-    notes:"notes.pdf"
+    notes: "notes/introduction-to-ml.pdf" // Add your notes file path or URL here
   },
-  {
-    id: 6,
-    title: 'HQL,JPQL & Criteria API',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
-    chapters: [
-      "Hibernate Query Language(HQL)",
-      "JPQL",
-      "Named Queries",
-      "Criteria API",
-      "Native SQL Queries"
-    ],
-    notes:"notes.pdf"
-  },
-  {
-    id: 7,
-    title: 'Advanced Topics & Performance Optimization',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
-    chapters: [
-"Caching",
-"Lazy vs Eager Loading",
-"Batch processing & fetching strategies",
-"Transactions with JTA, Spring Itegration",
-"Best Practices"
-    ],
-    notes:"notes.pdf"
-  },
-
-  
+  // Add more modules as needed, each with a 'notes' property
 ];
 
 const Syllabus = () => {
@@ -115,7 +30,7 @@ const Syllabus = () => {
     <>
       <style>
         {`
-        body {
+       body {
           margin: 0;
           font-family: 'Segoe UI', sans-serif;
           background-color: #f3f4f6;
@@ -147,8 +62,11 @@ const Syllabus = () => {
           text-decoration:none;
           color:white;
           }
-        .sidebar li.active, .sidebar li:hover {
+        
+        .sidebar li.active, .sidebar li a:hover {
           background-color: #2c2f3e;
+          border-radius:8px;
+          
         }
         .content {
           flex: 1;
@@ -215,15 +133,17 @@ const Syllabus = () => {
           margin-bottom: 0.3rem;
           color: #22223b;
         }
+        
         `}
       </style>
       <div className="main-container">
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li><Link to="/Flask">Syllabus</Link></li>
-            <li><Link to="/assignments">Assignment</Link></li>
-            <li><Link to="/Grades">Grades</Link></li>
+            <li><Link to="/Ml">Syllabus</Link></li>
+            <li><Link to="/Modules">Modules</Link></li>
+            <li><Link to="/assignments">Assignments</Link></li>
+            <li><Link to="/">Grades</Link></li>
           </ul>
         </aside>
 
@@ -251,7 +171,7 @@ const Syllabus = () => {
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                     {item.notes && (
+                    {item.notes && (
                       <div style={{ marginTop: "10px" }}>
                         <a
                           href={item.notes}
@@ -261,11 +181,11 @@ const Syllabus = () => {
                         >
                           Download Notes
                         </a>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
-                )}
-                </div>
             </div>
           ))}
         </section>
