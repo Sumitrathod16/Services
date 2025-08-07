@@ -1,173 +1,275 @@
 import React, { useState } from 'react';
 
-const coursesData = [
+const syllabusData = [
   {
-    title: "Introduction to CSS",
-    description: "Purpose and role in web development",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 1,
+    title: 'Introduction to Deep-Designing',
+    description: 'Fundamental concepts of deep learning and its applications',
+    details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
+    icon: '🧠',
     chapters: [
       "What is CSS?",
-      "Why use CSS ?",
-      "CSS syntax"
+      "Benefits of CSS",
+      "Types of CSS:",
+      "Inline CSS",
+      "Internal CSS",
+      "External CSS",
+     " CSS Syntax and Rules",
+      "CSS Comments"
     ]
   },
   {
-    title: "Stylling Basics",
-    description: "Stylling to Web.",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 2,
+    title: ' Text and Font Styling',
+    description: 'Understanding the architecture and function of ANNs',
+    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
+    icon: '🔗',
     chapters: [
-      "Text formatting",
-      "Color and background",
-      "Borders and Outlines"
+      "Font families and font stacks", 
+      "Font size, weight, and style",
+      "Line height and letter spacing",
+      "Text alignment",
+      "Text decoration",
+      "Text transform",
+      "Word and letter spacing",
+      "Google Fonts"
     ]
   },
   {
-    title: "Layouts and Positioning",
-    description: "Layouts to Web.",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 3,
+    title: 'Box Model & Layout Basics',
+    description: 'Exploring multi-layered neural networks and their power',
+    details: 'This module explains how deep architectures differ and how to train them effectively.',
+    icon: '🧱',
     chapters: [
-      "Display Property",
-      "Positioning",
-      "Float and clear"
+     "Box Model (content, padding, border, margin)",
+     "Width, height, and box-sizing",
+     "overflow, visibility, and z-index",
+     "display values (block, inline, inline-block, none)",
+     "Positioning:",
+     "static, relative, absolute, fixed, sticky,",
+     "top, right, bottom, left"
     ]
   },
   {
-    title: "Advanced CSS",
-    description: "Intro to advanced css",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 4,
+    title: 'Responsive Design & Media',
+    description: 'Latest advancements and future directions of the field',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    icon: '📈',
     chapters: [
-      "CSS3 Features",
-      "Transitions and Animations",
-      "Responsive web design"
+     "Viewport and mobile-first approach",
+     "Media Queries (syntax, breakpoints)",
+     "Responsive units: %, em, rem, vh, vw",
+     "Responsive typography and images",
+     "Layout strategies (fluid, adaptive, responsive)" 
     ]
   },
   {
-    title: "Other Topics",
-    description: "Creating tables",
-    duration: "1 Week",
-    instructor: "Areen Phadtare",
+    id: 5,
+    title: 'Advanced CSS Features & Best Practices',
+    description: 'Latest advancements and future directions of the field',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    icon: '📈',
     chapters: [
-      "CSS Specificity",
-      "Units of Measurement",
-      "CSS variables"
+     "Transitions and Animations:",
+     "transition, @keyframes, animation properties",
+     "CSS Variables (Custom Properties)",
+     "CSS Functions: calc(), clamp(), var(), min(), max()",
+     "CSS architecture:",
+     "BEM methodology",
+     "DRY and reusable CSS",
+     "Preprocessors (SASS/SCSS) – optional",
+     "Best practices:",
+     "Performance optimization",
+     "File organization",
+     "Writing maintainable CSS",
+     "Modern CSS:",
+     "Subgrid",
+     "Container queries",
+     "Logical properties",
+     "New selectors (:has, :is)"  
+    ]
+  },
+  {
+    id: 6,
+    title: 'Connnetivity and their uses!',
+    description: 'Latest advancements and future directions of the field',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    icon: '📈',
+    chapters: [
+      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
+      "U-Net:Convolutional  Networks for Image segmentation",
+      "Introduction to autoencoders and reecurrent neural network(RNN)"
+    ]
+  },
+  {
+    id: 7,
+    title: 'Connnetivity and their uses!',
+    description: 'Latest advancements and future directions of the field',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    icon: '📈',
+    chapters: [
+      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
+      "U-Net:Convolutional  Networks for Image segmentation",
+      "Introduction to autoencoders and reecurrent neural network(RNN)"
     ]
   }
 ];
 
-const AccordionCourses = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+const Syllabus = () => {
+  const [openId, setOpenId] = useState(null);
 
-  const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
+  const toggleInfo = (id) => {
+    setOpenId(openId === id ? null : id);
   };
 
   return (
-  <>
-<style>
-    {`
-    .accordion-container {
-  max-width: 90%;
-  margin: 40px auto;
-  font-family: Arial, sans-serif;
-}
+    <>
+      <style>
+        {`
+        body {
+          margin: 0;
+          font-family: 'Segoe UI', sans-serif;
+          background-color: #f3f4f6;
+        }
+        .main-container {
+          display: flex;
+          height: 100vh;
+        }
+        .sidebar {
+          width: 220px;
+          background-color: #1c1f2e;
+          color: white;
+          padding: 1rem;
+        }
+        .sidebar h2 {
+          margin-bottom: 1rem;
+        }
+        .sidebar ul {
+          list-style: none;
+          padding: 0;
+        }
+        .sidebar li {
+          padding: 0.75rem 1rem;
+          border-radius: 8px;
+          cursor: pointer;
+          margin-bottom: 0.5rem;
+        }
+        .sidebar li.active, .sidebar li:hover {
+          background-color: #2c2f3e;
+        }
+        .content {
+          flex: 1;
+          background-color: white;
+          padding: 2rem;
+          overflow-y: auto;
+        }
+        .syllabus-card {
+          display: flex;
+          padding: 1rem;
+          border: 1px solid #e5e7eb;
+          border-radius: 12px;
+          margin-bottom: 1rem;
+          background-color: #f9fafb;
+          transition: background 0.2s;
+        }
+        .syllabus-card:hover {
+          background-color: #f3f4f6;
+        }
+        .icon {
+          font-size: 1.8rem;
+          margin-right: 1rem;
+          align-self: flex-start;
+        }
+        .info h3 {
+          margin: 0;
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+        .info p {
+          margin: 0.4rem 0 0.6rem 0;
+          font-size: 0.9rem;
+          color: #4b5563;
+        }
+        .progress-bar {
+          height: 6px;
+          background-color: #d1d5db;
+          border-radius: 3px;
+          overflow: hidden;
+          width: 100%;
+          margin-top: 0.5rem;
+        }
+        .bar-fill {
+          height: 100%;
+          width: 60%;
+          background-color: #4f46e5;
+        }
+        .clickable {
+          cursor: pointer;
+        }
+        .extra-info {
+          margin-top: 0.5rem;
+          font-size: 0.85rem;
+          color: #374151;
+          background-color: #e5e7eb;
+          padding: 0.8rem;
+          border-radius: 8px;
+        }
+        .chapter-list {
+          margin-top: 0.5rem;
+          padding-left: 1.2rem;
+        }
+        .chapter-list li {
+          margin-bottom: 0.3rem;
+          color: #22223b;
+        }
+        `}
+      </style>
+      <div className="main-container">
+        <aside className="sidebar">
+          <h2>Syllabus</h2>
+          <ul>
+            <li className="active">Syllabus</li>
+            <li>Modules</li>
+            <li>Assignments</li>
+            <li>Grades</li>
+          </ul>
+        </aside>
 
-.accordion-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.accordion-item {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-
-.accordion-button {
-  width: 100%;
-  padding: 15px;
-  background-color: #f2f2f2;
-  border: none;
-  text-align: left;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s ease;
-}
-
-.accordion-button:hover {
-  background-color: #e0e0e0;
-}
-
-.accordion-content {
-  padding: 15px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-  .accordion-chapters {
-  margin-top: 10px;
-}
-
-.accordion-chapters ol {
-  margin-left: 20px;
-  padding-left: 10px;
-}
-
-.accordion-chapters li {
-  margin-bottom: 6px;
-  list-style-type: decimal;
-}
-    `}
-    </style>  
-    <div className="accordion-container">
-      <h2 className="accordion-title">Available Courses</h2>
-      {coursesData.map((course, index) => (
-        <div key={index} className="accordion-item">
-          <button
-            onClick={() => toggleAccordion(index)}
-            className="accordion-button"
-          >
-            {course.title}
-          </button>
-          {activeIndex === index && (
-            <div className="accordion-content">
-              <p>{course.description}</p>
-              <p><strong>Duration:</strong> {course.duration}</p>
-              <p><strong>Instructor:</strong> {course.instructor}</p>
-              <div className="accordion-chapters">
-                <p><strong>Chapters:</strong></p>
-                <ol>
-                  {course.chapters.map((chapter, idx) => (
-                    <li key={idx}>{chapter}</li>
-                  ))}
-                </ol>
+        <section className="content">
+          {syllabusData.map((item) => (
+            <div
+              key={item.id}
+              className="syllabus-card clickable"
+              onClick={() => toggleInfo(item.id)}
+            >
+              <div className="icon">{item.icon}</div>
+              <div className="info">
+                <h3>{item.id}. {item.title}</h3>
+                <p>{item.description}</p>
+                {item.id === 1 && (
+                  <div className="progress-bar">
+                    <div className="bar-fill" />
+                  </div>
+                )}
+                {openId === item.id && (
+                  <div className="extra-info">
+                    <p>{item.details}</p>
+                    <ul className="chapter-list">
+                      {item.chapters.map((chapter, idx) => (
+                        <li key={idx}>{chapter}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
-          )}
-        </div>
-      ))}
-    </div>
+          ))}
+        </section>
+      </div>
     </>
   );
 };
 
-export default AccordionCourses;
+export default Syllabus;
