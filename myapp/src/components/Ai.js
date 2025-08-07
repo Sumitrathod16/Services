@@ -7,6 +7,11 @@ const syllabusData = [
     description: 'Fundamental concepts of deep learning and its applications',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
     icon: '🧠',
+    id: 1,
+    title: 'Introduction to Deep Learning',
+    description: 'Fundamental concepts of deep learning and its applications',
+    details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
+    icon: '🧠',
     chapters: [
       "What is Deep learning?",
       "Study of neural Networks",
@@ -44,6 +49,11 @@ const syllabusData = [
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
     icon: '📈',
+    id: 4,
+    title: 'Recent Trends in Deep Learning',
+    description: 'Latest advancements and future directions of the field',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    icon: '📈',
     chapters: [
       "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
       "U-Net:Convolutional  Networks for Image segmentation",
@@ -55,7 +65,11 @@ const syllabusData = [
 
 const Syllabus = () => {
   const [openId, setOpenId] = useState(null);
+const Syllabus = () => {
+  const [openId, setOpenId] = useState(null);
 
+  const toggleInfo = (id) => {
+    setOpenId(openId === id ? null : id);
   const toggleInfo = (id) => {
     setOpenId(openId === id ? null : id);
   };
@@ -223,4 +237,5 @@ const Syllabus = () => {
   );
 };
 
+export default Syllabus;
 export default Syllabus;

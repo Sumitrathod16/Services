@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const syllabusData = [
+const syllabusData = [
   {
     id: 1,
     title: 'Introduction to Machine Learning',
@@ -123,6 +124,8 @@ notes:"notes.pdf"
 const Ml = () => {
   const [openId, setOpenId] = useState(null);
 
+  const toggleInfo = (id) => {
+    setOpenId(openId === id ? null : id);
   const toggleInfo = (id) => {
     setOpenId(openId === id ? null : id);
   };
