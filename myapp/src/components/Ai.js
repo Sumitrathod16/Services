@@ -3,61 +3,106 @@ import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
-    title: 'Introduction to Deep Learning',
-    description: 'Fundamental concepts of deep learning and its applications',
-    details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
-    id: 1,
-    title: 'Introduction to Deep Learning',
-    description: 'Fundamental concepts of deep learning and its applications',
+    title: 'Introduction to Artificial Intelligence',
+    description: 'Fundamental concepts of Ai',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
     icon: '🧠',
     chapters: [
-      "What is Deep learning?",
-      "Study of neural Networks",
+      "Definition and history of AI",
+      "Applications of AI in real-world domains (healthcare, robotics, finance, etc.)",
+       "Types of AI: Narrow AI, General AI, Super AI",
+       "Strong vs. Weak AI",
+      "Turing Test and Rational Agents"
     ],
     notes:"notes.pdf"
   },
   {
     id: 2,
-    title: 'Artificial Neural Networks',
-    description: 'Understanding the architecture and function of ANNs',
+    title: 'Problem solving and Search algorithm',
+    description: 'Understanding the problem solving methods and algorithms',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
     icon: '🔗',
     chapters: [
-      "Artificial Neural Network for pattern classification"
+"State-space search and problem formulation",
+"Uninformed search (BFS, DFS, UCS, DLS, IDS)",
+"Informed search (Greedy Best-First Search, A*)",
+"Heuristics and optimization",
+"Constraint Satisfaction Problems (CSP)"
     ],
     notes:"notes.pdf"
   },
   {
     id: 3,
-    title: 'Introduction to Deep Neural Networks',
-    description: 'Exploring multi-layered neural networks and their power',
+    title: 'Knowledge representation and reasoning',
+    description: 'Representation of knowledge',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
     icon: '🧱',
     chapters: [
-      "Introduction to deep learning and convolutional Neural network",
-      "Vanishing and Exploding Gradients in Deep Neural Network",
-      "CNN architectures-LeNet-5 and AlexNet",
-      "CNN architectures-VGG GoogleNet and ResNet"
+            "Propositional logic and predicate logic",
+"Inference rules and resolution",
+"Semantic networks and ontologies",
+"Frames, scripts, and rule-based systems",
+"Reasoning under uncertainty (Bayesian networks)"
     ],
     notes:"notes.pdf"
   },
   {
     id: 4,
-    title: 'Recent Trends in Deep Learning',
-    description: 'Latest advancements and future directions of the field',
+    title: 'Machine learning fundamentals',
+    description: 'Machine learning implementation into the AI',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
     icon: '📈',
-    id: 4,
-    title: 'Recent Trends in Deep Learning',
+    chapters: [
+      "Supervised learning: Regression, Classification",
+"Unsupervised learning: Clustering, Dimensionality Reduction",
+"Reinforcement learning: Markov Decision Processes (MDPs), Q-learning",
+"Neural Networks and Deep Learning (basics)",
+"Evaluation metrics: Accuracy, Precision, Recall, F1 Score"
+    ],
+    notes:"notes.pdf"
+  },
+    {
+    id: 5,
+    title: 'Natural Language processing',
+    description: 'Implementing NLP to recognise language',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    icon: '📈',
+    chapters: [
+"Text preprocessing: tokenization, stemming, stopwords",
+"Syntax and semantics",
+"Language models (n-grams, Transformers)",
+"Sentiment analysis, machine translation, chatbots",
+"Speech recognition basics"
+    ],
+    notes:"notes.pdf"
+  },
+    {
+    id: 6,
+    title: 'Computer vision and robotics',
+    description: 'Robotics',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    icon: '📈',
+    chapters: [
+"Image processing basics",
+"Object detection and recognition",
+"Convolutional Neural Networks (CNNs)",
+"Applications in robotics: path planning, sensors, actuators",
+"SLAM (Simultaneous Localization and Mapping)"
+],
+    notes:"notes.pdf"
+  },
+    {
+    id: 7,
+    title: 'Ethics and Future of AI',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
     icon: '📈',
     chapters: [
-      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
-      "U-Net:Convolutional  Networks for Image segmentation",
-      "Introduction to autoencoders and reecurrent neural network(RNN)"
+   "Bias and fairness in AI",
+"AI and job displacement",
+"AI safety and control",
+"Explainable AI (XAI)",
+"Current trends (AGI, AI in society, Responsible AI)"
     ],
     notes:"notes.pdf"
   },
@@ -65,12 +110,7 @@ const syllabusData = [
 
 const Syllabus = () => {
   const [openId, setOpenId] = useState(null);
-const Syllabus = () => {
-  const [openId, setOpenId] = useState(null);
-
-  const toggleInfo = (id) => {
-    setOpenId(openId === id ? null : id);
-  const toggleInfo = (id) => {
+const toggleInfo = (id) => {
     setOpenId(openId === id ? null : id);
   };
 
@@ -89,7 +129,7 @@ const Syllabus = () => {
         }
         .sidebar {
           width: 220px;
-          background-color: #1c1f2e;
+          background-color: #1f1f1fff;
           color: white;
           padding: 1rem;
         }
@@ -184,9 +224,9 @@ const Syllabus = () => {
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li><Link to="/Dl">Syllabus</Link></li>
-            <li><Link to="/assignments">Assignments</Link></li>
-            <li><Link to="/Grades">Grades</Link></li>
+            <li><Link to="/Ai">Syllabus</Link></li>
+            <li><Link to="/assignment">Assignments</Link></li>
+          
           </ul>
         </aside>
 
@@ -237,5 +277,4 @@ const Syllabus = () => {
   );
 };
 
-export default Syllabus;
 export default Syllabus;

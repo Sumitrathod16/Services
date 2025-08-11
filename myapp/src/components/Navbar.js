@@ -8,7 +8,6 @@ function Navbar() {
       <ul>
     
         <li><Link to="/features">Features</Link></li>
-        <li><Link to="/documentation">Documentation</Link></li>
         <li><Link to="/support">Support</Link></li>
         <li><Link to="/signin">Sign In</Link></li>
       </ul>

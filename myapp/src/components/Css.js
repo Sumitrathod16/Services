@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
@@ -16,7 +16,8 @@ const syllabusData = [
       "External CSS",
      " CSS Syntax and Rules",
       "CSS Comments"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 2,
@@ -33,7 +34,8 @@ const syllabusData = [
       "Text transform",
       "Word and letter spacing",
       "Google Fonts"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 3,
@@ -49,7 +51,8 @@ const syllabusData = [
      "Positioning:",
      "static, relative, absolute, fixed, sticky,",
      "top, right, bottom, left"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 4,
@@ -63,7 +66,8 @@ const syllabusData = [
      "Responsive units: %, em, rem, vh, vw",
      "Responsive typography and images",
      "Layout strategies (fluid, adaptive, responsive)" 
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 5,
@@ -89,7 +93,8 @@ const syllabusData = [
      "Container queries",
      "Logical properties",
      "New selectors (:has, :is)"  
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 6,
@@ -101,7 +106,8 @@ const syllabusData = [
       "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
       "U-Net:Convolutional  Networks for Image segmentation",
       "Introduction to autoencoders and reecurrent neural network(RNN)"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 7,
@@ -113,7 +119,8 @@ const syllabusData = [
       "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
       "U-Net:Convolutional  Networks for Image segmentation",
       "Introduction to autoencoders and reecurrent neural network(RNN)"
-    ]
+    ],
+    notes:"notes.pdf"
   }
 ];
 
@@ -139,7 +146,7 @@ const Syllabus = () => {
         }
         .sidebar {
           width: 220px;
-          background-color: #1c1f2e;
+          background-color: #1f1f1fff;
           color: white;
           padding: 1rem;
         }
@@ -156,6 +163,10 @@ const Syllabus = () => {
           cursor: pointer;
           margin-bottom: 0.5rem;
         }
+          .sidebar ul li a{
+          text-decoration:none;
+          color:white;
+          }
         .sidebar li.active, .sidebar li:hover {
           background-color: #2c2f3e;
         }
@@ -230,10 +241,9 @@ const Syllabus = () => {
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li className="active">Syllabus</li>
-            <li>Modules</li>
-            <li>Assignments</li>
-            <li>Grades</li>
+            <li><Link to="/Css">Syllabus</Link></li>
+            <li><Link to="/Cssassign">Assignments</Link></li>
+          
           </ul>
         </aside>
 
@@ -261,9 +271,21 @@ const Syllabus = () => {
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
+                    {item.notes && (
+                      <div style={{ marginTop: "10px" }}>
+                        <a
+                          href={item.notes}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#4f46e5", textDecoration: "underline" }}
+                        >
+                          Download Notes
+                        </a>
                   </div>
                 )}
               </div>
+                )}
+                </div>
             </div>
           ))}
         </section>

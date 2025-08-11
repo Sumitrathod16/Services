@@ -181,7 +181,7 @@ const Syllabus = () => {
         }
         .sidebar {
           width: 220px;
-          background-color: #1c1f2e;
+          background-color: #1f1f1fff;
           color: white;
           padding: 1rem;
         }
@@ -277,8 +277,8 @@ const Syllabus = () => {
           <h2>Syllabus</h2>
           <ul>
             <li><Link to="/Flutter">Syllabus</Link></li>
-            <li><Link to="/assignments">Assignment</Link></li>
-            <li><Link to="/Grades">Grades</Link></li>
+            <li><Link to="/Flutterassign">Assignment</Link></li>
+            
           </ul>
         </aside>
 

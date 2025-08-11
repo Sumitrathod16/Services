@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
@@ -17,7 +17,8 @@ const syllabusData = [
     "REPL (Read-Eval-Print Loop)",
     "NPM (Node Package Manager) and package.json",
     "Installing and updating Node.js and NPM " 
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 2,
@@ -39,7 +40,8 @@ const syllabusData = [
     "EventEmitter and custom events",
     "Streams and piping",
     "Understanding Buffers and handling binary data"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 3,
@@ -56,7 +58,8 @@ const syllabusData = [
     "Setting response headers and status codes",
     "Introduction to HTTPS and TLS",
     "Introduction to WebSockets"  
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 4,
@@ -76,7 +79,8 @@ const syllabusData = [
      "Using Postman for testing APIs",
      "Handling CORS in Express",
     "RESTful API structure using Express"
-    ]
+    ],
+    notes:"notes.pdf"
   },{
   id: 5,
     title: ' Advanced Concepts & Tooling',
@@ -98,7 +102,8 @@ const syllabusData = [
       "Deploying Node.js Apps (Heroku, Vercel, DigitalOcean, etc.)",
       "Performance optimization (Clustering, Load balancing)"
     
-    ]
+    ],
+    notes:"notes.pdf"
   }
   
 ];
@@ -125,7 +130,7 @@ const Syllabus = () => {
         }
         .sidebar {
           width: 220px;
-          background-color: #1c1f2e;
+          background-color: #1f1f1fff;
           color: white;
           padding: 1rem;
         }
@@ -142,6 +147,10 @@ const Syllabus = () => {
           cursor: pointer;
           margin-bottom: 0.5rem;
         }
+          .sidebar ul li a{
+          text-decoration:none;
+          color:white;
+          }
         .sidebar li.active, .sidebar li:hover {
           background-color: #2c2f3e;
         }
@@ -216,10 +225,9 @@ const Syllabus = () => {
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li className="active">Syllabus</li>
-            <li>Modules</li>
-            <li>Assignments</li>
-            <li>Grades</li>
+            <li><Link to="/Node">Syllabus</Link></li>
+            <li><Link to="/Nodeassign">Assignment</Link></li>
+        
           </ul>
         </aside>
 
@@ -247,9 +255,21 @@ const Syllabus = () => {
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
+                    {item.notes && (
+                      <div style={{ marginTop: "10px" }}>
+                        <a
+                          href={item.notes}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#4f46e5", textDecoration: "underline" }}
+                        >
+                          Download Notes
+                        </a>
                   </div>
                 )}
               </div>
+                )}
+                </div>
             </div>
           ))}
         </section>

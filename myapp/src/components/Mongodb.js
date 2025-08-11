@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
@@ -19,7 +19,8 @@ const syllabusData = [
     "show dbs, use db, show collections,db.collection.insertOne(), insertMany()",
     "db.collection.find(), findOne()",
     "Understanding _id field"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 2,
@@ -41,7 +42,8 @@ const syllabusData = [
     "Upserts (update + insert)",
     "Delete:",
     "deleteOne(), deleteMany()"
-        ]
+        ],
+        notes:"notes.pdf"
   },
   {
     id: 3,
@@ -62,7 +64,8 @@ const syllabusData = [
     "Creating and using Indexes",
     "Index Performance (Explain Plan)",
     "Data Modeling Best Practices (embedded vs referenced"  
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 4,
@@ -81,7 +84,8 @@ const syllabusData = [
      "Error handling and validation",
      "Connecting MongoDB to Express apps",
      "Environment Variables and Configs with MongoDB URI"
-     ]
+     ],
+     notes:"notes.pdf"
   },
   {
     id: 1,
@@ -104,7 +108,8 @@ const syllabusData = [
      "Compass Performance Tab",
      "Data Migration Techniques",
      "Export/Import Data using mongoexport, mongoimport"
-    ]
+    ],
+    notes:"notes.pdf"
   }
 ];
 
@@ -130,7 +135,7 @@ const Syllabus = () => {
         }
         .sidebar {
           width: 220px;
-          background-color: #1c1f2e;
+          background-color: #1f1f1fff;
           color: white;
           padding: 1rem;
         }
@@ -147,6 +152,10 @@ const Syllabus = () => {
           cursor: pointer;
           margin-bottom: 0.5rem;
         }
+          .sidebar ul li a{
+          text-decoration:none;
+          color:white;
+          }
         .sidebar li.active, .sidebar li:hover {
           background-color: #2c2f3e;
         }
@@ -221,10 +230,9 @@ const Syllabus = () => {
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li className="active">Syllabus</li>
-            <li>Modules</li>
-            <li>Assignments</li>
-            <li>Grades</li>
+            <li><Link to="/Mongodb">Syllabus</Link></li>
+            <li><Link to="/Mongodbassign">Assignment</Link></li>
+            
           </ul>
         </aside>
 
@@ -252,9 +260,22 @@ const Syllabus = () => {
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
+
+                    {item.notes && (
+                      <div style={{ marginTop: "10px" }}>
+                        <a
+                          href={item.notes}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#4f46e5", textDecoration: "underline" }}
+                        >
+                          Download Notes
+                        </a>
                   </div>
                 )}
               </div>
+                )}
+                </div>
             </div>
           ))}
         </section>

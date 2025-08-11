@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
@@ -10,7 +10,8 @@ const syllabusData = [
     chapters: [
       "What is Deep learning?",
       "Study of neural Networks",
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const syllabusData = [
     icon: '🔗',
     chapters: [
       "Artificial Neural Network for pattern classification"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 3,
@@ -33,7 +35,8 @@ const syllabusData = [
       "Vanishing and Exploding Gradients in Deep Neural Network",
       "CNN architectures-LeNet-5 and AlexNet",
       "CNN architectures-VGG GoogleNet and ResNet"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 4,
@@ -45,7 +48,8 @@ const syllabusData = [
       "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
       "U-Net:Convolutional  Networks for Image segmentation",
       "Introduction to autoencoders and reecurrent neural network(RNN)"
-    ]
+    ],
+    notes:"notes.pdf"
   },
 ];
 
@@ -71,7 +75,7 @@ const Syllabus = () => {
         }
         .sidebar {
           width: 220px;
-          background-color: #1c1f2e;
+          background-color: #1f1f1fff;
           color: white;
           padding: 1rem;
         }
@@ -88,6 +92,10 @@ const Syllabus = () => {
           cursor: pointer;
           margin-bottom: 0.5rem;
         }
+          .sidebar ul li a{
+          text-decoration:none;
+          color:white;
+          }
         .sidebar li.active, .sidebar li:hover {
           background-color: #2c2f3e;
         }
@@ -162,10 +170,9 @@ const Syllabus = () => {
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li className="active">Syllabus</li>
-            <li>Modules</li>
-            <li>Assignments</li>
-            <li>Grades</li>
+            <li><Link to="/Html">Syllabus</Link></li>
+            <li><Link to="/Htmlassign">Assignments</Link></li>
+            
           </ul>
         </aside>
 
@@ -193,9 +200,21 @@ const Syllabus = () => {
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
+                    {item.notes && (
+                      <div style={{ marginTop: "10px" }}>
+                        <a
+                          href={item.notes}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#4f46e5", textDecoration: "underline" }}
+                        >
+                          Download Notes
+                        </a>
                   </div>
                 )}
               </div>
+                )}
+            </div>
             </div>
           ))}
         </section>
