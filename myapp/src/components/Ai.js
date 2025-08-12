@@ -1,83 +1,68 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 const syllabusData = [
   {
     id: 1,
     title: 'Introduction to Deep Learning',
     description: 'Fundamental concepts of deep learning and its applications',
-    details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
+    details:
+      'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
     icon: '🧠',
-    id: 1,
-    title: 'Introduction to Deep Learning',
-    description: 'Fundamental concepts of deep learning and its applications',
-    details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
-    chapters: [
-      "What is Deep learning?",
-      "Study of neural Networks",
-    ],
-    notes:"notes.pdf"
+    chapters: ['What is Deep learning?', 'Study of neural Networks'],
+    notes: 'notes.pdf',
   },
   {
     id: 2,
     title: 'Artificial Neural Networks',
     description: 'Understanding the architecture and function of ANNs',
-    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
+    details:
+      'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
     icon: '🔗',
-    chapters: [
-      "Artificial Neural Network for pattern classification"
-    ],
-    notes:"notes.pdf"
+    chapters: ['Artificial Neural Network for pattern classification'],
+    notes: 'notes.pdf',
   },
   {
     id: 3,
     title: 'Introduction to Deep Neural Networks',
     description: 'Exploring multi-layered neural networks and their power',
-    details: 'This module explains how deep architectures differ and how to train them effectively.',
+    details:
+      'This module explains how deep architectures differ and how to train them effectively.',
     icon: '🧱',
     chapters: [
-      "Introduction to deep learning and convolutional Neural network",
-      "Vanishing and Exploding Gradients in Deep Neural Network",
-      "CNN architectures-LeNet-5 and AlexNet",
-      "CNN architectures-VGG GoogleNet and ResNet"
+      'Introduction to deep learning and convolutional Neural network',
+      'Vanishing and Exploding Gradients in Deep Neural Network',
+      'CNN architectures-LeNet-5 and AlexNet',
+      'CNN architectures-VGG GoogleNet and ResNet',
     ],
-    notes:"notes.pdf"
+    notes: 'notes.pdf',
   },
   {
     id: 4,
     title: 'Recent Trends in Deep Learning',
     description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
-    id: 4,
-    title: 'Recent Trends in Deep Learning',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    details:
+      'You’ll learn about transformers, foundation models, and cutting-edge applications.',
     icon: '📈',
     chapters: [
-      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
-      "U-Net:Convolutional  Networks for Image segmentation",
-      "Introduction to autoencoders and reecurrent neural network(RNN)"
+      'Generative Adversarial Networks (GAN) - Fundamentals and Applications',
+      'U-Net: Convolutional Networks for Image Segmentation',
+      'Introduction to Autoencoders and Recurrent Neural Networks (RNN)',
     ],
-    notes:"notes.pdf"
+    notes: 'notes.pdf',
   },
 ];
 
 const Syllabus = () => {
   const [openId, setOpenId] = useState(null);
-const Syllabus = () => {
-  const [openId, setOpenId] = useState(null);
 
-  const toggleInfo = (id) => {
-    setOpenId(openId === id ? null : id);
   const toggleInfo = (id) => {
     setOpenId(openId === id ? null : id);
   };
 
   return (
     <>
-      <style>
-        {`
+      <style>{`
         body {
           margin: 0;
           font-family: 'Segoe UI', sans-serif;
@@ -106,10 +91,10 @@ const Syllabus = () => {
           cursor: pointer;
           margin-bottom: 0.5rem;
         }
-          .sidebar ul li a{
-          text-decoration:none;
-          color:white;
-          }
+        .sidebar ul li a {
+          text-decoration: none;
+          color: white;
+        }
         .sidebar li.active, .sidebar li:hover {
           background-color: #2c2f3e;
         }
@@ -178,8 +163,8 @@ const Syllabus = () => {
           margin-bottom: 0.3rem;
           color: #22223b;
         }
-        `}
-      </style>
+      `}</style>
+
       <div className="main-container">
         <aside className="sidebar">
           <h2>Syllabus</h2>
@@ -214,7 +199,7 @@ const Syllabus = () => {
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                     {item.notes && (
+                    {item.notes && (
                       <div style={{ marginTop: "10px" }}>
                         <a
                           href={item.notes}
@@ -224,11 +209,11 @@ const Syllabus = () => {
                         >
                           Download Notes
                         </a>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
-                )}
-                </div>
             </div>
           ))}
         </section>
@@ -237,5 +222,4 @@ const Syllabus = () => {
   );
 };
 
-export default Syllabus;
 export default Syllabus;
