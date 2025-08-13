@@ -1,48 +1,53 @@
 import React, { useState } from "react";
 const questionsData = [
   {
-    question: "What is overfitting in machine learning?",
-    options: ["Model fits training data too well", "Model performs well on test data", "Data is too large", "Model underperforms on training data"],
-    answer: 0,
+    question: " What is a key characteristic of deep learning models?",
+    options: ["They require very little data","They use shallow decision trees",  "They consist of many layers of neurons","They don't require training"],
+    answer: 2 ,
   },
   {
-    question: "Which algorithm is used for classification problems?",
-    options: ["Linear Regression", "Logistic Regression", "K-Means", "PCA"],
+    question: "Which neural network is best suited for image recognition tasks?",
+    options: ["RNN","CNN","SVM","K-Means"],
     answer: 1,
   },
   {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
+    question: "What does a neuron in a neural network do?",
+    options: ["Stores data","Sends internet packets","Performs a simple computation on input and passes output"," Acts as a memory unit"],
     answer: 2,
   },
    {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
+    question: "What is the main role of an activation function?",
+    options: ["Reduce overfitting","Combine input layers","Introduce non-linearity" ,"Increase training speed"],
     answer: 2,
   },
    {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
+    question: " What is overfitting in deep learning?",
+    options: ["Model performs well on test data", "Model is too slow to train", "Model memorizes training data but performs poorly on new data","Model predicts the future"],
     answer: 2,
   },
    {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
+    question: " Which of the following is commonly used to prevent overfitting?",
+    options: ["Larger datasets","Dropout","Early stopping","All of the above"],
+    answer: 3,
+  },
+   {
+    question: "In a CNN, what is the main purpose of a pooling layer?",
+    options: ["Increase image size","Normalize pixel values","Reduce dimensionality","Add activation functions"],
     answer: 2,
   },
    {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
+    question: ". What type of deep learning model is typically used for language tasks like translation or text generation?",
+    options: ["CNN","GAN","Transformer","KNN"],
     answer: 2,
   },
    {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
-    answer: 2,
+    question: "Which of the following is a popular deep learning framework?",
+    options: [ "MySQL","TensorFlow","Selenium","Apache"],
+    answer: 1,
   },
-   {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
+  {
+    question: " What is the purpose of backpropagation in neural networks?",
+    options: ["To initialize weights","To reduce data size","To update weights by minimizing loss","To increase learning rate"],
     answer: 2,
   },
 ];

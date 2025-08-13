@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
-    title: 'Introduction to Pyhton',
+    title: 'Introduction to Python',
     description: '',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
     icon: '🧠',
@@ -53,12 +53,12 @@ notes:"notes.pdf"
     icon: '📈',
     chapters: [
        "Arithmetic Operators",
-    "Logical Operators",
-    "Realtional Operators",
-    "Bitwise Operators",
-    "Assignment Operators",
-    "Membership Operators",
-    "Identity Operators"  
+       "Logical Operators",
+       "Realtional Operators",
+       "Bitwise Operators",
+       "Assignment Operators",
+       "Membership Operators",
+       "Identity Operators"  
   ],
   notes:"notes.pdf"
   },
@@ -70,8 +70,8 @@ notes:"notes.pdf"
     icon: '📈',
     chapters: [
        "Conditional Statements(if, elif, else)",
-      "Looping Statements(for,while)",
-      "break,continue , and pass"
+       "Looping Statements(for,while)",
+       "break,continue , and pass"
     ],
     notes:"notes.pdf"
   },
@@ -82,8 +82,8 @@ notes:"notes.pdf"
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
     icon: '📈',
     chapters: [
-     "input() function",
-      "print() function and formatting"
+       "input() function",
+       "print() function and formatting"
     ],
     notes:"notes.pdf"
   },
@@ -94,12 +94,12 @@ notes:"notes.pdf"
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
     icon: '📈',
     chapters: [
-      "Defining and calling functions",
-      "Types of functions(Built-in,user-defined)",
-      "Arguments(Positional,Keyword,Default,Variable-length)",
-      "Return Statements",
-      "Recursion",
-      "Anonymous functions(lambda)"
+       "Defining and calling functions",
+       "Types of functions(Built-in,user-defined)",
+       "Arguments(Positional,Keyword,Default,Variable-length)",
+       "Return Statements",
+       "Recursion",
+       "Anonymous functions(lambda)"
     ],
     notes:"notes.pdf"
   },
@@ -110,14 +110,14 @@ notes:"notes.pdf"
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
     icon: '📈',
     chapters: [
-      "Classes and Objects",
-      "__init__ Constructor",
-      "Instance vs Class Variable",
-      "Inheritance",
-      "Method Overriding",
-      "Access Specifiers(Public,Private,Protected)",
-      "self Keyword",
-      'super() Function'
+       "Classes and Objects",
+       "__init__ Constructor",
+       "Instance vs Class Variable",
+       "Inheritance",
+       "Method Overriding",
+       "Access Specifiers(Public,Private,Protected)",
+       "self Keyword",
+       "super() Function"
     ],
     notes:"notes.pdf"
   },
@@ -129,9 +129,9 @@ notes:"notes.pdf"
     icon: '📈',
     chapters: [
        "try,except,else,finally",
-      "Raising Exceptions(raise)",
-      "Custom Exceptions",
-      "assert Statement"
+       "Raising Exceptions(raise)",
+       "Custom Exceptions",
+       "assert Statement"
 
 
     ],
@@ -144,7 +144,7 @@ notes:"notes.pdf"
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
     icon: '📈',
     chapters: [
-     "List Comprehension",
+      "List Comprehension",
       "Dictionary Comprehension",
       "Set Comprehension"
     ],
@@ -173,7 +173,7 @@ notes:"notes.pdf"
       "lambda Expressions",
       "reduce()"
 ],
-notes:"notes.pdf"
+notes: "notes.pdf"
   }, 
 ];
 

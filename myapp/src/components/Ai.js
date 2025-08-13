@@ -225,7 +225,7 @@ const toggleInfo = (id) => {
           <h2>Syllabus</h2>
           <ul>
             <li><Link to="/Ai">Syllabus</Link></li>
-            <li><Link to="/assignment">Assignments</Link></li>
+            <li><Link to="/Aiassign">Assignments</Link></li>
           
           </ul>
         </aside>
@@ -277,4 +277,4 @@ const toggleInfo = (id) => {
   );
 };
 
-export default Syllabus;
+export default Syllabus;  

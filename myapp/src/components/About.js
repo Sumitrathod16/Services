@@ -64,5 +64,5 @@ function About() {
   </style>
     </> 
   );
-}
+}; 
 export default About;
