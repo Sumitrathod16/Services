@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
@@ -21,7 +21,8 @@ const syllabusData = [
     "AWS CLI and AWS SDK Basics",
     "AWS Console Navigation",
     "Setting up a Free AWS Account securely"  
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 2,
@@ -50,7 +51,8 @@ const syllabusData = [
       "Security Groups vs NACLs",
       "Elastic IP, VPC Flow Logs",
       "Route 53 (DNS and Domai Management)"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 3,
@@ -74,7 +76,8 @@ const syllabusData = [
     "Lambda Proxy Integration",
     "Step Functions (Serverless Orchestration)",
     "EventBridge and CloudWatch Events  "
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 4,
@@ -94,7 +97,8 @@ const syllabusData = [
     "IAM Best Practices:",
     "Principle of Least Privilege",
     "MFA (Multi-Factor Authentication)"  
-    ]
+    ],
+    notes:"notes.pdf"
   },
 ];
 
@@ -120,7 +124,7 @@ const Syllabus = () => {
         }
         .sidebar {
           width: 220px;
-          background-color: #1c1f2e;
+          background-color: #1f1f1fff;
           color: white;
           padding: 1rem;
         }
@@ -137,6 +141,10 @@ const Syllabus = () => {
           cursor: pointer;
           margin-bottom: 0.5rem;
         }
+          .sidebar ul li a{
+          text-decoration:none;
+          color:white;
+          }
         .sidebar li.active, .sidebar li:hover {
           background-color: #2c2f3e;
         }
@@ -211,10 +219,9 @@ const Syllabus = () => {
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li className="active">Syllabus</li>
-            <li>Modules</li>
-            <li>Assignments</li>
-            <li>Grades</li>
+            <li><Link to="/Aws">Syllabus</Link></li>
+            <li><Link to="/Awsassign">Assignment</Link></li>
+          
           </ul>
         </aside>
 
@@ -242,9 +249,21 @@ const Syllabus = () => {
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
+                    {item.notes && (
+                      <div style={{ marginTop: "10px" }}>
+                        <a
+                          href={item.notes}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#4f46e5", textDecoration: "underline" }}
+                        >
+                          Download Notes
+                        </a>
                   </div>
                 )}
               </div>
+                )}
+                </div>
             </div>
           ))}
         </section>

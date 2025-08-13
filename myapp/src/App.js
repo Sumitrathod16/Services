@@ -37,6 +37,25 @@ import AI from './components/Ai';
 import Projects from './components/Projects';
 import Portfolio from './components/Portfolio';
 import FAQ from './components/FAQ';
+import Mlassign from './components/Mlassign';
+import Dlassign from './components/Dlassign'; 
+import Aiassign from './components/Aiassign';
+import Flutterassign from './components/Flutterassign';
+import Pyassign from './components/Pyassign';
+import Djassign from './components/Djassign';
+import Flaskassign from './components/Flaskassign';
+import Javaassign from './components/Javaassign';
+import Springassign from './components/Springassign';
+import Hiberassign from './components/Hiberassign';
+import Htmlassign from './components/Htmlassign';
+import Cssassign from './components/Cssassign';
+import Jsassign from './components/Jsassign';
+import Nodeassign from './components/Nodeassign';
+import Reactassign from './components/Reactassign';
+import Mongodbassign from './components/Mongodbassign';
+import Awsassign from './components/Awsassign';
+import Azureassign from './components/Azureassign';
+import Gcpassign from './components/Gcpassign';
 function App() {
   return (
     <Router>
@@ -77,6 +96,26 @@ function App() {
         <Route path="/Projects" element={<Projects/>}/>
         <Route path="/Portfolio" element={<Portfolio/>}/>
         <Route path="/FAQ" element={<FAQ/>}/>
+        <Route path="/Assignment" element={<Mlassign/>}/>
+        <Route path="/Assignment" element={<Dlassign/>}/>
+        <Route path="/Assignment" elment={<Aiassign/>}/>
+        <Route path="/Flutterassign" element={<Flutterassign/>}/>
+        <Route path="/Pyassign" element={<Pyassign/>}/>
+        <Route path="/Djassign" element={<Djassign/>}/>
+        <Route path="/Flaskassign " element={<Flaskassign/>}/>
+        <Route path="/Javaassign" element={<Javaassign/>}/>
+        <Route path="/Springassign" element={<Springassign/>}/>
+        <Route path="/Hiberassign" element={<Hiberassign/>}/>
+        <Route path="/Htmlassign" element={<Htmlassign/>}/>
+        <Route path="/Cssassign" element={<Cssassign/>}/>
+        <Route path="/Jsassign" element={<Jsassign/>}/>
+        <Route path="/Nodeassign" element={<Nodeassign/>}/>
+        <Route path="/Reactassign" element={<Reactassign/>}/>
+        <Route path="/Mongodbassign" element={<Mongodbassign/>}/>
+        <Route path="/Awsassign" element={<Awsassign/>}/>
+        <Route path="/Azureassign" element={<Azureassign/>}/>
+        <Route path="/Gcpassign" element={<Gcpassign/>}/>
+
         </Routes>
         <Footer/>
     </Router>

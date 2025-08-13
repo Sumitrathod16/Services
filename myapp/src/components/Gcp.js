@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
@@ -26,7 +26,8 @@ const syllabusData = [
       "Persistent Disks",
       "Filestore (File storage)",
       "Local SSDs"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 2,
@@ -48,7 +49,8 @@ const syllabusData = [
       "Resource Hierarchy (Org > Folder > Project)",
       "Audit Logs",
       "Policy Intelligence"
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 3,
@@ -72,7 +74,8 @@ const syllabusData = [
     "AutoML",
     "Vision AI, Speech-to-Text, Natural Language AI",
     "Dialogflow (Chatbots)  ",
-    ]
+    ],
+    notes:"notes.pdf"
   },
   {
     id: 4,
@@ -118,7 +121,7 @@ const Syllabus = () => {
         }
         .sidebar {
           width: 220px;
-          background-color: #1c1f2e;
+          background-color: #1f1f1fff;
           color: white;
           padding: 1rem;
         }
@@ -135,6 +138,10 @@ const Syllabus = () => {
           cursor: pointer;
           margin-bottom: 0.5rem;
         }
+          .sidebar ul li a{
+          text-decoration:none;
+          color:white;
+          }
         .sidebar li.active, .sidebar li:hover {
           background-color: #2c2f3e;
         }
@@ -209,10 +216,9 @@ const Syllabus = () => {
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li className="active">Syllabus</li>
-            <li>Modules</li>
-            <li>Assignments</li>
-            <li>Grades</li>
+            <li><Link to="/GCP">Syllabus</Link></li>
+            <li><Link to="/Gcpassign">Assignment</Link></li>
+        
           </ul>
         </aside>
 
@@ -240,9 +246,21 @@ const Syllabus = () => {
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
+                    {item.notes && (
+                      <div style={{ marginTop: "10px" }}>
+                        <a
+                          href={item.notes}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#4f46e5", textDecoration: "underline" }}
+                        >
+                          Download Notes
+                        </a>
                   </div>
                 )}
               </div>
+                )}
+                </div>
             </div>
           ))}
         </section>
