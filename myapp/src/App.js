@@ -97,8 +97,8 @@ function App() {
         <Route path="/Portfolio" element={<Portfolio/>}/>
         <Route path="/FAQ" element={<FAQ/>}/>
         <Route path="/Assignment" element={<Mlassign/>}/>
-        <Route path="/Assignment" element={<Dlassign/>}/>
-        <Route path="/Assignment" elment={<Aiassign/>}/>
+        <Route path="/Dlassign" element={<Dlassign/>}/>
+        <Route path="/Aiassign" element={<Aiassign/>}/>
         <Route path="/Flutterassign" element={<Flutterassign/>}/>
         <Route path="/Pyassign" element={<Pyassign/>}/>
         <Route path="/Djassign" element={<Djassign/>}/>

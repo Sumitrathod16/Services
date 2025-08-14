@@ -256,7 +256,7 @@ const Pyassign = () => {
           ></div>
         </div>
         <div className="timer">
-          <span>⏱️ Remaining</span> | <span>700 oim</span>
+          <span>⏱️ Remaining</span> | <span>70 min</span>
         </div>
       </div>
 

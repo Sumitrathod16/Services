@@ -1,49 +1,54 @@
 import React, { useState } from "react";
 const questionsData = [
   {
-    question: "What is overfitting in machine learning?",
-    options: ["Model fits training data too well", "Model performs well on test data", "Data is too large", "Model underperforms on training data"],
-    answer: 0,
+    question: "What is the main goal of Artificial Intelligence?",
+    options: ["To solve puzzles","To understand human thinking", "To make intelligent machines" ,"To play games"],
+    answer: 2,
   },
   {
-    question: "Which algorithm is used for classification problems?",
-    options: ["Linear Regression", "Logistic Regression", "K-Means", "PCA"],
+    question: " Which of the following is an application of AI?",
+    options: [ "Email spam filtering" ,"Autonomous vehicles","Speech recognition", "All of the above"],
+    answer: 3,
+  },
+  {
+    question: "Who is considered the father of Artificial Intelligence?",
+    options: ["Alan Turing","John McCarthy","Marvin Minsky"," Geoffrey Hinton"],
+    answer: 1,
+  },
+   {
+    question:  "Which of the following is NOT a type of machine learning??",
+    options: ["Supervised Learning","Reinforcement Learning","Unsupervised Learning","Assisted Learning"],
+    answer: 3,
+  },
+   {
+    question: "What does NLP stand for in AI?",
+    options: ["Natural Language Processing", "Natural Learning Processing", "Neural Language Programming"," None of the above"],
+    answer: 0
+  },
+   {
+    question: "Which algorithm is used for classification problems in AI?",
+    options: [" K-Means","Linear Regression","Decision Tree","Apriori"],
+    answer: 2,
+  },
+   {
+    question: " What is the Turing Test used for?",
+    options: ["Measuring CPU speed","Testing computer vision","Checking machine intelligence ","Validating software"],
+    answer: 2,
+  },
+   {
+    question: "Which of the following is a component of an intelligent agent?",
+    options: [ "Perception", "Learning", "Reasoning","All of the above"],
+    answer: 3,
+  },
+   {
+    question: "In which AI approach are knowledge and rules explicitly coded?",
+    options: ["Neural Networks","Rule-based System","Genetic Algorithms","Deep Learning"],
     answer: 1,
   },
   {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
-    answer: 2,
-  },
-   {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
-    answer: 2,
-  },
-   {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
-    answer: 2,
-  },
-   {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
-    answer: 2,
-  },
-   {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
-    answer: 2,
-  },
-   {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
-    answer: 2,
-  },
-   {
-    question: "What does PCA stand for?",
-    options: ["Primary Component Analysis", "Principal Component Algorithm", "Principal Component Analysis", "Partial Cluster Algorithm"],
-    answer: 2,
+    question: " Which of these is an example of Weak AI?",
+    options: ["Siri","Self-aware robots","Sentient machines","Conscious AI"],
+    answer: 0,
   },
 ];
 

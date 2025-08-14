@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 const syllabusData = [
   {
     id: 1,
@@ -44,7 +45,7 @@ const syllabusData = [
 "Frames, scripts, and rule-based systems",
 "Reasoning under uncertainty (Bayesian networks)"
     ],
-    notes:"notes.pdf"
+    notes: 'notes.pdf',
   },
   {
     id: 4,
@@ -104,7 +105,7 @@ const syllabusData = [
 "Explainable AI (XAI)",
 "Current trends (AGI, AI in society, Responsible AI)"
     ],
-    notes:"notes.pdf"
+    notes: 'notes.pdf',
   },
 ];
 
@@ -116,8 +117,7 @@ const toggleInfo = (id) => {
 
   return (
     <>
-      <style>
-        {`
+      <style>{`
         body {
           margin: 0;
           font-family: 'Segoe UI', sans-serif;
@@ -146,10 +146,10 @@ const toggleInfo = (id) => {
           cursor: pointer;
           margin-bottom: 0.5rem;
         }
-          .sidebar ul li a{
-          text-decoration:none;
-          color:white;
-          }
+        .sidebar ul li a {
+          text-decoration: none;
+          color: white;
+        }
         .sidebar li.active, .sidebar li:hover {
           background-color: #2c2f3e;
         }
@@ -218,14 +218,14 @@ const toggleInfo = (id) => {
           margin-bottom: 0.3rem;
           color: #22223b;
         }
-        `}
-      </style>
+      `}</style>
+
       <div className="main-container">
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
             <li><Link to="/Ai">Syllabus</Link></li>
-            <li><Link to="/assignment">Assignments</Link></li>
+            <li><Link to="/Aiassign">Assignments</Link></li>
           
           </ul>
         </aside>
@@ -254,7 +254,7 @@ const toggleInfo = (id) => {
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                     {item.notes && (
+                    {item.notes && (
                       <div style={{ marginTop: "10px" }}>
                         <a
                           href={item.notes}
@@ -264,11 +264,11 @@ const toggleInfo = (id) => {
                         >
                           Download Notes
                         </a>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
-                )}
-                </div>
             </div>
           ))}
         </section>
@@ -277,4 +277,4 @@ const toggleInfo = (id) => {
   );
 };
 
-export default Syllabus;
+export default Syllabus;  

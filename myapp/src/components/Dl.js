@@ -171,7 +171,7 @@ const Syllabus = () => {
           <h2>Syllabus</h2>
           <ul>
             <li><Link to="/Dl">Syllabus</Link></li>
-            <li><Link to="/Assignment">Assignments</Link></li>
+            <li><Link to="/Dlassign">Assignments</Link></li>
           
           </ul>
         </aside>
