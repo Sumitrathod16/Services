@@ -107,6 +107,21 @@ const syllabusData = [
     ],
     notes: 'notes.pdf',
   },
+  {
+    id: 8,
+    title:"Sources",
+    description: "Useful resources for further learning",
+    chapters:[
+      "Online courses (Coursera, edX, Udacity)",
+      "Youtube channels (3Blue1Brown, Sentdex, Two Minute Papers)",
+      "Books (Artificial Intelligence: A Modern Approach by Russell and Norvig, Deep Learning by Goodfellow et al.)",
+    ],
+    url:[
+      "https://www.coursera.org/specializations/ai",
+      "https://www.edx.org/professional-certificate/harvardx-data-science",
+      "https://www.udacity.com/course/intro-to-artificial-intelligence--cs50ai"
+    ]
+  }
 ];
 
 const Syllabus = () => {
@@ -264,6 +279,25 @@ const toggleInfo = (id) => {
                         >
                           Download Notes
                         </a>
+                      </div>
+                    )}
+                    {item.url && Array.isArray(item.url) && (
+                      <div style={{ marginTop: "10px" }}>
+                        <strong>Useful Links:</strong>
+                        <ul>
+                          {item.url.map((link, idx) => (
+                            <li key={idx}>
+                              <a
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: "#4f46e5", textDecoration: "underline" }}
+                              >
+                                {link}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     )}
                   </div>

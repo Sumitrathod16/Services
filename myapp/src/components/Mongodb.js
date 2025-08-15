@@ -88,7 +88,7 @@ const syllabusData = [
      notes:"notes.pdf"
   },
   {
-    id: 1,
+    id: 5,
     title: '. Production, Security & Tools',
     description: 'Fundamental concepts of  learning and its applications',
     details: 'This section covers the foundations of  learning, including definitions, types, and how it’s used in modern applications.',
@@ -110,6 +110,23 @@ const syllabusData = [
      "Export/Import Data using mongoexport, mongoimport"
     ],
     notes:"notes.pdf"
+  },
+  {
+    id: 6,
+    title: 'Sources',
+    description: 'Additional resources for further learning',
+    details: 'Links to online courses, books, and articles for deeper understanding.',
+    chapters:[
+      "Online Courses: MongoDB University, Coursera, Udemy",
+      "Books: 'MongoDB: The Definitive Guide', 'Learning MongoDB 4.x'",
+      "Documentation: MongoDB Official Docs, Mongoose Docs",
+      "Community: MongoDB Forums, Stack Overflow"
+    ],
+    url:[
+      "https://www.mongodb.com/docs/",
+      "https://mongoosejs.com/docs/",
+      "https://university.mongodb.com/"
+    ]
   }
 ];
 
@@ -274,6 +291,26 @@ const Syllabus = () => {
                   </div>
                 )}
               </div>
+              
+                )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{marginTop:"10px"}}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((link, idx) => (
+                        <li key={idx}>
+                          <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                          >
+                            {link}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                    </div>
                 )}
                 </div>
             </div>

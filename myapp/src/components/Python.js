@@ -175,6 +175,24 @@ notes:"notes.pdf"
 ],
 notes: "notes.pdf"
   }, 
+  {
+    id: 13,
+    title:"Sources",
+    description: 'Additional resources for further learning',
+    details: 'Links to official documentation, tutorials, and community resources.',
+    chapters:[
+      "Python Official Documentation: https://docs.python.org/3/",
+      "W3Schools Python Tutorial: https://www.w3schools.com/python/",
+      "Real Python: https://realpython.com/",
+      "GeeksforGeeks Python Programming Language: https://www.geeksforgeeks.org/python-programming-language/"
+    ],
+    url:[
+      "https://docs.python.org/3/",
+      "https://www.w3schools.com/python/",
+      "https://realpython.com/",
+      "https://www.geeksforgeeks.org/python-programming-language/"
+    ]
+  }
 ];
 
 const Syllabus = () => {
@@ -335,6 +353,20 @@ const Syllabus = () => {
                           Download Notes
                         </a>
                   </div>
+                )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{marginTop: "10px"}}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                {item.url.map((link, idx) => (
+                    <li key={idx}>
+                      <a href={link} target="_blank" rel="noopener noreferrer" style={{ color: "#4f46e5", textDecoration: "underline" }}>
+                        {link}
+                      </a>
+                    </li>
+                ))}
+                </ul>
+                </div>
                 )}
               </div>
                 )}

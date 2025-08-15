@@ -248,6 +248,27 @@ notes:"notes.pdf"
 ],
 notes:"notes.pdf"
   }, 
+{
+    id: 14,
+    title:"Sources",
+    description: 'Resources for further learning',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    chapters: [
+      "Java Documentation",
+      "Books (Effective Java, Java: The Complete Reference)",
+      "Online Courses (Coursera, Udemy, etc.)",
+      "YouTube Channels (Java Brains, Telusko)",
+      "Community Forums (Stack Overflow, Reddit)"
+    ],
+    url:[
+      "https://docs.oracle.com/javase/tutorial/",
+      "https://www.oracle.com/java/technologies/javase/javase-tutorials.html",
+      "https://www.coursera.org/specializations/java-programming",
+      "https://www.udemy.com/topic/java/",
+      "https://www.youtube.com/c/JavaBrainsChannel",
+      "https://www.youtube.com/c/Telusko"
+    ]
+}
   
 ];
 
@@ -410,6 +431,23 @@ const Syllabus = () => {
                         </a>
                   </div>
                 )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{marginTop:"10px"}}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((link, index) => (
+                        <li key={index}>
+                          <a href={link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          style={{ color: "#4f46e5", textDecoration: "underline" }}>
+                            {link}
+                          </a>
+                        </li>
+                      ))}
+                      </ul>
+                      </div>
+                   )}
               </div>
                 )}
             </div>

@@ -104,6 +104,26 @@ const syllabusData = [
     
     ],
     notes:"notes.pdf"
+  },
+  {
+    id: 6,
+    title: 'Sources',
+    description: 'Resources for further learning',
+    details: 'Links to official documentation, tutorials, and community resources.',
+    chapters: [
+      "Node.js Documentation",
+      "Express.js Documentation",
+      "Online Courses (Coursera, Udemy, etc.)",
+      "YouTube Channels (Traversy Media, Academind, etc.)",
+      "GitHub Repositories and Open Source Projects"
+    ],
+    url: [
+      "https://nodejs.org/en/docs/",
+      "https://expressjs.com/",
+      "https://www.udemy.com/topic/nodejs/",
+      "https://www.youtube.com/c/TraversyMedia",
+      "https://www.youtube.com/c/Academind",
+    ]
   }
   
 ];
@@ -267,8 +287,28 @@ const Syllabus = () => {
                         </a>
                   </div>
                 )}
-              </div>
+                {item.url && Array.isArray(item.url)&& (
+                  <div style={{marginTop:"10px"}}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((link, idx) => (
+                        <li key={idx}>
+                          <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                          >
+                            {link}
+                          </a>
+                        </li>
+                      ))}
+                      </ul>
+                  </div>
                 )}
+                </div>
+                )}
+              
                 </div>
             </div>
           ))}

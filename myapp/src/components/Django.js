@@ -167,6 +167,24 @@ notes:"notes.pdf"
 ],
 notes:"notes.pdf"
   }, 
+  {
+    id: 12,
+    title: 'Sources',
+    description: 'Additional resources for further learning',
+    details: 'Links to official documentation, tutorials, and community resources.',
+    chapters: [
+      "Django Documentation: https://docs.djangoproject.com/en/stable/",
+      "Django REST Framework Documentation: https://www.django-rest-framework.org/",
+      "Django Tutorials: https://tutorial.djangogirls.org/",
+      "Django Community: https://www.djangoproject.com/community/"      
+    ],
+    url: [
+      "https://docs.djangoproject.com/en/stable/",
+      "https://www.django-rest-framework.org/",
+      "https://tutorial.djangogirls.org/",
+      "https://www.djangoproject.com/community/"
+    ]
+  }
   
 ];
 
@@ -327,6 +345,26 @@ const Syllabus = () => {
                         >
                           Download Notes
                         </a>
+                  </div>
+                )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{ marginTop: "10px" }}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                    {item.url.map((url, idx) => (
+                      <li key={idx}>
+                      <a
+                      
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "#4f46e5", textDecoration: "underline", display: 'block' }}
+                      >
+                        {url}
+                      </a>
+                      </li>
+                    ))}
+                    </ul>
                   </div>
                 )}
               </div>

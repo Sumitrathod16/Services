@@ -99,6 +99,24 @@ notes:"notes.pdf"
     ],
     notes:"notes.pdf"
   },
+  {
+    id: 8,
+    title: 'Sources',
+    description: 'Additional resources for further learning',
+    details: 'Links to online courses, books, and articles for deeper understanding.',
+    chapters:[
+      "Flask Documentation",
+      "Flask Mega-Tutorial by Miguel Grinberg",
+      "Online Courses (Coursera, Udemy, etc.)",
+      "Books: 'Flask Web Development' by Miguel Grinberg"
+    ],
+    url:[
+      "https://flask.palletsprojects.com/",
+      "https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world",
+      "https://www.coursera.org/specializations/flask",
+      "https://www.udemy.com/course/flask-tutorial-for-beginners/"
+    ]
+  }
 
   
 ];
@@ -261,6 +279,23 @@ const Syllabus = () => {
                           Download Notes
                         </a>
                   </div>
+                )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style ={{marginTop: "10px"}}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((link, idx)=>(
+                        <li key={idx}>
+                          <a href={link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          style={{ color: "#4f46e5", textDecoration: "underline" }}>
+                            {link}
+                            </a>
+                        </li>
+                      ))}
+                    </ul>
+                    </div>
                 )}
               </div>
                 )}

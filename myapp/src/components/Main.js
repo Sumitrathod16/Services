@@ -31,7 +31,8 @@ function Main() {
                 .main-container {
                     padding: 100px 0 0 60px;
                     background-color: black;
-                    min-height: 80vh;  
+                    min-height: 60vh;  
+                    margin: 0 auto;
                 }
                 .main-content {
                     text-size: 1.8em;
@@ -64,6 +65,17 @@ function Main() {
                     font-size: 1em;
                     margin-right: 10px;
                 }
+                    .explore-button:hover {
+                    background-color: darkred;
+                }
+                .explore-button:active {
+                    background-color: maroon;
+                }
+                .explore-button:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5);
+                }
+
                 .info-button {
                     padding: 10px 20px;
                     background-color: white;
@@ -72,17 +84,29 @@ function Main() {
                     border-radius: 5px;
                     cursor: pointer;
                     font-size: 1em;
-                }   
+                } 
+                    .info-button:hover {
+                    background-color: #f0f0f0;
+                }
+                .info-button:active {
+                    background-color: #e0e0e0;
+                }
+                .info-button:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5);
+                }
+                      
                 .logo-container {
                             padding: 5px;
                             display: flex;
                             flex-direction: row;
+                            flex-start:start;
                             gap: 10px;
                             max-width: 600px;
-                            justify-content: space-evenly;
-                            align-items: center;
+                            justify-content: space-around;
+                            
                             margin-top: 20px;
-                            margin-left: 0 auto;
+                        margin: 0 auto;
                 }
                     
                     .tech-logo {
@@ -91,6 +115,7 @@ function Main() {
                     border-radius: 50%;
                     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
                     transition: transform 0.3s;
+                    margin: 0 10px;
                 }
                 .tech-logo:hover {
                     transform: scale(1.1);
@@ -119,7 +144,7 @@ function Main() {
                 <button className="explore-button">Explore More</button>
                 <button className="info-button">More Information</button>
 </div>
-<div className="logo-container">
+                <div className="logo-container">
                     
                     <img src={SQL} alt="SQL" className="tech-logo" />
                     <img src={CSS} alt="CSS" className="tech-logo" />

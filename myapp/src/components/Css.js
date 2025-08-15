@@ -121,6 +121,24 @@ const syllabusData = [
       "Introduction to autoencoders and reecurrent neural network(RNN)"
     ],
     notes:"notes.pdf"
+  },
+  {
+    id: 8,
+    title: 'Sources',
+    description: 'Additional resources for further learning',
+    details: 'Links to official documentation, tutorials, and community resources.',
+    chapters: [
+      "MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/CSS",
+      "CSS Tricks: https://css-tricks.com/",
+      "W3Schools CSS Tutorial: https://www.w3schools.com/css/",
+      "FreeCodeCamp CSS Course: https://www.freecodecamp.org/learn/responsive-web-design/basic-css/"
+    ],
+    url:[
+      "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      "https://css-tricks.com/",
+      "https://www.w3schools.com/css/",
+      "https://www.freecodecamp.org/learn/responsive-web-design/basic-css/"
+    ]
   }
 ];
 
@@ -283,7 +301,26 @@ const Syllabus = () => {
                         </a>
                   </div>
                 )}
-              </div>
+                {item.url && Array.isArray(item.url) && (
+                      <div style={{ marginTop: "10px" }}>
+                        <strong>Useful Links:</strong>
+                        <ul>
+                        {item.url.map((url, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "underline", display: "block" }}
+                            >
+                              {url}
+                            </a>
+                          </li>
+                        ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 )}
                 </div>
             </div>

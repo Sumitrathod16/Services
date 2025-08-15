@@ -116,6 +116,27 @@ notes:"notes.pdf"
       ],
       notes:"notes.pdf"
   },
+{
+    id: 10,
+    title: 'Sources',
+    description: 'Additional resources for further learning',
+    details: 'Links to official documentation, tutorials, and community resources.',
+    chapters: [
+      "Machine Learning Mastery",
+      "Coursera Machine Learning Course",
+      "Kaggle Datasets and Competitions",
+      "Google AI Blog",
+      "YouTube Channels (3Blue1Brown, StatQuest)"
+    ],
+    url :[
+      "https://machinelearningmastery.com/",
+      "https://www.coursera.org/learn/machine-learning",
+      "https://www.kaggle.com/datasets",
+      "https://ai.googleblog.com/",
+      "https://www.youtube.com/c/3blue1brown",
+      "https://www.youtube.com/c/StatQuest"
+    ]
+}
    
   
 ];
@@ -281,7 +302,26 @@ const toggleInfo = (id) => {
                         </a>
                   </div>
                 )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{ marginTop: "10px" }}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((link, idx) => (
+                        <li key={idx}>
+                          <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                          >
+                            {link}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
               </div>
+                )}
+                </div>
                 )}
                 </div>
                 </div>

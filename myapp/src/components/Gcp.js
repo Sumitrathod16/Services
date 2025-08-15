@@ -95,8 +95,30 @@ const syllabusData = [
    "Cloud Deploy",
    "Monitoring & Logging (Cloud Monitoring, Cloud Logging)",
    "Error Reporting & Debugger"  
-    ]
+    ],
+    notes:"notes.pdf"
   },
+  {
+    id: 5,
+    title: 'Sources',
+    description: 'Additional resources for further learning',
+    details: 'Links to official documentation, tutorials, and community resources.',
+    chapters: [
+      "Google Cloud Documentation",
+      "Google Cloud Training",
+      "Online Courses (Coursera, Udemy, etc.)",
+      "Google Cloud Blog",
+      "YouTube Channels (Google Cloud Platform, GCP Podcast)"
+    ],
+    url: [
+      "https://cloud.google.com/docs",
+      "https://cloud.google.com/training",
+      "https://www.coursera.org/googlecloud",
+      "https://www.udemy.com/topic/google-cloud-platform/",
+      "https://cloud.google.com/blog",
+      "https://www.youtube.com/c/googlecloudplatform"
+    ],
+  }
 ];
 
 const Syllabus = () => {
@@ -258,7 +280,26 @@ const Syllabus = () => {
                         </a>
                   </div>
                 )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{ marginTop: "10px" }}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((link, idx) => (
+                        <li key={idx}>
+                          <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                          >
+                            {link}
+                          </a>
+                        </li>
+                      ))}
+                   </ul>
               </div>
+                )}
+                </div>
                 )}
                 </div>
             </div>

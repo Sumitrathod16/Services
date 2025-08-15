@@ -56,6 +56,26 @@ const syllabusData = [
     ],
     notes:"notes.pdf"
   },
+  {
+    id: 5,
+    title:"Sources",
+    description: 'Additional resources for further learning',
+    details: 'Links to official documentation, tutorials, and community resources.',
+    chapters:[
+      "Microsoft Learn: https://learn.microsoft.com/en-us/training/",
+      "Azure Documentation: https://docs.microsoft.com/en-us/azure/",
+      "Azure Blog: https://azure.microsoft.com/en-us/blog/",
+      "Azure YouTube Channel: https://www.youtube.com/user/windowsazure",
+    ],
+    url:[
+      "https://learn.microsoft.com/en-us/training/",
+      "https://docs.microsoft.com/en-us/azure/",
+      "https://azure.microsoft.com/en-us/blog/",
+      "https://www.youtube.com/user/windowsazure"
+    
+      
+    ]
+  }
 ];
 
 const Syllabus = () => {
@@ -216,6 +236,25 @@ const Syllabus = () => {
                           Download Notes
                         </a>
                   </div>
+                )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{ marginTop: "10px" }}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((url, idx) => (
+                        <li key={idx}>
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                          >
+                            {url}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                    </div>
                 )}
               </div>
                 )}

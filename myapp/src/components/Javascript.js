@@ -115,8 +115,31 @@ const syllabusData = [
      "Symbol and BigInt"
     ],
     notes:"notes.pdf"
-    }
-  
+    },
+  {
+    id: 6,
+    title: 'Sources',
+    description: 'Resources for further learning',
+    details: 'Links to official documentation, tutorials, and community resources.',
+    chapters: [
+      "MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "JavaScript.info: https://javascript.info/",
+      "Eloquent JavaScript (book): https://eloquentjavascript.net/",
+      "YouTube Channels (Traversy Media, Academind, The Net Ninja)",
+      "Online Courses (Udemy, Coursera, freeCodeCamp)"
+    ],
+    url:[
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      "https://javascript.info/",
+      "https://eloquentjavascript.net/",
+      "https://www.youtube.com/c/TraversyMedia",
+      "https://www.youtube.com/c/Academind",
+      "https://www.youtube.com/c/TheNetNinja",
+      "https://www.udemy.com/topic/javascript/",
+      "https://www.coursera.org/courses?query=javascript",
+      "https://www.freecodecamp.org/"
+    ]
+  }
 ];
 
 const Syllabus = () => {
@@ -276,6 +299,25 @@ const Syllabus = () => {
                         >
                           Download Notes
                         </a>
+                  </div>
+                )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{ marginTop: "10px" }}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((link, idx) => (
+                        <li key={idx}>
+                          <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                          >
+                            {link}
+                          </a>
+                        </li>
+                      ))}
+                      </ul>
                   </div>
                 )}
               </div>

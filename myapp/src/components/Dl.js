@@ -51,6 +51,22 @@ const syllabusData = [
     ],
     notes:"notes.pdf"
   },
+  {
+    id: 5,
+    title:"Sources",
+    description: 'Additional resources for further learning',
+    details: 'Links to online courses, books, and articles for deeper understanding.',
+    chapters:[
+      "Online Courses: Coursera, edX, Udacity",
+      "Books: 'Deep Learning' by Ian Goodfellow, 'Neural Networks and Deep Learning' by Michael Nielsen",
+      "Research Papers: arXiv.org for latest papers in deep learning"
+    ],
+    url:[
+      "https://www.coursera.org/specializations/deep-learning",
+      "https://www.edx.org/professional-certificate/mitx-deep-learning",
+      "https://www.udacity.com/course/deep-learning-nanodegree--nd101"
+    ]
+  }
 ];
 
 const Syllabus = () => {
@@ -210,6 +226,25 @@ const Syllabus = () => {
                         >
                           Download Notes
                         </a>
+                  </div>
+                )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{ marginTop: "10px" }}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((link, idx) => (
+                        <li key={idx}>
+                          <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                          >
+                            {link}
+                          </a>
+                        </li>
+                      ))}
+                      </ul>
                   </div>
                 )}
               </div>

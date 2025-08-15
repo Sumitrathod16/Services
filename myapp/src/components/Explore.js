@@ -378,12 +378,12 @@ body {
             <div className="card">
                 <div className="card-bg bg-purple"></div>
                 <div className="card-content">
-                    <h3 className="card-title">AI</h3>
+                    <h3 className="card-title">Base languages</h3>
                     <div className="card-tags">
                     <ul>
-                        <li> <Link to="/AI">AI</Link></li>
-                        <li> <Link to="/ChatGPT">ChatGPT</Link></li>
-                        <li> <Link to="/GPT-4">GPT-4</Link></li>
+                        <li> <Link to="/">C</Link></li>
+                        <li> <Link to="/C++">C++</Link></li>
+                        <li> <Link to="/Php">PHP</Link></li>
                     </ul>
                     </div>
                 </div>

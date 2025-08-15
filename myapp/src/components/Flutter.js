@@ -157,6 +157,23 @@ const syllabusData = [
 ],
     notes:"notes.pdf"
   }, 
+  {
+    id:12,
+    title: 'Sources',
+    description: 'Additional resources for further learning',
+    details: 'Links to online courses, books, and articles for deeper understanding.',
+    chapters:[
+      "Online Courses: Coursera, edX, Udacity",
+      "Flutter Documentation: https://flutter.dev/docs",
+      "Flutter YouTube Channel: https://www.youtube.com/c/flutterdev",
+      "Flutter Community: https://flutter.dev/community"
+    ],
+    url:[
+      "https://flutter.dev/docs",
+      "https://www.youtube.com/c/flutterdev",
+      "https://flutter.dev/community"
+    ]
+  }
 ];
 
 const Syllabus = () => {
@@ -318,10 +335,29 @@ const Syllabus = () => {
                         </a>
                   </div>
                 )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{ marginTop: "10px" }}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                    {item.url.map((link, index) => (
+                      <li key={index}>
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: "#4f46e5", textDecoration: "underline" }}
+                        >
+                          {link}
+                        </a>
+                      </li>
+                    ))}
+                 </ul>
               </div>
                 )}
                 </div>
-            </div>
+                )}
+                </div>
+              </div>
           ))}
         </section>
       </div>

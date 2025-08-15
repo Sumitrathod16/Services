@@ -100,6 +100,25 @@ const syllabusData = [
     ],
     notes:"notes.pdf"
   },
+  {
+    id:5,
+    title:'Sources',
+    description: 'Resources for further learning',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    chapters:[
+      "AWS Documentation",
+      "AWS Training and Certification",
+      "Online Courses (Coursera, Udemy, etc.)",
+      "AWS Blogs and Whitepapers",
+      "YouTube Channels (AWS Official, FreeCodeCamp, etc.)"
+    ],
+    url: [
+      "https://aws.amazon.com/training/",
+      "https://aws.amazon.com/documentation/",
+      "https://aws.amazon.com/blogs/",
+      "https://www.youtube.com/c/AmazonWebServices"
+    ]
+  }
 ];
 
 const Syllabus = () => {
@@ -259,11 +278,31 @@ const Syllabus = () => {
                         >
                           Download Notes
                         </a>
+                      </div>
+                    )}
+                    {/* Show URLs if present */}
+                    {item.url && Array.isArray(item.url) && (
+                      <div style={{ marginTop: "10px" }}>
+                        <strong>Useful Links:</strong>
+                        <ul>
+                          {item.url.map((link, idx) => (
+                            <li key={idx}>
+                              <a
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ color: "#4f46e5", textDecoration: "underline" }}
+                              >
+                                {link}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
-                )}
-                </div>
             </div>
           ))}
         </section>

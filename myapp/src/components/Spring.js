@@ -99,6 +99,26 @@ notes:"notes.pdf"
     ],
     notes:"notes.pdf"
   },
+  {
+    id: 8,
+    title:"Sources",
+    description: 'Additional resources for further learning',
+    details: 'Links to official documentation, tutorials, and community resources.',
+    chapters:[
+      "Spring Documentation",
+      "Spring Boot Documentation",
+      "Online Courses (Coursera, Udemy, etc.)",
+      "YouTube Channels (Java Brains, Spring Academy, etc.)",
+      "GitHub Repositories and Open Source Projects"
+    ],
+    url: [
+      "https://spring.io/projects/spring-framework",
+      "https://spring.io/projects/spring-boot",
+      "https://www.udemy.com/topic/spring-framework/",
+      "https://www.youtube.com/c/JavaBrainsChannel",
+      "https://www.youtube.com/c/SpringAcademy"
+    ]
+  }
 
   
 ];
@@ -214,6 +234,15 @@ const Syllabus = () => {
           margin-bottom: 0.3rem;
           color: #22223b;
         }
+        url-list {
+          margin-top: 0.5rem;
+          padding-left: 1.2rem;
+        
+          }
+        url-list li {
+          margin-bottom: 0.3rem;
+          color:red;
+        }
         `}
       </style>
       <div className="main-container">
@@ -262,7 +291,21 @@ const Syllabus = () => {
                         </a>
                   </div>
                 )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{ marginTop: "10px" }}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((link,idx) =>(
+                        <li key={idx}>
+                          <a href={link} target="_blank" rel="noopener noreferrer" style={{ color: "#4f46e5", textDecoration: "underline" }}>
+                            {link}
+                            </a>
+                        </li>
+                      ))}
+                    </ul>
               </div>
+                )}
+                </div>
                 )}
                 </div>
                 </div>

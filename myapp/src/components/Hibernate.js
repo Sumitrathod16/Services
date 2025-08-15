@@ -100,6 +100,26 @@ notes:"notes.pdf"
     ],
     notes:"notes.pdf"
   },
+  {
+    id: 8,
+    title: 'Sources',
+    description: 'Resources for further learning',
+    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    chapters: [
+      "Hibernate Documentation",
+      "Books (Java Persistence with Hibernate, etc.)",
+      "Online Courses (Udemy, Coursera)",
+      "Community Forums (Stack Overflow, Hibernate Forums)",
+      "YouTube Channels (Java Brains, Telusko)"
+    ],
+    url: [
+      "https://hibernate.org/orm/documentation/",
+      "https://www.amazon.com/Java-Persistence-Hibernate-Coverage-Annotations/dp/1617291043",
+      "https://www.udemy.com/course/hibernate-tutorial-for-beginners/",
+      "https://stackoverflow.com/questions/tagged/hibernate",
+      "https://www.youtube.com/c/JavaBrainsChannel"
+    ],
+  }
 
   
 ];
@@ -263,7 +283,26 @@ const Syllabus = () => {
                         </a>
                   </div>
                 )}
+                {item.url && Array.isArray(item.url) && (
+                  <div style={{ marginTop: "10px" }}>
+                    <strong>Useful Links:</strong>
+                    <ul>
+                      {item.url.map((link, idx) => (
+                        <li key={idx}>
+                          <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                          >
+                            {link}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
               </div>
+                )}
+                </div>
                 )}
                 </div>
             </div>
