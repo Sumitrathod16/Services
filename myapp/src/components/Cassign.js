@@ -1,58 +1,58 @@
 import React, { useState } from "react";
 const questionsData = [
   {
-    question: "What type of database is MongoDB?",
-    options: ["Relational", "Document-oriented", "Graph-based", "Key-value"],
+    question: "What is the correct syntax to declare a pointer in C?",
+    options: ["int p","int *p","int &p","pointer int p"],
     answer: 1,
   },
   {
-    question: "Which format does MongoDB use to store data?",
-    options: ["Tables", "Document(BSON)", "key-value pairs", "CSV"],
-    answer: 1,
+    question: " Which of the following is the correct operator to compare two values?",
+    options: ["==", "=", "===", "!="],
+    answer: 0,
   },
   {
-    question: "Which command is used to insert a document into a MongoDB collection?",
-    options: ["db.collection.insert()", "db.insert()", "db.add()", "db.collection.add()"],
+    question: 'int a=5; printf("%d",a++)?',
+    options: ["5", "6", "Compilation Error", "Runtime Error"],
     answer: 0,
   },
    {
-    question: "What is the default port for MongoDB?",
-    options: ["8080", "3306", "27017", "1521"],
-    answer: 3,
-  },
-   {
-    question: "What is collection in MongoDB?",
-    options: ["A table-like structure that holds documents", "A group of databases", "A single field", "A backup file"],
-    answer: 0,
-  },
-   {
-    question: "Which data format does MongoDB use internally to represent documents?",
-    options: ["JSON", "XML", "BSON", "CSV"],
-    answer: 2,
-  },
-   {
-    question: "What is the purpose of the _id field in MongoDB?",
-    options: ["It stores user credentials", "It uniquely ientifies each document", "It defines the schema", "It represents the document size"],
+    question:  "Which function is used to read a formatted input in C?",
+    options: ["printf()", "scanf()", "gets()", "puts()"],
     answer: 1,
   },
    {
-    question: "How do you retrieve all documents from a collection in MongoDB?",
-    options: ["db.collection.findOne()", "db.collection.retriveAll()", "db.collection.get()", "db.collection.find()"],
+    question: "What is the size of int typically in a 32-bit system?",
+    options: ["2 bytes", "4 bytes", "8 bytes", "16 bytes"],
+    answer: 1,
+  },
+   {
+    question: "Which of the following is not valid C storage class?",
+    options: ["auto", "register", "static", "mutable"],
     answer: 3,
   },
    {
-    question: "Which of the following is not a valid MongoDB data type?",
-    options: ["String", "Integer", "Float", "DateTimePicker"],
-    answer: 3,
-  },
-   {
-    question: "What is MongoDB Atlas?",
-    options: ["A data visualization tool","An on-premise MongoDB GUI", "A cloud-based MongoDB database service", "Webpack"],
+    question: "Which loop will execute at least once, even if the condition is false initially?",
+    options: ["for", "while", "do-while", "None of the above"],
     answer: 2,
+  },
+   {
+    question: "What is a correct way to declare a multi-dimensional array in C?",
+    options: [ "int arr[10][20]", "int arr[10,20]", "int arr(10)(20)", "int arr{10,20}"],
+    answer: 0,
+  },
+   {
+    question: "Which header file is required for using malloc() function?",
+    options: ["stdlib.h", "stdio.h", "string.h", "math.h"],
+    answer: 0,
+  },
+  {
+    question: " Which of the following functions is used to find the length of a string in C?",
+    options: ["strcpy()", "strlen()", "strcat()", "strcmp()"],
+    answer: 1,
   },
 ];
 
-const Mongodbassign = () => {
+const Cassign = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -305,4 +305,4 @@ const Mongodbassign = () => {
   );
 };
 
-export default Mongodbassign;
+export default Cassign;

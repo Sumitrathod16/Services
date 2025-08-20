@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'React Fundamentals',
     description: 'Fundamental concepts of  learning and its applications',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+
     chapters: [
     "What is React and why use it?",
     "SPA (Single Page Applications) vs MPA",
@@ -26,7 +26,7 @@ const syllabusData = [
     title: ' React State & Lifecycle',
     description:'Master data management and component behavior over time',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+    
     chapters: [
       "useState Hook",
      "useEffect Hook",
@@ -47,7 +47,7 @@ const syllabusData = [
     title: ' Component Architecture & Routing',
     description: 'Build modular, navigable applications',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+  
     chapters: [
    "Component-based architecture and best practices",
     "Smart vs Dumb Components",
@@ -68,7 +68,7 @@ const syllabusData = [
     title: 'State Management & APIs',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+
     chapters: [
     "State Management Strategies in React",
     "Fetching APIs with:",
@@ -91,7 +91,7 @@ const syllabusData = [
     title:'Advanced React & Best Practices',
     description:'Prepare for production-level apps and interviews',
     details:'',
-    icon:'',
+
     chapters:[
        "Performance Optimization:",
        "useMemo",
@@ -295,7 +295,7 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url)&&(
-                  <div style={{marginTop:"10px"}}>
+                  <div style={{marginLeft:"20px",marginTop:"10px"}}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((link,idx)=>(
@@ -303,7 +303,7 @@ const Syllabus = () => {
                           <a href={link} 
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}>
+                          style={{ color: "#4f46e5", textDecoration: "none" }}>
                             {link}
                           </a>
                         </li>

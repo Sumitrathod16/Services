@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'Introduction to Java',
     description: '',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+  
     chapters: [
     "Java why? What? How? When? Where?",
       "Different Java Versions",
@@ -19,7 +19,7 @@ const syllabusData = [
     title: 'Introduction to Java programming Environment',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+
     chapters: [
       "How to install & set path",
       "A simple java program",
@@ -41,7 +41,7 @@ notes:"notes.pdf"
     title: 'Fundamentals of Java programming',
     description: '',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+    
     chapters: [
      "The naming convention of Java program",
     "Comments Statement",
@@ -60,7 +60,7 @@ notes:"notes.pdf"
     title: 'Control Structures',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
       "Working with control structures",
       "Types of control structures",
@@ -74,7 +74,7 @@ notes:"notes.pdf"
     title: 'Input fundamentals and Data types',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
        "Java program inputs and Keywords",
       "Methods of keyboard inputs",
@@ -97,7 +97,7 @@ notes:"notes.pdf"
     title: 'Object Oriented Programming',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+
     chapters: [
        "Procedural vs Object oriented programming",
       "Different types of program procedural and object oriented",
@@ -123,7 +123,7 @@ notes:"notes.pdf"
     id: 7,
     title: 'Command line argument',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
         "What a command-line argument?",
       "Java application with command-line argument",
@@ -139,7 +139,7 @@ notes:"notes.pdf"
     title: 'Integrated Development Environment',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
         "Using various Editors",
       "Program compilation, Execution in Editor",
@@ -157,7 +157,7 @@ notes:"notes.pdf"
     title: 'Inner Class',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
         "First view of inner class",
       "Outer class access",
@@ -171,7 +171,7 @@ notes:"notes.pdf"
     title: 'Types of inheritance',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
  "Complete concept of Inheritance",
       "Sub-classes",
@@ -188,7 +188,7 @@ notes:"notes.pdf"
     title: 'Abstract Classes and inheritance',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
 "Introduction to Abstract methods",
           "Abstract classes and Interface",
@@ -207,7 +207,7 @@ notes:"notes.pdf"
     title: 'Polymorphism',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
 "Introduction to Polymorphism",
       "Types of Polymorphism",
@@ -229,7 +229,7 @@ notes:"notes.pdf"
     title: 'Package',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
       "Package and classPath and its use",
       "First look into Packages",
@@ -432,7 +432,7 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{marginTop:"10px"}}>
+                  <div style={{marginLeft:"20px",marginTop:"10px"}}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((link, index) => (
@@ -440,7 +440,7 @@ const Syllabus = () => {
                           <a href={link} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}>
+                          style={{ color: "#4f46e5", textDecoration: "none" }}>
                             {link}
                           </a>
                         </li>

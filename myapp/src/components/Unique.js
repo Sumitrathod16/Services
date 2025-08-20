@@ -83,8 +83,8 @@ function Unique() {
                 all designed for maximum impact and flexibility.</p>
                 <div className="unique-list">
                     <img src={Code} className="unique-icon" alt="Code Icon" /> <p>Well organized code</p>
-                    <img src={User} className="unique-icon" alt="User Icon" /><p>First 6 months of support are free</p>
-                    <img src={Update} className="unique-icon" alt="Update Icon" /><p>Free lifetime updates</p>
+                    <img src={User} className="unique-icon" alt="User Icon" /><p>User-friendly</p>
+                    <img src={Update} className="unique-icon" alt="Update Icon" /><p></p>
                 </div>
 
         </div>

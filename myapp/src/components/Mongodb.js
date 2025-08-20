@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'MongoDB Basics',
     description: 'Fundamental concepts of  learning and its applications',
     details: 'This section covers the foundations of  learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+
     chapters: [
     "What is MongoDB?",
     "NoSQL vs SQL databases",
@@ -27,7 +27,7 @@ const syllabusData = [
     title: ' CRUD Operations',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+  
     chapters: [
     "Create:",
     "insertOne(), insertMany()",
@@ -50,7 +50,7 @@ const syllabusData = [
     title: ' Advanced Querying & Indexing',
     description: 'Exploring multi-layered neural networks and their power',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+
     chapters: [
     "Query Operators:",
     "$in, $nin, $and, $or, $not, $exists, $regex",
@@ -72,7 +72,7 @@ const syllabusData = [
     title: ' MongoDB with Node.js (Mongoose)',
     description: 'Use MongoDB in real-world backend projects',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+
     chapters: [
     "Introduction to Mongoose ORM",
     "Defining Mongoose Schemas and Models",
@@ -92,7 +92,7 @@ const syllabusData = [
     title: '. Production, Security & Tools',
     description: 'Fundamental concepts of  learning and its applications',
     details: 'This section covers the foundations of  learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+  
     chapters:[
      "MongoDB Atlas Cloud Setup",
      "Connection URI and Environment Configs",
@@ -294,7 +294,7 @@ const Syllabus = () => {
               
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{marginTop:"10px"}}>
+                  <div style={{marginLeft:"20px",marginTop:"10px"}}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((link, idx) => (
@@ -303,7 +303,7 @@ const Syllabus = () => {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                            style={{ color: "#4f46e5", textDecoration: "none" }}
                           >
                             {link}
                           </a>

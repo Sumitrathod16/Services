@@ -1,58 +1,58 @@
 import React, { useState } from "react";
 const questionsData = [
   {
-    question: "What type of database is MongoDB?",
-    options: ["Relational", "Document-oriented", "Graph-based", "Key-value"],
+    question: "What does PHP stand for?",
+    options: ["Personal Home Page", "PHP Hypertext Preprocessor", "Private Home Page", "Public Home Page"],
     answer: 1,
   },
   {
-    question: "Which format does MongoDB use to store data?",
-    options: ["Tables", "Document(BSON)", "key-value pairs", "CSV"],
+    question: " Which symbol is used to declare a variable in PHP?",
+    options:["@","#","$","%"],
+    answer: 2,
+  },
+  {
+    question: 'Which of the following is the correct way to start a PHP block?',
+    options: ["<?php", "<?php code?>", "<php>", "<?php...?> "],
+    answer: 3,
+  },
+   {
+    question:  "What will this code output $a=5; $b='5'; echo($a=$b)? ",
+    options: ["0",'1',"5","5.0"],
+    answer: 1,
+  },
+   {
+    question: "What is the correct way to write a comment in PHP?",
+    options: ["// This is a comment", "/* This is a comment */", "# This is a comment","All of the above"],
+    answer: 3,
+  },
+   {
+    question: "Which function is used to get the length of a string in PHP?",
+    options: ["strlen()", "str_length()", "length()", "strLen()"],
+    answer: 0,
+  },
+   {
+    question: "Which of the following is a superglobal variable in PHP?",
+    options: ["$_GET", "$_POST", "$_SESSION", "All of the above"],
+    answer: 3,
+  },
+   {
+    question: "How do you define a constant in PHP?",
+    options: [ "define('CONSTANT_NAME', 'value')", "const CONSTANT_NAME = 'value'", "constant('CONSTANT_NAME', 'value')", "Both A and B"],
+    answer: 3,
+  },
+   {
+    question: "Which PHP function is used to include and execute a file only once?",
+    options: ["include_once", "require_once", "include", "require"],
     answer: 1,
   },
   {
-    question: "Which command is used to insert a document into a MongoDB collection?",
-    options: ["db.collection.insert()", "db.insert()", "db.add()", "db.collection.add()"],
-    answer: 0,
-  },
-   {
-    question: "What is the default port for MongoDB?",
-    options: ["8080", "3306", "27017", "1521"],
-    answer: 3,
-  },
-   {
-    question: "What is collection in MongoDB?",
-    options: ["A table-like structure that holds documents", "A group of databases", "A single field", "A backup file"],
-    answer: 0,
-  },
-   {
-    question: "Which data format does MongoDB use internally to represent documents?",
-    options: ["JSON", "XML", "BSON", "CSV"],
-    answer: 2,
-  },
-   {
-    question: "What is the purpose of the _id field in MongoDB?",
-    options: ["It stores user credentials", "It uniquely ientifies each document", "It defines the schema", "It represents the document size"],
+    question: " What will isset($var) return if $var is declared but set to null?",
+    options: ["true", "false", "null", "undefined"],
     answer: 1,
-  },
-   {
-    question: "How do you retrieve all documents from a collection in MongoDB?",
-    options: ["db.collection.findOne()", "db.collection.retriveAll()", "db.collection.get()", "db.collection.find()"],
-    answer: 3,
-  },
-   {
-    question: "Which of the following is not a valid MongoDB data type?",
-    options: ["String", "Integer", "Float", "DateTimePicker"],
-    answer: 3,
-  },
-   {
-    question: "What is MongoDB Atlas?",
-    options: ["A data visualization tool","An on-premise MongoDB GUI", "A cloud-based MongoDB database service", "Webpack"],
-    answer: 2,
   },
 ];
 
-const Mongodbassign = () => {
+const Phpassign = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -305,4 +305,4 @@ const Mongodbassign = () => {
   );
 };
 
-export default Mongodbassign;
+export default Phpassign;

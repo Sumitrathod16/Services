@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'Introduction to Flutter',
     description: '',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+
     chapters: [
         "Learn to setup new material app using android studio",
     "Overview of Flutter",
@@ -22,7 +22,7 @@ const syllabusData = [
     title: 'Stateful and stateless widdgets',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+    
     chapters: [
        "Stateless vs Stateful widgets",
     "Define State",
@@ -36,7 +36,7 @@ const syllabusData = [
     title: 'Forms',
     description: '',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+    
     chapters: [
       "Creating login and signup forms",
    "Handling User input",
@@ -51,7 +51,7 @@ const syllabusData = [
     title: 'Widgets',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: ["Creating login and signup forms",
    "Handling User input",
    "Form Validation",
@@ -65,7 +65,7 @@ const syllabusData = [
     title: 'User Interface',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
       "Applying theme data",
       "Applying custom font"
@@ -79,7 +79,7 @@ const syllabusData = [
     title: 'Asynchronous Function',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
      "Future Function",
       "Async and Await"
@@ -91,7 +91,7 @@ const syllabusData = [
     title: 'Working with the App data',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+
     chapters: [
    "Http Package",
       "Model class and json Parsing",
@@ -104,7 +104,7 @@ const syllabusData = [
     title: 'Navigation',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
       "Navigator and Routes",
       "Applying push() and pop()"
@@ -117,7 +117,7 @@ const syllabusData = [
     title: 'Container',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
        "Container",
       "Card",
@@ -138,7 +138,6 @@ const syllabusData = [
     title: 'Offline Storage',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
     chapters: [
      "Basic concept of sqlite database",
      "Database Connection",
@@ -151,7 +150,7 @@ const syllabusData = [
     title: 'Basic GIT',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
        
 ],
@@ -336,7 +335,7 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{marginLeft:"20px", marginTop: "10px" }}>
                     <strong>Useful Links:</strong>
                     <ul>
                     {item.url.map((link, index) => (
@@ -345,7 +344,7 @@ const Syllabus = () => {
                           href={link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}
+                          style={{ color: "#4f46e5", textDecoration: "none" }}
                         >
                           {link}
                         </a>

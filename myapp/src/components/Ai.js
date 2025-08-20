@@ -7,7 +7,7 @@ const syllabusData = [
     title: 'Introduction to Artificial Intelligence',
     description: 'Fundamental concepts of Ai',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+    
     chapters: [
       "Definition and history of AI",
       "Applications of AI in real-world domains (healthcare, robotics, finance, etc.)",
@@ -22,7 +22,7 @@ const syllabusData = [
     title: 'Problem solving and Search algorithm',
     description: 'Understanding the problem solving methods and algorithms',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+    
     chapters: [
 "State-space search and problem formulation",
 "Uninformed search (BFS, DFS, UCS, DLS, IDS)",
@@ -37,7 +37,7 @@ const syllabusData = [
     title: 'Knowledge representation and reasoning',
     description: 'Representation of knowledge',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+  
     chapters: [
             "Propositional logic and predicate logic",
 "Inference rules and resolution",
@@ -52,7 +52,7 @@ const syllabusData = [
     title: 'Machine learning fundamentals',
     description: 'Machine learning implementation into the AI',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
       "Supervised learning: Regression, Classification",
 "Unsupervised learning: Clustering, Dimensionality Reduction",
@@ -67,7 +67,7 @@ const syllabusData = [
     title: 'Natural Language processing',
     description: 'Implementing NLP to recognise language',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
 "Text preprocessing: tokenization, stemming, stopwords",
 "Syntax and semantics",
@@ -82,7 +82,7 @@ const syllabusData = [
     title: 'Computer vision and robotics',
     description: 'Robotics',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
 "Image processing basics",
 "Object detection and recognition",
@@ -97,7 +97,7 @@ const syllabusData = [
     title: 'Ethics and Future of AI',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
    "Bias and fairness in AI",
 "AI and job displacement",
@@ -233,6 +233,7 @@ const toggleInfo = (id) => {
           margin-bottom: 0.3rem;
           color: #22223b;
         }
+      
       `}</style>
 
       <div className="main-container">
@@ -282,7 +283,7 @@ const toggleInfo = (id) => {
                       </div>
                     )}
                     {item.url && Array.isArray(item.url) && (
-                      <div style={{ marginTop: "10px" }}>
+                      <div style={{ marginLeft:"20px",marginTop: "10px" }}>
                         <strong>Useful Links:</strong>
                         <ul>
                           {item.url.map((link, idx) => (
@@ -291,7 +292,7 @@ const toggleInfo = (id) => {
                                 href={link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={{ color: "#4f46e5", textDecoration: "underline" }}
+                                style={{ color: "#4f46e5", textDecoration: "none" }}
                               >
                                 {link}
                               </a>

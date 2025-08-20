@@ -7,7 +7,7 @@ const syllabusData = [
     title: 'Spring core(Ioc container  & Dependency Injection',
     description: '',
     details: '',
-    icon: '🧠',
+    
     chapters: [
     "Inversion of Control (IoC)",
    "Dependency Injection (DI)",
@@ -21,7 +21,7 @@ const syllabusData = [
     title: 'Spring AOP',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+    
     chapters: [
       "Cross-cutting concerns",
       "Aspects,Join Points, Pointcuts",
@@ -35,7 +35,7 @@ notes:"notes.pdf"
     title: 'Spring Data & ORM Integration',
     description: '',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+    
     chapters: [
     "Spring Data JPA",
     "Repositories",
@@ -49,7 +49,7 @@ notes:"notes.pdf"
     title: 'Spring MVC',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
       "Controllers",
       "Request Mapping",
@@ -63,7 +63,7 @@ notes:"notes.pdf"
     title: 'Spring Boot',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
       "Auto Configuration",
       "Starter Dependecies",
@@ -77,7 +77,7 @@ notes:"notes.pdf"
     title: 'Spring Security',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
       "Authentication and Authorization",
       "Custom Security",
@@ -90,7 +90,6 @@ notes:"notes.pdf"
     id: 7,
     title: 'Spring Testing',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
     chapters: [
       "Unit Testing",
       "Integration Testing",
@@ -292,12 +291,12 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{marginLeft:"20px", marginTop: "10px" }}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((link,idx) =>(
                         <li key={idx}>
-                          <a href={link} target="_blank" rel="noopener noreferrer" style={{ color: "#4f46e5", textDecoration: "underline" }}>
+                          <a href={link} target="_blank" rel="noopener noreferrer" style={{ color: "#4f46e5", textDecoration: "none" }}>
                             {link}
                             </a>
                         </li>

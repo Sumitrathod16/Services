@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'Introuction to hibernate & ORM Concepts ',
     description: '',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+    
     chapters: [
 "What is hibernate",
 "ORM basics",
@@ -20,7 +20,7 @@ notes:"notes.pdf"
     title: 'Hibernate Configuration & setup',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+    
     chapters: [
      "Hibernate dependencies",
      "Configuration Files",
@@ -34,7 +34,7 @@ notes:"notes.pdf"
     title: 'Entity Mapping',
     description: '',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+    
     chapters: [
 "Defining entities",
 "Primary key strategies",
@@ -48,7 +48,7 @@ notes:"notes.pdf"
     title: 'Relationships Mapping',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
       "One-to-one",
       "One-to-Many",
@@ -62,7 +62,7 @@ notes:"notes.pdf"
     title: 'CRUD operations & session Management',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
        "Basic CRUD",
        "Session lifecycle",
@@ -76,7 +76,7 @@ notes:"notes.pdf"
     title: 'HQL,JPQL & Criteria API',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
       "Hibernate Query Language(HQL)",
       "JPQL",
@@ -90,7 +90,7 @@ notes:"notes.pdf"
     id: 7,
     title: 'Advanced Topics & Performance Optimization',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
 "Caching",
 "Lazy vs Eager Loading",
@@ -284,7 +284,7 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{ marginLeft:"20px",marginTop: "10px" }}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((link, idx) => (
@@ -293,7 +293,7 @@ const Syllabus = () => {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                            style={{ color: "#4f46e5", textDecoration: "none" }}
                           >
                             {link}
                           </a>

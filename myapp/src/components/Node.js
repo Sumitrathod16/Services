@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'Introduction to Nodejs',
     description:'Understand the core of how Node.js works',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+
     chapters: [
     "What is Node.js and why use it?",
     "Node.js Architecture (Event Loop, Call Stack, Libuv)",
@@ -25,7 +25,7 @@ const syllabusData = [
     title: ' Core Modules & File System',
     description: 'Learn to work with built-in modules and file operations',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+    
     chapters: [
     "fs (File System)",
     "path",
@@ -48,7 +48,7 @@ const syllabusData = [
     title: ' Networking and HTTP',
     description: 'Build servers and handle requests/responses',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+  
     chapters: [
     "Creating a basic HTTP server",
     "Request and response handling",
@@ -66,7 +66,7 @@ const syllabusData = [
     title: 'Express.js & Middleware',
     description: 'Use the most popular framework for building apps with Node.js',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
       "What is Express.js?",
      "Creating routes (GET, POST, PUT, DELETE)",
@@ -86,7 +86,7 @@ const syllabusData = [
     title: ' Advanced Concepts & Tooling',
     description: 'Deepen your knowledge and explore production-ready practices',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
       "MongoDB using Mongoose",
       "MySQL or PostgreSQL",
@@ -288,7 +288,7 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url)&& (
-                  <div style={{marginTop:"10px"}}>
+                  <div style={{marginLeft:"20px",marginTop:"10px"}}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((link, idx) => (
@@ -297,7 +297,7 @@ const Syllabus = () => {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                            style={{ color: "#4f46e5", textDecoration: "none" }}
                           >
                             {link}
                           </a>

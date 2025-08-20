@@ -44,12 +44,12 @@ function LogicPractice() {
           border-bottom: 2px solid #3f51b5;
           padding-bottom: 6px;
         }
-        ul {
+        .practice-section ul {
           list-style: none;
           padding-left: 0;
           color: #444;
         }
-        ul li {
+        .practice-section ul li {
           margin-bottom: 14px;
           font-size: 1.1rem;
           position: relative;

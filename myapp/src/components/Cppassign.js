@@ -1,58 +1,58 @@
 import React, { useState } from "react";
 const questionsData = [
   {
-    question: "What type of database is MongoDB?",
-    options: ["Relational", "Document-oriented", "Graph-based", "Key-value"],
+    question: "Which of the following is the correct way to declare a class in C++?",
+    options: ["class MyClass {}", "class MyClass[]", "MyClass class {}", "MyClass()"],
+    answer: 0,
+  },
+  {
+    question: "What will be the output int a=10; cout<<++a;?",
+    options: ["10", "11", "Compilation Error", "Runtime Error"],
     answer: 1,
   },
   {
-    question: "Which format does MongoDB use to store data?",
-    options: ["Tables", "Document(BSON)", "key-value pairs", "CSV"],
+    question: 'Which header file is used for cin and cout in C++?',
+    options: ["iostream.h", "iostream", "stdio.h", "cinout.h"],
+    answer: 0,
+  },
+   {
+    question:  "Which of the following is not a basic data type in C++?",
+    options: ["int", "float", "string", "char"],
+    answer: 2,
+  },
+   {
+    question: "How do you declare a pointer in C++?",
+    options: ["int *ptr", "int ptr*", "int &ptr", "int ptr[]"],
+    answer: 0,
+  },
+   {
+    question: "What is the default access modifier for members of a class in C++?",
+    options: ["public", "private", "protected", "none of the above"],
     answer: 1,
+  },
+   {
+    question: "Which OOP concept allows defining multiple functions with the same name but different parameters?",
+    options: ["Abstraction", "Overriding", "Encapsulation", "Overloading"],
+    answer: 3,
+  },
+   {
+    question:'What will be the output int x=5; int y=++x; cout<<x<<" "<<y;?',
+    options: [ "5 5", "6 5", "6 6", "5 6"],
+    answer: 1,
+  },
+   {
+    question: "Which of the following is used to create objects in C++?",
+    options: ["new", "create", "malloc", "object"],
+    answer: 0,
   },
   {
-    question: "Which command is used to insert a document into a MongoDB collection?",
-    options: ["db.collection.insert()", "db.insert()", "db.add()", "db.collection.add()"],
+    question: "What is a constructor in C++?",
+    options: ["A special function to initialize objects", "A function to destroy objects", "A function to copy objects", "A function to overload operators"],
     answer: 0,
-  },
-   {
-    question: "What is the default port for MongoDB?",
-    options: ["8080", "3306", "27017", "1521"],
-    answer: 3,
-  },
-   {
-    question: "What is collection in MongoDB?",
-    options: ["A table-like structure that holds documents", "A group of databases", "A single field", "A backup file"],
-    answer: 0,
-  },
-   {
-    question: "Which data format does MongoDB use internally to represent documents?",
-    options: ["JSON", "XML", "BSON", "CSV"],
-    answer: 2,
-  },
-   {
-    question: "What is the purpose of the _id field in MongoDB?",
-    options: ["It stores user credentials", "It uniquely ientifies each document", "It defines the schema", "It represents the document size"],
-    answer: 1,
-  },
-   {
-    question: "How do you retrieve all documents from a collection in MongoDB?",
-    options: ["db.collection.findOne()", "db.collection.retriveAll()", "db.collection.get()", "db.collection.find()"],
-    answer: 3,
-  },
-   {
-    question: "Which of the following is not a valid MongoDB data type?",
-    options: ["String", "Integer", "Float", "DateTimePicker"],
-    answer: 3,
-  },
-   {
-    question: "What is MongoDB Atlas?",
-    options: ["A data visualization tool","An on-premise MongoDB GUI", "A cloud-based MongoDB database service", "Webpack"],
-    answer: 2,
   },
 ];
 
-const Mongodbassign = () => {
+const Cppassign = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -305,4 +305,4 @@ const Mongodbassign = () => {
   );
 };
 
-export default Mongodbassign;
+export default Cppassign;

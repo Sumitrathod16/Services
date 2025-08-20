@@ -7,7 +7,7 @@ const syllabusData = [
     title: 'Introduction to Machine Learning',
     description: '',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '',
+
     chapters: [
     "Introduction to machine learning",
       "Performance of measures of classification",
@@ -21,7 +21,7 @@ const syllabusData = [
     title: 'Bayesian decision Theory',
     description: 'Bayesian Decision Theory',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '',
+  
     chapters: [
        "Bayesian Belief Networks"
       ],
@@ -32,7 +32,7 @@ const syllabusData = [
     title: 'Parametric Approaches and non-parametric approaches',
     description: '',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '',
+    
     chapters: [
     "Parameter Estimation and Maximum likelihood Estimation",
       "Parameter Estimation and Bayesian Estimation",
@@ -47,7 +47,7 @@ const syllabusData = [
     title: 'Perceptron criteria and Discriminative models',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '',
+  
     chapters: [
       "Linear discriminant Functions and perceptron Criteria",
       "Support Vector Machine"
@@ -59,7 +59,7 @@ const syllabusData = [
     title: 'Logistic regression ,Decision trees and hidden markov model',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '',
+
     chapters: [
       "Logisitc Regression ",
       "Decision tree",
@@ -73,7 +73,7 @@ const syllabusData = [
     title: 'Ensemble Methods',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '',
+  
     chapters: [
       "Ensemble Classifiers"
     ],
@@ -83,7 +83,7 @@ const syllabusData = [
     id: 7,
     title: 'Dimensionality Problems',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '',
+    
     chapters: [
       "Dimensionality Problem and Principal Component analysis",
       "Principal Component analysis",
@@ -96,7 +96,7 @@ notes:"notes.pdf"
     title: 'Mixture model and clustering',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '',
+    
     chapters: [
        "Gaussian Mixture Model and EM algorithm",
       "K-means clustering",
@@ -108,7 +108,7 @@ notes:"notes.pdf"
     title: 'Clustering',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '',
+    
     chapters: [
        "Fuzzy k-means clustering",
       "Hierarchical Agglomorative clustering and Mean-shift Clustering"
@@ -303,7 +303,7 @@ const toggleInfo = (id) => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{marginLeft:"20px", marginTop: "10px" }}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((link, idx) => (
@@ -312,7 +312,7 @@ const toggleInfo = (id) => {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                            style={{ color: "#4f46e5", textDecoration: "none" }}
                           >
                             {link}
                           </a>

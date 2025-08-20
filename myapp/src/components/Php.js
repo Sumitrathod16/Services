@@ -3,120 +3,125 @@ import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
-    title: 'Introduction to Deep-Designing',
-    description: 'Fundamental concepts of deep learning and its applications',
+    title: 'Php Basics',
+    description: 'Fundamental concepts of PHP and its applications',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
   
     chapters: [
-      "What is CSS?",
-      "Benefits of CSS",
-      "Types of CSS:",
-      "Inline CSS",
-      "Internal CSS",
-      "External CSS",
-     " CSS Syntax and Rules",
-      "CSS Comments"
+      "Introduction to PHP", 
+      "Installing XAMPP / WAMP / LAMP",
+       "PHP syntax and tags",
+       "PHP file structure and execution",
+        "Variables and data types",
+        "Constants",
+        "Comments",
+         "Output: echo, print",
+          "Basic operators: arithmetic, assignment, comparison, logical"
     ],
     notes:"notes.pdf"
   },
   {
     id: 2,
-    title: ' Text and Font Styling',
-    description: 'Understanding the architecture and function of ANNs',
-    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-  
+    title: 'Control Structures',
+    description: 'Understanding control structures in PHP',
+    details: '',
+
     chapters: [
-      "Font families and font stacks", 
-      "Font size, weight, and style",
-      "Line height and letter spacing",
-      "Text alignment",
-      "Text decoration",
-      "Text transform",
-      "Word and letter spacing",
-      "Google Fonts"
+    "Conditional statements: if, if-else, if-elseif-else, switch",
+    "Looping: for, while, do-while, foreach",
+    "Break and continue",
+    "Match expression (PHP 8+)"  
     ],
     notes:"notes.pdf"
   },
   {
     id: 3,
-    title: 'Box Model & Layout Basics',
-    description: 'Exploring multi-layered neural networks and their power',
-    details: 'This module explains how deep architectures differ and how to train them effectively.',
+    title: 'Functions and Arrays',
+    description: 'Functions and Arrays in PHP',
+    details: '',
 
     chapters: [
-     "Box Model (content, padding, border, margin)",
-     "Width, height, and box-sizing",
-     "overflow, visibility, and z-index",
-     "display values (block, inline, inline-block, none)",
-     "Positioning:",
-     "static, relative, absolute, fixed, sticky,",
-     "top, right, bottom, left"
+     "Declaring and calling functions",
+     "Function parameters and return values",
+     "Variable scope: local, global, static",
+     "Built-in functions",
+     "User-defined functions",
+     "Arrays: Indexed, associative, and multidimensional arrays",
+     "Array functions: array_push(), array_merge(), count(), etc.",
+     "Looping through arrays"
     ],
     notes:"notes.pdf"
   },
   {
     id: 4,
-    title: 'Responsive Design & Media',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Forms and User Input',
+    description: 'Handling forms and user input in PHP',
+    details: '',
   
     chapters: [
-     "Viewport and mobile-first approach",
-     "Media Queries (syntax, breakpoints)",
-     "Responsive units: %, em, rem, vh, vw",
-     "Responsive typography and images",
-     "Layout strategies (fluid, adaptive, responsive)" 
+     "HTML forms with PHP",
+     "$_GET and $_POST",
+     "$_REQUEST, $_SERVER, $_FILES",
+     "Form validation and sanitization",
+     "File upload handling",
+     "Security basics: input filtering, escaping HTML, preventing XSS/SQL injection" 
     ],
     notes:"notes.pdf"
   },
   {
     id: 5,
-    title: 'Advanced CSS Features & Best Practices',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    
+    title: 'Strings, Date/Time and File handling',
+    description: 'Working with strings, date/time, and file handling in PHP',
+    details: '',
+  
     chapters: [
-     "Transitions and Animations:",
-     "transition, @keyframes, animation properties",
-     "CSS Variables (Custom Properties)",
-     "CSS Functions: calc(), clamp(), var(), min(), max()",
-     "CSS architecture:",
-     "BEM methodology",
-     "DRY and reusable CSS",
-     "Preprocessors (SASS/SCSS) – optional",
-     "Best practices:",
-     "Performance optimization",
-     "File organization",
-     "Writing maintainable CSS",
-     "Modern CSS:",
-     "Subgrid",
-     "Container queries",
-     "Logical properties",
-     "New selectors (:has, :is)"  
+     "String functions: strlen(), strtoupper(), str_replace(), etc.",
+     "String concatenation",
+     "Date and time functions: date(), time(), strtotime()",
+     "Timezones and formatting",
+     "File operations:fopen(), fread(), fwrite(), fclose()",
+     "File upload basics",
+     "File existence and deletion"
     ],
     notes:"notes.pdf"
   },
   {
     id: 6,
-    title: 'Connnetivity and their uses!',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Php with MySQL',
+    description: 'Connecting PHP with MySQL databases',
+    details: '',
+  
     chapters: [
-      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
-      "U-Net:Convolutional  Networks for Image segmentation",
-      "Introduction to autoencoders and reecurrent neural network(RNN)"
+"Introduction to MySQL and phpMyAdmin",
+"Connecting to MySQL using mysqli or PDO",
+"Performing queries: SELECT, INSERT, UPDATE, DELETE",
+"Displaying data from database",
+"Prepared statements (for security)",
+"Error handling",
+"Database CRUD operations",
+"Using JOINs in PHP queries"
     ],
     notes:"notes.pdf"
   },
   {
     id: 7,
-    title: 'Connnetivity and their uses!',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Advanced PHP Concepts',
+    description: 'Advanced concepts in PHP',
+    details: '',
+    
     chapters: [
-      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
-      "U-Net:Convolutional  Networks for Image segmentation",
-      "Introduction to autoencoders and reecurrent neural network(RNN)"
+"Sessions and Cookies:",
+"session_start(), $_SESSION, setcookie(), $_COOKIE",
+"PHP OOP (Object-Oriented Programming):",
+"Classes and objects",
+"Constructors and destructors",
+"Inheritance and visibility",
+"Interfaces and traits",
+"PHP and JSON",
+"PHP and APIs (RESTful)",
+"Sending emails using mail(), PHPMailer",
+"Introduction to Composer (PHP package manager)",
+"Introduction to MVC frameworks (e.g., Laravel basics)"
     ],
     notes:"notes.pdf"
   },
@@ -126,16 +131,19 @@ const syllabusData = [
     description: 'Additional resources for further learning',
     details: 'Links to official documentation, tutorials, and community resources.',
     chapters: [
-      "MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/CSS",
-      "CSS Tricks: https://css-tricks.com/",
-      "W3Schools CSS Tutorial: https://www.w3schools.com/css/",
-      "FreeCodeCamp CSS Course: https://www.freecodecamp.org/learn/responsive-web-design/basic-css/"
+        "PHP Documentation",
+        "Online Tutorials (W3Schools, PHP.net, etc.)",
+        "Books (PHP: The Right Way)",
+        "Community Forums (Stack Overflow, Reddit)"
     ],
     url:[
-      "https://developer.mozilla.org/en-US/docs/Web/CSS",
-      "https://css-tricks.com/",
-      "https://www.w3schools.com/css/",
-      "https://www.freecodecamp.org/learn/responsive-web-design/basic-css/"
+        "https://www.php.net/docs.php",
+        "https://www.w3schools.com/php/",
+        "https://www.tutorialspoint.com/php/index.htm",
+        "https://www.geeksforgeeks.org/php-tutorials/",
+        "https://www.freecodecamp.org/news/learn-php-with-these-free-resources/",
+        "https://www.phptherightway.com/",
+        "https://www.php.net/manual/en/index.php"
     ]
   }
 ];
@@ -257,8 +265,8 @@ const Syllabus = () => {
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li><Link to="/Css">Syllabus</Link></li>
-            <li><Link to="/Cssassign">Assignments</Link></li>
+            <li><Link to="/Php">Syllabus</Link></li>
+            <li><Link to="/Phpassign">Assignment</Link></li>
           
           </ul>
         </aside>

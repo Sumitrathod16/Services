@@ -255,7 +255,7 @@ const Aiassign = () => {
           ></div>
         </div>
         <div className="timer">
-          <span>⏱️ Remaining</span> | <span>700 oim</span>
+          <span>⏱️ Remaining</span> | <span>20min</span>
         </div>
       </div>
 
