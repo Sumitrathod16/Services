@@ -1,6 +1,4 @@
-// LoginForm.js
 import React, { useState } from 'react';
-
 const LoginForm = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -13,7 +11,7 @@ const LoginForm = () => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
-    });
+    }); 
   };
 
   const validate = () => {
@@ -32,17 +30,33 @@ const LoginForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
 
     if (validate()) {
-      alert('Login successful!');
-      setFormData({ email: '', password: '' });
-      setErrors({});
-      // You can also call an API here
-    }
-  };
+       try {
+      const res = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
+      const data = await res.json();
+
+      if (res.ok) {
+        alert(data.message); 
+      } else {
+        alert(data.message); 
+      }
+    } catch (err) {
+      console.error('Error:', err);
+      alert('Something went wrong. Try again.');
+    }
+  }
+  };
+  
   return (
     <div style={styles.container}>
       <form onSubmit={handleSubmit} style={styles.form}>
