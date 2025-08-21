@@ -1,7 +1,6 @@
 import React from 'react';            
 import { Link } from 'react-router-dom';
-import './Navbar.css'; // Assuming you have a CSS file for styling
-import CompanyIcon from '../assets/logo.svg'; // Adjust the path to your logo
+import CompanyIcon from '../assets/qlogo.svg'; // Adjust the path to your logo
 
 
 function Navbar() {
@@ -21,7 +20,7 @@ nav {
   background-color:black;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content:space evenly;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -59,6 +58,7 @@ nav ul li a.active {
   width:70px;
   pointer-events: none;
   margin-right:65rem;
+  
 }
 
 .login-button{

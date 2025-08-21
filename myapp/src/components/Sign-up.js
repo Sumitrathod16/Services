@@ -15,7 +15,8 @@ function Signin() {
     });
 
     const [errors, setErrors] = useState({});
-  
+    const [message, setMessage] = useState('');
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
@@ -41,16 +42,47 @@ function Signin() {
         return newErrors;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const validationErrors = validate();
+
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
         } else {
             setErrors({});
-            // Simulate API call
-            console.log("Form Data Submitted:", formData);
-            alert("Form submitted successfully!");
+            try {
+                const res = await fetch('http://localhost:3000/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await res.json();
+                setMessage(data.message);
+
+                if (res.ok) {
+                    alert("Registered successfully!");
+                    setFormData({
+                        name: '',
+                        mobile: '',
+                        email: '',
+                        password: '',
+                        confirmPassword: '',
+                        address: '',
+                        city: '',
+                        state: '',
+                        country: '',
+                        pincode: ''
+                    });
+                } else {
+                    alert(data.message || 'Registration failed');
+                }
+
+            } catch (err) {
+                console.error('Error:', err);
+                setMessage('Something went wrong');
+                alert('Something went wrong while registering.');
+            }
         }
     };
 
@@ -58,71 +90,74 @@ function Signin() {
         <>
             <style>
                 {`
-                    .signin-container {
-                        max-width: 400px;
-                        margin: 60px auto;
-                        padding: 2rem;
-                        background: white;
-                        border-radius: 8px;
-                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                        text-align: center;
-                    }
+                .signin-container {
+                    max-width: 500px;
+                    margin: 50px auto;
+                    padding: 30px;
+                    background: #f5f5f5;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                }
 
-                    .signin-title {
-                        margin-bottom: 1rem;
-                        color: #222;
-                    }
+                .signin-title {
+                    font-size: 28px;
+                    margin-bottom: 10px;
+                    text-align: center;
+                    color: #333;
+                }
 
-                    .signin-desc {
-                        margin-bottom: 1.5rem;
-                        color: #555;
-                    }
+                .signin-desc {
+                    font-size: 16px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    color: #666;
+                }
 
-                    .signin-form {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1rem;
-                        text-align: left;
-                    }
+                .signin-form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
 
-                    .signin-input {
-                        padding: 0.7rem;
-                        border: 1px solid #ccc;
-                        border-radius: 4px;
-                        font-size: 1rem;
-                    }
+                .signin-input {
+                    padding: 10px;
+                    font-size: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 6px;
+                }
 
-                    .signin-btn {
-                        padding: 0.7rem;
-                        background: #6361f1;
-                        color: #fff;
-                        border: none;
-                        border-radius: 4px;
-                        font-size: 1rem;
-                        cursor: pointer;
-                    }
+                .signin-btn {
+                    padding: 12px;
+                    font-size: 16px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
 
-                    .signin-btn:hover {
-                        background: #0056b3;
-                    }
+                .signin-btn:hover {
+                    background-color: #0056b3;
+                }
 
-                    .error {
-                        color: red;
-                        font-size: 0.85rem;
-                        margin-top: -0.5rem;
-                        margin-bottom: 0.5rem;
-                    }
-                `}
-            </style>
+                .error {
+                    color: red;
+                    font-size: 0.85rem;
+                    margin-top: -10px;
+                    margin-bottom: 10px;
+                }
+            `}</style>
 
             <div className="signin-container">
                 <h1 className="signin-title">Sign In</h1>
                 <p className="signin-desc">Please sign in to continue.</p>
+
                 <form className="signin-form" onSubmit={handleSubmit}>
                     <input className="signin-input" type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange} />
                     {errors.name && <div className="error">{errors.name}</div>}
 
-                    <input className="signin-input" type="number" placeholder="Mobile Number" name="mobile" value={formData.mobile} onChange={handleChange} />
+                    <input className="signin-input" type="tel" placeholder="Mobile Number" name="mobile" value={formData.mobile} onChange={handleChange} />
                     {errors.mobile && <div className="error">{errors.mobile}</div>}
 
                     <input className="signin-input" type="email" placeholder="Email" name="email" value={formData.email} onChange={handleChange} />
@@ -151,6 +186,8 @@ function Signin() {
 
                     <button className="signin-btn" type="submit">Sign In</button>
                 </form>
+
+                {message && <p style={{ color: 'green', marginTop: '1rem', textAlign: 'center' }}>{message}</p>}
             </div>
         </>
     );
