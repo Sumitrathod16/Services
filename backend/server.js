@@ -96,7 +96,7 @@ app.post('/register', async (req, res) => {
       res.status(200).json({ message: 'Login successful', user: { name: user.name, email: user.email } });
     } catch (err) {
       console.error('Error logging in:', err);
-      res.status(500).json({ message: 'Server error. Please try again later.' });
+      res.status(500).json({ message: 'Invalid User!! Please try again later.' });
     }
   });
 app.listen(PORT, () => {
