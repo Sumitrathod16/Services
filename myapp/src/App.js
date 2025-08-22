@@ -7,7 +7,7 @@ import Documentation from './components/Documentation';
 import Support from './components/Support';
 import Home from './components/Home';
 import Features from './components/Features';
-import Signin from './components/Sign-up'; // Assuming you have a Signin component
+import Signin from './components/Sign-up';
 import Footer from './components/Footer';
 import About from './components/About'; // Importing the About component
 import Careers from './Careers'; // Importing the Careers component
@@ -69,10 +69,17 @@ import Phpassign from './components/Phpassign';
 function App() {
   return (
     <Router>
-     <Navbar />
-      
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signin />} />
+        {/* All other routes with Navbar and Footer */}
+        <Route
+          path="*"
+          element={
+            <>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Home />} />
         <Route path="/Documentation" element={<Documentation />} />
         <Route path="/Support" element={<Support />} />
         <Route path="/login" element={<Login />} />
@@ -135,10 +142,12 @@ function App() {
         <Route path="/Cassign" element={<Cassign/>}/>
         <Route path="/Cppassign" element={<Cppassign/>}/>
         <Route path="/Phpassign" element={<Phpassign/>}/>
-
-
-        </Routes>
-        <Footer/>
+              </Routes>
+              <Footer />
+            </>
+          }
+        />
+      </Routes>
     </Router>
     
       
