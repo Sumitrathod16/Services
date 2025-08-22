@@ -113,15 +113,15 @@ function Exclusive() {
             <div className="container1">
 
                 <img src={Seo} alt="SEO" className="tech-logo" />
-                <h1>Bootstrap 5.x framework</h1>
-                <p>Build it on the latest bootstrap version for responsive,mobile-first and consistent design.</p>
+                <h1>Notes & resources</h1>
+                <p>We provide you the notes and resources for studying</p>
                 
 
             </div>
             <div className="container2">
                 <img src={Code} alt="Code" className="tech-logo" />
-                <h1> Crafted Code Excellence</h1>
-                <p>Clean,well-organized and developer-friendly code that's easy to customize and scale</p>                
+                <h1> Near about 100 programs</h1>
+                <p>Clean,well-organized code and developer-friendly code that's easy to customize and scale</p>                
             </div>
         <div className="container3">
                 <img src={bootstrap} alt="Bootstrap" className="tech-logo" />

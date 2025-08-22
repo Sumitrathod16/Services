@@ -164,10 +164,17 @@ body {
             .card-tags ul li a {
             color: var(--color-gray-700);
             text-decoration: none;
+            font-weight: 600;
         }
             .card-tags ul li a:hover {
             text-decoration: underline;
             color: var(--color-blue-600);
+            background-color: red;
+            border-radius: 0.25rem; /* 4px */
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+
         }
 
         /* Explore Link */
@@ -381,7 +388,7 @@ body {
                     <h3 className="card-title">Base languages</h3>
                     <div className="card-tags">
                     <ul>
-                        <li> <Link to="/">C</Link></li>
+                        <li> <Link to="/C">C</Link></li>
                         <li> <Link to="/C++">C++</Link></li>
                         <li> <Link to="/Php">PHP</Link></li>
                     </ul>

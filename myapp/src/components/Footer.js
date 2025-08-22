@@ -92,11 +92,11 @@ function Footer()
         <div className="Footer">
            <div className="footer-container1">
                 <ul>
-                    <h3>Company.</h3>
+                    <h3>Company</h3>
                     <li><Link to="/About">About</Link></li>
                     <li><Link to="/Careers">Careers</Link></li>
                     <li><Link to="/Press">Press</Link></li>
-                    <li><Link to="/Affilates">Affilates</Link></li>
+                    <li><Link to="/Affiliates">Affilates</Link></li>
                 </ul>
             </div>
             <div className="footer-container1">
@@ -118,9 +118,9 @@ function Footer()
             <div className="footer-container1">
                 <ul>
                     <h3>Legal</h3>
-                    <li><Link to="/">Privacy Policy</Link></li>
-                    <li><Link to="/">Terms of Service</Link></li>
-                    <li><Link to="/">Cookie Policy</Link></li>
+                    <li><Link to="/Privacy">Privacy Policy</Link></li>
+                    <li><Link to="/Terms">Terms of Service</Link></li>
+                    <li><Link to="/Cookie">Cookie Policy</Link></li>
                 </ul>
             </div>
             <div className="Box1">

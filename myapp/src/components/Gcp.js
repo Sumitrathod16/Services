@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'Core Cloud Services & Infrastructure',
     description: 'Fundamental concepts of deep learning and its applications',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+  
     chapters: [
       "Compute Services",
       "Compute Engine (VMs)",
@@ -34,7 +34,7 @@ const syllabusData = [
     title: '. Identity, Security & Governance',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+  
     chapters: [
       "IAM (Identity and Access Management)",
       "Service Accounts & Roles",
@@ -57,7 +57,7 @@ const syllabusData = [
     title: ' Data, AI & Machine Learning',
     description: 'Exploring multi-layered neural networks and their power',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+  
     chapters: [
     "Data Management",
     "BigQuery (Data warehouse)",
@@ -82,7 +82,7 @@ const syllabusData = [
     title: ' Developer Tools & DevOps',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
   "Development Tools",
    "Cloud SDK / gcloud CLI",
@@ -281,7 +281,7 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{marginLeft:"20px", marginTop: "10px" }}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((link, idx) => (
@@ -290,7 +290,7 @@ const Syllabus = () => {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                            style={{ color: "#4f46e5", textDecoration: "none" }}
                           >
                             {link}
                           </a>

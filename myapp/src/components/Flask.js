@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'Flask Basics & App structure ',
     description: '',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+    
     chapters: [
       "What is Flask",
       "Setting up Flask",
@@ -20,7 +20,7 @@ notes:"notes.pdf"
     title: 'Routing & views',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+
     chapters: [
      "Routing",
      "HTTP methods",
@@ -34,7 +34,7 @@ notes:"notes.pdf"
     title: 'Templates & Static Files',
     description: '',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+    
     chapters: [
 "Jinja2 templating",
 "Template inheritance",
@@ -48,7 +48,7 @@ notes:"notes.pdf"
     title: 'Forms & User Input',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
       "HTML Forms handling",
       "Form validations",
@@ -62,7 +62,7 @@ notes:"notes.pdf"
     title: 'Databases & ORM',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
        "Flask-SQLAlchemy",
        "Migrations",
@@ -77,7 +77,7 @@ notes:"notes.pdf"
     title: 'Blueprints & Modularization',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
       "Blueprints",
       "Registering blueprints",
@@ -90,7 +90,7 @@ notes:"notes.pdf"
     id: 7,
     title: 'Authentication , APIs & deployment',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
        "User Authentication",
        "REST APIs",
@@ -281,7 +281,7 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style ={{marginTop: "10px"}}>
+                  <div style ={{marginLeft:"20px",marginTop: "10px"}}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((link, idx)=>(
@@ -289,7 +289,7 @@ const Syllabus = () => {
                           <a href={link} 
                           target="_blank" 
                           rel="noopener noreferrer" 
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}>
+                          style={{ color: "#4f46e5", textDecoration: "none" }}>
                             {link}
                             </a>
                         </li>

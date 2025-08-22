@@ -7,14 +7,18 @@ import Documentation from './components/Documentation';
 import Support from './components/Support';
 import Home from './components/Home';
 import Features from './components/Features';
-import Signin from './components/Sign-in'; // Assuming you have a Signin component
+import Signin from './components/Sign-up'; // Assuming you have a Signin component
 import Footer from './components/Footer';
 import About from './components/About'; // Importing the About component
 import Careers from './Careers'; // Importing the Careers component
 import Press from './Press'; // Importing the Press component  
+import Affiliates from './components/Affiliates';
 import Blog from './Blog';
 import Study from './Study'; // Importing the Study component
-import Practice from './Practice'; // Importing the Practice component
+import Practice from './Practice';// Importing the Practice component
+import Privacy from './Privacy';
+import Terms from './Terms';
+import Cookie from './Cookie';
 import Html from './components/Html';
 import CSS from './components/Css';
 import Javascript from './components/Javascript';
@@ -34,6 +38,9 @@ import Hibernate from './components/Hibernate';
 import ML from './components/Ml';
 import Dl from './components/Dl';
 import AI from './components/Ai';
+import C from './components/C';
+import Cpp from './components/C++';
+import Php from './components/Php';
 import Projects from './components/Projects';
 import Portfolio from './components/Portfolio';
 import FAQ from './components/FAQ';
@@ -56,6 +63,9 @@ import Mongodbassign from './components/Mongodbassign';
 import Awsassign from './components/Awsassign';
 import Azureassign from './components/Azureassign';
 import Gcpassign from './components/Gcpassign';
+import Cassign from './components/Cassign';
+import Cppassign from './components/Cppassign';
+import Phpassign from './components/Phpassign';
 function App() {
   return (
     <Router>
@@ -67,13 +77,17 @@ function App() {
         <Route path="/Support" element={<Support />} />
         <Route path="/login" element={<Login />} />
         <Route path="/features" element={<Features />} />
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<Signin />} />
         <Route path="/About" element={<About />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/press" element={<Press />} />
+        <Route path="/Affiliates" element={<Affiliates/>}/>
         <Route path="/blog" element={<Blog />} />
         <Route path="/Study" element={<Study/>} />
         <Route path="/Practice" element={<Practice/>} />
+        <Route path="/Privacy" element={<Privacy/>}/>
+        <Route path="/Terms" element={<Terms/>}/>
+        <Route path="/Cookie" element={<Cookie/>}/>
         <Route path="/Html" element={<Html/>}/>
         <Route path="/Css" element={<CSS/>}/>
         <Route path="/Javascript" element={<Javascript/>}/>
@@ -93,6 +107,9 @@ function App() {
         <Route path="/Ml" element={<ML/>}/>
         <Route path="/Dl" element={<Dl/>}/>
         <Route path="/Ai" element={<AI/>}/>
+        <Route path="/C" element={<C/>}/>
+        <Route path="/C++" element={<Cpp/>}/>
+        <Route path="/Php" element={<Php/>}/>
         <Route path="/Projects" element={<Projects/>}/>
         <Route path="/Portfolio" element={<Portfolio/>}/>
         <Route path="/FAQ" element={<FAQ/>}/>
@@ -115,6 +132,10 @@ function App() {
         <Route path="/Awsassign" element={<Awsassign/>}/>
         <Route path="/Azureassign" element={<Azureassign/>}/>
         <Route path="/Gcpassign" element={<Gcpassign/>}/>
+        <Route path="/Cassign" element={<Cassign/>}/>
+        <Route path="/Cppassign" element={<Cppassign/>}/>
+        <Route path="/Phpassign" element={<Phpassign/>}/>
+
 
         </Routes>
         <Footer/>

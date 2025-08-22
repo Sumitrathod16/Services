@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'Introduction to Javascript',
     description: 'Fundamental concepts of deep learning and its applications',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+    
     chapters: [
     "What is JavaScript? (History, usage, role in web dev)",
      "Embedding JavaScript in HTML (<script> tag)",
@@ -29,7 +29,7 @@ const syllabusData = [
     title: 'Control Structures & Functions',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+    
     chapters: [
       "Conditionals:",
           
@@ -60,7 +60,7 @@ const syllabusData = [
     title: 'Introduction to Javascript Libraries',
     description: 'Exploring multi-layered neural networks and their power',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+  
     chapters: [
       "Objects and Object Literals",
       "this in objects",
@@ -77,7 +77,7 @@ const syllabusData = [
     title: 'Recent trends in Javascript and its uses',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
       "DOM (Document Object Model)",
       "Selecting elements: getElementById, querySelecto",
@@ -100,7 +100,7 @@ const syllabusData = [
     title: ' ES6+ and Modern JavaScript',
     description: 'Latest advancements and future directions of the field',
     details: 'You will learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
      "Let & Const (Block Scoping)",
      "Arrow Functions",
@@ -302,7 +302,7 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{ marginLeft:"20px",marginTop: "10px" }}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((link, idx) => (
@@ -311,7 +311,7 @@ const Syllabus = () => {
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                            style={{ color: "#4f46e5", textDecoration: "none" }}
                           >
                             {link}
                           </a>

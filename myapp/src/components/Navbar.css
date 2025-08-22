@@ -43,6 +43,17 @@ nav ul li a.active {
   background: red;
   color: #fff;
 }
+.logo{
+  height:60px;
+  width:70px;
+  pointer-events: none;
+  margin-right:65rem;
+}
+.logoI{
+  
+}
+
+
 .login-button{
   background-color:red;
   padding: 10px 20px;

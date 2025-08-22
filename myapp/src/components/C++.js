@@ -3,120 +3,107 @@ import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
-    title: 'Introduction to Deep-Designing',
-    description: 'Fundamental concepts of deep learning and its applications',
+    title: 'Basics of C++ Programming',
+    description: 'Fundamental concepts of C++ and its applications',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-  
+    
     chapters: [
-      "What is CSS?",
-      "Benefits of CSS",
-      "Types of CSS:",
-      "Inline CSS",
-      "Internal CSS",
-      "External CSS",
-     " CSS Syntax and Rules",
-      "CSS Comments"
+      "History & features of C++",
+      "Structure of a C++ program",
+      "Keywords, identifiers",
+      "Variables and constants",
+      "Data types & type modifiers",
+      "Input/output:cin, cout, endl",
+      "Type casting",
+      "Header files and namespaces (std)"
     ],
     notes:"notes.pdf"
   },
   {
     id: 2,
-    title: ' Text and Font Styling',
-    description: 'Understanding the architecture and function of ANNs',
-    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-  
+    title: 'Operators & Control Statements',
+    description: 'Understanding the operators and control statements in C++',
+    details: '',
+    
     chapters: [
-      "Font families and font stacks", 
-      "Font size, weight, and style",
-      "Line height and letter spacing",
-      "Text alignment",
-      "Text decoration",
-      "Text transform",
-      "Word and letter spacing",
-      "Google Fonts"
+      "Arithmetic, relational, logical, assignment operators",
+      "Bitwise, increment/decrement, conditional operators",
+      "Operator precedence & associativity",
+      "Decision making: if, if-else, else-if, switch",
+      "Loops: for, while, do-while",
+      "Jumping statements:break, continue, goto, return"
     ],
     notes:"notes.pdf"
   },
   {
     id: 3,
-    title: 'Box Model & Layout Basics',
-    description: 'Exploring multi-layered neural networks and their power',
+    title: 'Functions and Storage Classes',
+    description: '',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-
+  
     chapters: [
-     "Box Model (content, padding, border, margin)",
-     "Width, height, and box-sizing",
-     "overflow, visibility, and z-index",
-     "display values (block, inline, inline-block, none)",
-     "Positioning:",
-     "static, relative, absolute, fixed, sticky,",
-     "top, right, bottom, left"
+     "Function definition, declaration, and call",
+     "Function overloading",
+     "Default arguments",
+     "Inline functions",
+     "Recursion",
+     "Scope rules",
+     "Storage classes: auto, static, register, extern"
     ],
     notes:"notes.pdf"
   },
   {
     id: 4,
-    title: 'Responsive Design & Media',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Object-Oriented Programming Concepts',
+    description: 'Understanding OOP in C++',
+    details: '',
   
     chapters: [
-     "Viewport and mobile-first approach",
-     "Media Queries (syntax, breakpoints)",
-     "Responsive units: %, em, rem, vh, vw",
-     "Responsive typography and images",
-     "Layout strategies (fluid, adaptive, responsive)" 
+     "Classes and Objects Data members and member functions Access specifiers: public, private, protected this pointer",
+    "Constructors and Destructors Default, parameterized, copy constructors Constructor overloading Destructor basics",
+     "Inheritance Types: single, multiple, multilevel, hierarchical, hybrid ,protected access specifier,Constructor behavior in inheritance",
+     "Polymorphism Function overriding Virtual functions Runtime polymorphism Abstract classes virtual and pure virtual functions"
     ],
     notes:"notes.pdf"
   },
   {
     id: 5,
-    title: 'Advanced CSS Features & Best Practices',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Arrays Strings and Pointers',
+    description: 'Understanding Arrays, Strings, and Pointers in C++',
+    details: '',
     
     chapters: [
-     "Transitions and Animations:",
-     "transition, @keyframes, animation properties",
-     "CSS Variables (Custom Properties)",
-     "CSS Functions: calc(), clamp(), var(), min(), max()",
-     "CSS architecture:",
-     "BEM methodology",
-     "DRY and reusable CSS",
-     "Preprocessors (SASS/SCSS) – optional",
-     "Best practices:",
-     "Performance optimization",
-     "File organization",
-     "Writing maintainable CSS",
-     "Modern CSS:",
-     "Subgrid",
-     "Container queries",
-     "Logical properties",
-     "New selectors (:has, :is)"  
+     "One and multi-dimensional arrays",
+     "Array of objects",
+     "String handling (C-style and std::string)",
+     "Pointers: Basic pointer concepts Pointers and arrays Pointers to objects this pointer",
+     "Dynamic memory: new, delete operators, Dynamic arrays"
     ],
     notes:"notes.pdf"
   },
   {
     id: 6,
-    title: 'Connnetivity and their uses!',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Operator overloading and Templates',
+    description:' Operator Overloading and Templates in C++',
+    details: '',
+  
     chapters: [
-      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
-      "U-Net:Convolutional  Networks for Image segmentation",
-      "Introduction to autoencoders and reecurrent neural network(RNN)"
-    ],
+      
+      "Operator overloading: Overloading unary & binary operators,Overloading using member and friend functions",
+      "Function templates :Class templates,Template specialization"
+        ],
     notes:"notes.pdf"
   },
   {
     id: 7,
-    title: 'Connnetivity and their uses!',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'File Handling and Exception Handling',
+    description: 'File Handling and Exception Handling in C++',
+    details: '',
+  
     chapters: [
-      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
-      "U-Net:Convolutional  Networks for Image segmentation",
-      "Introduction to autoencoders and reecurrent neural network(RNN)"
+"File Handling File streams: ifstream, ofstream, fstream, Opening, reading, writing, closing files File modes (ios::in, ios::out, etc.)",
+"Exception Handling Try, catch, throw Multiple catch block Catching all exceptions",
+"Standard Template Library (STL) ,Containers: vector, list, deque, stack, queue, map, set, Iterators Algorithms: sort(), find(), etc.Function objects & Lambda expressions"
     ],
     notes:"notes.pdf"
   },
@@ -126,16 +113,19 @@ const syllabusData = [
     description: 'Additional resources for further learning',
     details: 'Links to official documentation, tutorials, and community resources.',
     chapters: [
-      "MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/CSS",
-      "CSS Tricks: https://css-tricks.com/",
-      "W3Schools CSS Tutorial: https://www.w3schools.com/css/",
-      "FreeCodeCamp CSS Course: https://www.freecodecamp.org/learn/responsive-web-design/basic-css/"
+        "C++ Programming Documentation",
+        "Online Tutorials (GeeksforGeeks, W3Schools, etc.)",
+        "Books (The C++ Programming Language by Bjarne Stroustrup)",
+        "Community Forums (Stack Overflow, Reddit)"
     ],
     url:[
-      "https://developer.mozilla.org/en-US/docs/Web/CSS",
-      "https://css-tricks.com/",
-      "https://www.w3schools.com/css/",
-      "https://www.freecodecamp.org/learn/responsive-web-design/basic-css/"
+        "https://www.learncpp.com/",
+        "https://www.tutorialspoint.com/cplusplus/index.htm",
+        "https://www.geeksforgeeks.org/c-plus-plus/",
+        "https://www.cplusplus.com/",
+        "https://www.learn-cpp.org/",
+        "https://www.freecodecamp.org/news/learn-c-plus-plus-with-these-free-resources/",
+        "https://www.cprogramming.com/tutorial/c++-tutorial.html"
     ]
   }
 ];
@@ -257,8 +247,8 @@ const Syllabus = () => {
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li><Link to="/Css">Syllabus</Link></li>
-            <li><Link to="/Cssassign">Assignments</Link></li>
+            <li><Link to="/C++">Syllabus</Link></li>
+            <li><Link to="/Cppassign">Assignments</Link></li>
           
           </ul>
         </aside>

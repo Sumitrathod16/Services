@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'AWS Fundamentals',
     description: 'Fundamental concepts of  learning and its applications',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+  
     chapters: [
     "What is AWS? Why use it?",
     "Cloud Computing Models:",
@@ -29,7 +29,7 @@ const syllabusData = [
     title: ' Compute, Storage & Networking',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+    
     chapters: [
       "EC2 (Elastic Compute Cloud):",
       "Launching, connecting via SSH, AMIs",
@@ -59,7 +59,7 @@ const syllabusData = [
     title: ' Databases & Serverless',
     description: 'Exploring multi-layered neural networks and their power',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+    
     chapters: [
    "RDS (Relational Database Service)",
     "MySQL, PostgreSQL, Aurora, etc.",
@@ -84,7 +84,7 @@ const syllabusData = [
     title: 'DevOps, Monitoring & Security',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
     "CloudFormation (Infrastructure as Code)",
     "AWS CDK or Terraform (optional advanced) ",
@@ -105,6 +105,7 @@ const syllabusData = [
     title:'Sources',
     description: 'Resources for further learning',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+
     chapters:[
       "AWS Documentation",
       "AWS Training and Certification",
@@ -282,7 +283,7 @@ const Syllabus = () => {
                     )}
                     {/* Show URLs if present */}
                     {item.url && Array.isArray(item.url) && (
-                      <div style={{ marginTop: "10px" }}>
+                      <div style={{ marginLeft:"20px",marginTop: "10px" }}>
                         <strong>Useful Links:</strong>
                         <ul>
                           {item.url.map((link, idx) => (
@@ -291,7 +292,7 @@ const Syllabus = () => {
                                 href={link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                style={{ color: "#4f46e5", textDecoration: "underline" }}
+                                style={{ color: "#4f46e5", textDecoration: "none" }}
                               >
                                 {link}
                               </a>

@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'Introduction to Django',
     description: '',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+  
     chapters: [
   "Understanding web development frameworks",
      "Introduction to Django and its features",
@@ -20,7 +20,7 @@ notes:"notes.pdf"
     title: 'Django model and Database integration',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+  
     chapters: [
      "Variables",
       "Keywords",
@@ -37,7 +37,7 @@ notes:"notes.pdf"
     title: 'Views and Templates',
     description: '',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+    
     chapters: [
 
         "Building views to handle HTTP requests",
@@ -55,7 +55,7 @@ notes:"notes.pdf"
     title: 'Django Forms',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
       "Creating HTML forms in Django",
       "Form validation and handling form submissions",
@@ -71,7 +71,7 @@ notes:"notes.pdf"
     title: 'Django admin and panel',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
        "Utilizing the Django admin interface for content management",
       "Customizing the admin panel for specific models",
@@ -85,7 +85,7 @@ notes:"notes.pdf"
     title: 'Authentication and Authorization',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
       "Implementing user authentication in Django",
           "Managing user sessions and passwords",
@@ -98,7 +98,7 @@ notes:"notes.pdf"
     id: 7,
     title: 'Django REST framework',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
        "Introduction to RESTful APIs",
        "Building APIs with Django REST Framework",
@@ -113,7 +113,7 @@ notes:"notes.pdf"
     title: 'Frontend itegration with Django',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
       "Integrating frontend frameworks (e.g., Bootstrap) with Django",
       "Using static files and media in Django projects",
@@ -128,7 +128,7 @@ notes:"notes.pdf"
     title: 'Testing and Debugging in Django',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
        "Writing unit tests for Django applications",
       "Debugging techniques and tools",
@@ -141,7 +141,7 @@ notes:"notes.pdf"
     title: 'Deployment and Scaling',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
        "Preparing a Django application for deployment",
       "Choosing a hosting platform (e.g., Heroku, AWS)",
@@ -157,7 +157,7 @@ notes:"notes.pdf"
     title: 'Advanced Topics',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
  "Signals and event handling in Django",
      "Building custom middleware",
@@ -348,7 +348,7 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{ marginLeft:"20px",marginTop: "10px" }}>
                     <strong>Useful Links:</strong>
                     <ul>
                     {item.url.map((url, idx) => (
@@ -358,7 +358,7 @@ const Syllabus = () => {
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{ color: "#4f46e5", textDecoration: "underline", display: 'block' }}
+                        style={{ color: "#4f46e5", textDecoration: "none", display: 'block' }}
                       >
                         {url}
                       </a>

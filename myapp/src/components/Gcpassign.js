@@ -256,7 +256,7 @@ const Gcpassign = () => {
           ></div>
         </div>
         <div className="timer">
-          <span>⏱️ Remaining</span> | <span>700 oim</span>
+          <span>⏱️ Remaining</span> | <span>20 min</span>
         </div>
       </div>
 

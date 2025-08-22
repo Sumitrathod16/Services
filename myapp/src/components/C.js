@@ -3,120 +3,114 @@ import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
-    title: 'Introduction to Deep-Designing',
-    description: 'Fundamental concepts of deep learning and its applications',
+    title: 'Basics of C Programming',
+    description: 'Fundamental concepts of C and its applications',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-  
+    
     chapters: [
-      "What is CSS?",
-      "Benefits of CSS",
-      "Types of CSS:",
-      "Inline CSS",
-      "Internal CSS",
-      "External CSS",
-     " CSS Syntax and Rules",
-      "CSS Comments"
+      "History & features of C",
+      "Structure of a C program",
+      "Keywords, identifiers",
+      "Variables and constants",
+       "Data types and type modifiers",
+        "Input/Output functions: printf(), scanf()",
+         "Comments in C",
+        "Compilation & execution process"
     ],
     notes:"notes.pdf"
   },
   {
     id: 2,
-    title: ' Text and Font Styling',
-    description: 'Understanding the architecture and function of ANNs',
-    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-  
+    title: ' Operators & Expressions',
+    description: 'Understanding the operators and expressions in C',
+    details: '',
+    
     chapters: [
-      "Font families and font stacks", 
-      "Font size, weight, and style",
-      "Line height and letter spacing",
-      "Text alignment",
-      "Text decoration",
-      "Text transform",
-      "Word and letter spacing",
-      "Google Fonts"
+      "Arithmetic operators",
+      "Relational operators",
+      "Logical operators",
+      "Bitwise operators",
+      "Assignment operators",
+      "Increment/Decrement operators",
+      "Conditional (Ternary) operator",
+      "Operator precedence and associativity",
+      "Type conversion (implicit & explicit)"
     ],
     notes:"notes.pdf"
   },
   {
     id: 3,
-    title: 'Box Model & Layout Basics',
-    description: 'Exploring multi-layered neural networks and their power',
-    details: 'This module explains how deep architectures differ and how to train them effectively.',
-
+    title: 'Control Statements',
+    description: 'Exploring Control Statements in C',
+    details: '',
+    
     chapters: [
-     "Box Model (content, padding, border, margin)",
-     "Width, height, and box-sizing",
-     "overflow, visibility, and z-index",
-     "display values (block, inline, inline-block, none)",
-     "Positioning:",
-     "static, relative, absolute, fixed, sticky,",
-     "top, right, bottom, left"
+     "Conditional statements:if, if-else, nested if, else-if ladder",
+     "switch-case",
+     "Looping statements:for, while, do-while",
+     "Jumping statements:break, continue, goto, return"
     ],
     notes:"notes.pdf"
   },
   {
     id: 4,
-    title: 'Responsive Design & Media',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-  
+    title: 'Functions in C',
+    description: 'Functions and their applications in C',
+    details: '',
     chapters: [
-     "Viewport and mobile-first approach",
-     "Media Queries (syntax, breakpoints)",
-     "Responsive units: %, em, rem, vh, vw",
-     "Responsive typography and images",
-     "Layout strategies (fluid, adaptive, responsive)" 
+     "Function declaration, definition, and call",
+     "Types of functions (with/without arguments & return values)",
+     "Recursion",
+     "Scope and lifetime of variables",
+     "Storage classes: auto, static, extern, register"
     ],
     notes:"notes.pdf"
   },
   {
     id: 5,
-    title: 'Advanced CSS Features & Best Practices',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Arrays and Strings',
+    description: 'Understanding Arrays and Strings in C',
+    details: '',
     
     chapters: [
-     "Transitions and Animations:",
-     "transition, @keyframes, animation properties",
-     "CSS Variables (Custom Properties)",
-     "CSS Functions: calc(), clamp(), var(), min(), max()",
-     "CSS architecture:",
-     "BEM methodology",
-     "DRY and reusable CSS",
-     "Preprocessors (SASS/SCSS) – optional",
-     "Best practices:",
-     "Performance optimization",
-     "File organization",
-     "Writing maintainable CSS",
-     "Modern CSS:",
-     "Subgrid",
-     "Container queries",
-     "Logical properties",
-     "New selectors (:has, :is)"  
+    "One-dimensional arrays",
+    "Two-dimensional arrays (matrices)",
+    "Multi-dimensional arrays",
+    "String handling:",
+      "Declaring & initializing strings :String I/O: gets(), puts(), scanf(), printf()String functions: strlen(), strcpy(), strcmp(), strcat(), etc."
     ],
     notes:"notes.pdf"
   },
   {
     id: 6,
-    title: 'Connnetivity and their uses!',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Pointers and Dynamic Memory Allocation',
+    description: 'Pointers and Memory Management in C',
+    details: '',
+  
     chapters: [
-      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
-      "U-Net:Convolutional  Networks for Image segmentation",
-      "Introduction to autoencoders and reecurrent neural network(RNN)"
+      "Basics of pointers",
+     "Pointer arithmetic",
+      "Pointers and arrays",
+       "Pointers and functions",
+        "Pointers to pointers",
+        "Dynamic memory allocation: malloc(), calloc(), realloc(), free()"
     ],
     notes:"notes.pdf"
   },
   {
     id: 7,
-    title: 'Connnetivity and their uses!',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Structures ,Unions and File Handling',
+    description: 'Structures, Unions, and File Handling in C',
+    details: '',
+    
     chapters: [
-      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
-      "U-Net:Convolutional  Networks for Image segmentation",
-      "Introduction to autoencoders and reecurrent neural network(RNN)"
+      "Structures:Declaration, initialization, accessing members",
+       "Arrays of structures",
+        "Nested structures",
+         "Structure with pointers",
+         "Unions",
+        "Enumerated types (enum)",
+      "File handling:File I/O functions: fopen(), fclose(), fgetc(), fputc(), fprintf(), fscanf(), etc.File modes (r, w, a, etc.)"
     ],
     notes:"notes.pdf"
   },
@@ -126,16 +120,15 @@ const syllabusData = [
     description: 'Additional resources for further learning',
     details: 'Links to official documentation, tutorials, and community resources.',
     chapters: [
-      "MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/CSS",
-      "CSS Tricks: https://css-tricks.com/",
-      "W3Schools CSS Tutorial: https://www.w3schools.com/css/",
-      "FreeCodeCamp CSS Course: https://www.freecodecamp.org/learn/responsive-web-design/basic-css/"
+        "C Programming Documentation",
+        "Online Tutorials (GeeksforGeeks, W3Schools, etc.)",
+        "Books (The C Programming Language by Kernighan and Ritchie)",
+        "Community Forums (Stack Overflow, Reddit)"
     ],
     url:[
-      "https://developer.mozilla.org/en-US/docs/Web/CSS",
-      "https://css-tricks.com/",
-      "https://www.w3schools.com/css/",
-      "https://www.freecodecamp.org/learn/responsive-web-design/basic-css/"
+        "https://www.learn-c.org/",
+        "https://www.tutorialspoint.com/c_standard_library/index.htm",
+        "https://www.geeksforgeeks.org/c-programming-language/"
     ]
   }
 ];
@@ -257,8 +250,8 @@ const Syllabus = () => {
         <aside className="sidebar">
           <h2>Syllabus</h2>
           <ul>
-            <li><Link to="/Css">Syllabus</Link></li>
-            <li><Link to="/Cssassign">Assignments</Link></li>
+            <li><Link to="/Clang">Syllabus</Link></li>
+            <li><Link to="/Cassign">Assignments</Link></li>
           
           </ul>
         </aside>

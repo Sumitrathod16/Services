@@ -6,7 +6,7 @@ const syllabusData = [
     title: ' Azure Core Services & Infrastructure',
     description: 'Fundamental concepts of deep learning and its applications',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+    
     chapters: [
     "Compute: Virtual Machines, App Services, Functions, Container Instances, AKS (Kubernetes)",
     "Networking: Virtual Network (VNet), Load Balancer, VPN Gateway, Azure DNS, Traffic Manager, Application Gateway",
@@ -20,7 +20,7 @@ const syllabusData = [
     title: 'Identity, Security & Governance',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+  
     chapters: [
       "Azure Active Directory (Azure AD): Identity management, Conditional Access, MFA",
       "Role-Based Access Control (RBAC), Policies, Blueprints",
@@ -34,7 +34,7 @@ const syllabusData = [
     title: ' Application Development & DevOps',
     description: 'Exploring multi-layered neural networks and their power',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+  
     chapters: [
     "App Services: Web Apps, API Apps, Logic Apps",
     "Serverless: Azure Functions, Event Grid, Service Bus",
@@ -48,7 +48,7 @@ const syllabusData = [
     title: ' Data, AI & Analytics',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+
     chapters: [
     "Data Services: Azure Synapse Analytics, Data Factory, Data Lake, Stream Analytics",
     "AI & Machine Learning: Azure Machine Learning, Cognitive Services, Bot Service",
@@ -238,7 +238,7 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{ marginTop: "10px" }}>
+                  <div style={{marginLeft:"20px", marginTop: "10px" }}>
                     <strong>Useful Links:</strong>
                     <ul>
                       {item.url.map((url, idx) => (
@@ -247,7 +247,7 @@ const Syllabus = () => {
                             href={url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{ color: "#4f46e5", textDecoration: "underline" }}
+                            style={{ color: "#4f46e5", textDecoration: "none" }}
                           >
                             {url}
                           </a>

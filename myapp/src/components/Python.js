@@ -6,7 +6,7 @@ const syllabusData = [
     title: 'Introduction to Python',
     description: '',
     details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    icon: '🧠',
+
     chapters: [
     "What is Python",
     "Features and application of Python",
@@ -20,7 +20,7 @@ notes:"notes.pdf"
     title: 'Variable,Keywords ,Data Types,and Identifiers',
     description: 'Understanding the architecture and function of ANNs',
     details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-    icon: '🔗',
+  
     chapters: [
      "Variables",
       "Keywords",
@@ -35,7 +35,7 @@ notes:"notes.pdf"
     title: 'Data Strucutres',
     description: '',
     details: 'This module explains how deep architectures differ and how to train them effectively.',
-    icon: '🧱',
+    
     chapters: [
    "Strings",
       "Lists",
@@ -50,7 +50,7 @@ notes:"notes.pdf"
     title: 'Operators in Python',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
        "Arithmetic Operators",
        "Logical Operators",
@@ -67,7 +67,7 @@ notes:"notes.pdf"
     title: 'Control Flow Statements',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
        "Conditional Statements(if, elif, else)",
        "Looping Statements(for,while)",
@@ -80,7 +80,7 @@ notes:"notes.pdf"
     title: 'Input and Output in python',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
        "input() function",
        "print() function and formatting"
@@ -92,7 +92,7 @@ notes:"notes.pdf"
     title: 'Functions',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+    
     chapters: [
        "Defining and calling functions",
        "Types of functions(Built-in,user-defined)",
@@ -108,7 +108,7 @@ notes:"notes.pdf"
     title: 'Object oriented programming in python',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
        "Classes and Objects",
        "__init__ Constructor",
@@ -126,7 +126,7 @@ notes:"notes.pdf"
     title: 'Exception Handling',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
        "try,except,else,finally",
        "Raising Exceptions(raise)",
@@ -142,7 +142,7 @@ notes:"notes.pdf"
     title: 'Python Comprehensions',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+
     chapters: [
       "List Comprehension",
       "Dictionary Comprehension",
@@ -155,7 +155,7 @@ notes:"notes.pdf"
     title: 'Decorators',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+  
     chapters: [
        "Decorators"
 ],
@@ -166,7 +166,7 @@ notes:"notes.pdf"
     title: 'Functional Programming tools',
     description: 'Latest advancements and future directions of the field',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-    icon: '📈',
+
     chapters: [
        "map()",
       "filter()",
@@ -355,12 +355,12 @@ const Syllabus = () => {
                   </div>
                 )}
                 {item.url && Array.isArray(item.url) && (
-                  <div style={{marginTop: "10px"}}>
+                  <div style={{marginLeft:"20px",marginTop: "10px"}}>
                     <strong>Useful Links:</strong>
                     <ul>
                 {item.url.map((link, idx) => (
                     <li key={idx}>
-                      <a href={link} target="_blank" rel="noopener noreferrer" style={{ color: "#4f46e5", textDecoration: "underline" }}>
+                      <a href={link} target="_blank" rel="noopener noreferrer" style={{ color: "#4f46e5", textDecoration: "none" }}>
                         {link}
                       </a>
                     </li>
