@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import CSS from "../assets/css.svg";
 import HTML from "../assets/html.svg";
@@ -64,6 +65,7 @@ function Main() {
                     cursor: pointer;
                     font-size: 1em;
                     margin-right: 10px;
+                    text-decoration: none;
                 }
                     .explore-button:hover {
                     background-color: darkred;
@@ -141,9 +143,8 @@ function Main() {
             
                 </div>
                 <div className="buttons">
-                <button className="explore-button">Explore More</button>
-                <button className="info-button">More Information</button>
-</div>
+                <Link to="/Explorepage" className="explore-button">Explore More</Link>
+                </div>
                 <div className="logo-container">
                     
                     <img src={SQL} alt="SQL" className="tech-logo" />
