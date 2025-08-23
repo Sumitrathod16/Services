@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
-import Navbar from './components/Navbar'; 
+import Navbar from './components/Navbar';
+import Explorepage from './components/ExplorePage'; 
 import Login from './components/Login';
 import Documentation from './components/Documentation';
 import Support from './components/Support';
@@ -79,9 +80,10 @@ function App() {
             <>
               <Navbar />
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/Home" element={<Home />} />
         <Route path="/Documentation" element={<Documentation />} />
         <Route path="/Support" element={<Support />} />
+        <Route path="/Explorepage" element={<Explorepage />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/features" element={<Features />} />
         <Route path="/signup" element={<Signin />} />

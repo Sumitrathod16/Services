@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const Login = () => {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -54,6 +56,7 @@ const Login = () => {
 
         if (res.ok) {
           alert(data.message || 'Login successful');
+          navigate('/Home'); // Redirect to dashboard on successful login
         } else {
           alert(data.message || 'Login failed');
         }
