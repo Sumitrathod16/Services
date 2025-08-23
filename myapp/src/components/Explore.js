@@ -169,7 +169,7 @@ body {
             .card-tags ul li a:hover {
             text-decoration: underline;
             color: var(--color-blue-600);
-            background-color: red;
+            background-color:  #e0e0e0;;
             border-radius: 0.25rem; /* 4px */
             cursor: pointer;
             transform: scale(1.05);
