@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 const Login = () => {
@@ -10,6 +10,7 @@ const Login = () => {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   // Replace with your actual Google Client ID
   const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID'; 
@@ -84,7 +85,7 @@ const Login = () => {
 
         if (res.ok) {
           alert(data.message || 'Login successful');
-          // Handle successful login
+          navigate('/'); // Redirect to home or dashboard on successful login
         } else {
           alert(data.message || 'Login failed');
         }
