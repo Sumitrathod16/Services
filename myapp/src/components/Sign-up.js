@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 function Signin() {
     const [formData, setFormData] = useState({
@@ -92,44 +93,48 @@ function Signin() {
                 {`
                 .signin-container {
                     max-width: 500px;
-                    margin: 50px auto;
-                    padding: 30px;
-                    background: #f5f5f5;
-                    border-radius: 10px;
+                    margin: 80px auto;
+                    padding: 32px;
+                    background: #fff;
+                    border-radius: 12px;
                     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                    font-family:'Segoe UI',sans-serif;
                 }
 
                 .signin-title {
-                    font-size: 28px;
-                    margin-bottom: 10px;
+                    font-size: 24px;
+                    font-weight:bold;
                     text-align: center;
-                    color: #333;
+                    margin-bottom:8px;
                 }
 
                 .signin-desc {
-                    font-size: 16px;
+                    font-size: 14px;
                     text-align: center;
-                    margin-bottom: 20px;
-                    color: #666;
+                    margin-bottom: 24px;
+                    color: #555;
                 }
 
                 .signin-form {
                     display: flex;
                     flex-direction: column;
-                    gap: 15px;
+                    gap: 16px;
                 }
 
                 .signin-input {
                     padding: 10px;
-                    font-size: 16px;
+                    font-size: 1em;
                     border: 1px solid #ccc;
-                    border-radius: 6px;
-                }
+                    border-radius: 8px;
+                    outline:none;
+                    }
+                    .signin-input focus{
+                    border-color:#4f46e5;
+                    }
 
                 .signin-btn {
-                    padding: 12px;
-                    font-size: 16px;
-                    background-color: #007bff;
+                    padding: 10px;
+                    background-color: #4f46e5;
                     color: white;
                     border: none;
                     border-radius: 6px;
@@ -138,15 +143,23 @@ function Signin() {
                 }
 
                 .signin-btn:hover {
-                    background-color: #0056b3;
+                    background-color: #4338ca;
                 }
 
                 .error {
                     color: red;
                     font-size: 0.85rem;
                     margin-top: -10px;
-                    margin-bottom: 10px;
+                    margin-bottom: 6px;
                 }
+                    .already{
+                    text-align:center;
+                }
+                    .already a{
+                    text-decoration:none;
+                    color:black;
+                    margin-left:5px;
+                    }
             `}</style>
 
             <div className="signin-container">
@@ -188,6 +201,9 @@ function Signin() {
                 </form>
 
                 {message && <p style={{ color: 'green', marginTop: '1rem', textAlign: 'center' }}>{message}</p>}
+                <div className="already">
+                    <p>Already have an account?<Link to="/login">Log-in</Link></p>
+                </div>
             </div>
         </>
     );
