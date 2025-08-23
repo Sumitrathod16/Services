@@ -20,8 +20,9 @@ nav {
   background-color:black;
   display: flex;
   align-items: center;
-  justify-content:space evenly;
+  justify-content:center;
   position: sticky;
+  padding:10px;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);

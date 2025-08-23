@@ -3,68 +3,93 @@ import { Link } from 'react-router-dom';
 const syllabusData = [
   {
     id: 1,
-    title: 'Introduction to Front-end Development',
-    description: 'Fundamental concepts of deep learning and its applications',
-    details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
+    title: 'Introduction to html',
+    description: 'Fundamental concepts of HTML',
+    details: '',
   
     chapters: [
-      "What is Deep learning?",
-      "Study of neural Networks",
+    "What is HTML and its role in web development",
+    "Structure of an HTML document",
+    "Basic tag:<html>,<head>,<body>",
+    "Headings(<h1>to<h6>), paragraphs(<p>),line breaks(<br>),horizontal rule(<hr>)",
+    "Comments in HTML"
     ],
     notes:"notes.pdf"
   },
   {
     id: 2,
-    title: 'Introduction to Tags and their uses!',
-    description: 'Understanding the architecture and function of ANNs',
-    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
+    title: 'Text Formatting & Links',
+    description: 'Understanding text formats and links',
+    details: '',
   
     chapters: [
-      "Artificial Neural Network for pattern classification"
+      "Bold,italic,underline (<b>,<i>,<u>,<strong>,<em>)",
+      "Superscript &  subscript(<sup>,<sub>)",
+      "Lists:ordered(<ol>), unordered(<ul>), description(<dl>)",
+      "Links (<a>): absolute and relative URLs, target attribute",
+      "Email and telephone links"
     ],
     notes:"notes.pdf"
   },
   {
     id: 3,
-    title: 'Introduction to Structures and their uses!',
-    description: 'Exploring multi-layered neural networks and their power',
-    details: 'This module explains how deep architectures differ and how to train them effectively.',
+    title: 'Images, Multimedia & Tables',
+    description: 'Exploring images, multimedia and tables in HTML',
+    details: '',
     
     chapters: [
-      "Introduction to deep learning and convolutional Neural network",
-      "Vanishing and Exploding Gradients in Deep Neural Network",
-      "CNN architectures-LeNet-5 and AlexNet",
-      "CNN architectures-VGG GoogleNet and ResNet"
+      "Adding images(<img> , attributes like src,alt,width,height)",
+      "Image maps",
+      "Embedding audio and video(<audio>,<video>",
+      "Tables (<table>, <tr>, <td>, <th>, colspan, rowspan, table stylling basics)"
     ],
     notes:"notes.pdf"
   },
   {
     id: 4,
-    title: 'Recent Trends in Front-end development',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Forms and Input elements',
+    description: 'Forms and input elements in HTML',
+    details: '',
     
     chapters: [
-      "Generative Aadversarial Networks(GAN)-Fundamentals and Applications",
-      "U-Net:Convolutional  Networks for Image segmentation",
-      "Introduction to autoencoders and reecurrent neural network(RNN)"
+      "Creating forms (<form>)",
+      "Input types (text, password, email, number, date, file, etc.)",
+      "Labels and placeholders",
+      "Dropdowns (<select>, <option>), checkboxes, radio buttons",
+      "Buttons (<button>, submit, reset)",
+      "Textarea for multiline input"
+    ],
+    notes:"notes.pdf"
+  },
+    {
+    id: 5,
+    title: 'Advanced HTML & Basic Practices',
+    description: 'Advanced topics in html',
+    details: '',
+    
+    chapters: [
+      "Semantic HTML tags (<header>, <nav>, <section>, <article>, <footer>)",
+      "HTML5 APIs (Canvas, Geolocation, Local Storage basics)",
+      "Meta tags (charset, viewport, description, keywords)",
+      "Iframes (<iframe>)",
+      "Accessibility (alt text, ARIA basics)",
+      "Best practices for clean and valid HTML"
     ],
     notes:"notes.pdf"
   },
   {
-    id: 5,
+    id: 6,
     title:"Sources",
     description: 'Additional resources for further learning',
     details: 'Links to online courses, books, and articles for deeper understanding.',
     chapters:[
       "Online Courses: Coursera, edX, Udacity",
-      "Books: 'Deep Learning' by Ian Goodfellow, 'Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow' by Aurélien Géron",
-      "Articles: Research papers on arXiv.org"
+       
     ],
     url :[
-      "https://www.coursera.org/specializations/deep-learning",
+      "https://www.coursera.org/specializations/html",
       "https://www.edx.org/professional-certificate/harvardx-data-science",
-      "https://www.udacity.com/course/deep-learning-nanodegree--nd101"
+      
     ]
   }
 ];
@@ -84,10 +109,12 @@ const Syllabus = () => {
           margin: 0;
           font-family: 'Segoe UI', sans-serif;
           background-color: #f3f4f6;
+          
         }
         .main-container {
           display: flex;
           height: 100vh;
+          position:sticky;
         }
         .sidebar {
           width: 220px;

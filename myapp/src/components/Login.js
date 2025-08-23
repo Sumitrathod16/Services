@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,9 @@ const Login = () => {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+
+  // Replace with your actual Google Client ID
+  const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID'; 
 
   const handleChange = (e) => {
     setFormData({
@@ -36,7 +41,32 @@ const Login = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleLogin = async (credentials) => {
+    try {
+      // You send the Google ID token to your backend for verification
+      const res = await fetch('http://localhost:3000/auth/google', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ token: credentials.credential })
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert(data.message || 'Google login successful');
+        // Handle successful login, e.g., redirect or save token
+      } else {
+        alert(data.message || 'Google login failed');
+      }
+    } catch (err) {
+      console.error('Error during Google login:', err);
+      alert('Something went wrong with Google login. Try again.');
+    }
+  };
+
+  const handleManualLogin = async (e) => {
     e.preventDefault();
     setSubmitted(true);
 
@@ -54,6 +84,7 @@ const Login = () => {
 
         if (res.ok) {
           alert(data.message || 'Login successful');
+          // Handle successful login
         } else {
           alert(data.message || 'Login failed');
         }
@@ -65,9 +96,8 @@ const Login = () => {
   };
 
   return (
-    <>
-     
-           <style>
+    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+      <style>
         {`
           .login-container {
             max-width: 360px;
@@ -131,12 +161,27 @@ const Login = () => {
             margin-top: -10px;
             margin-bottom: 6px;
           }
+          .account {
+            text-align: center;
+          }
+          .account a {
+            text-decoration: none;
+            color: black;
+            margin-left: 5px;
+          }
+
+          .google-btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            font:bold;
+          }
         `}
       </style>
       <div className="login-container">
         <h1 className="login-title">Login</h1>
-        <p className="login-desc">Please enter your credentials to continue.</p>
-        <form className="login-form" onSubmit={handleSubmit} noValidate>
+        <p className="login-desc">Please enter your credentials or use your Google account.</p>
+        <form className="login-form" onSubmit={handleManualLogin} noValidate>
           <input
             className="login-input"
             type="email"
@@ -159,8 +204,19 @@ const Login = () => {
 
           <button className="login-btn" type="submit">Login</button>
         </form>
+        <div className="google-btn-container">
+          <GoogleLogin
+            onSuccess={handleLogin}
+            onError={() => {
+              alert('Google login failed');
+            }}
+          />
+        </div>
+        <div className="account">
+          <p>Don't have an account?<Link to="/signup">Signup</Link></p>
+        </div>
       </div>
-    </>
+    </GoogleOAuthProvider>
   );
 };
 
