@@ -18,7 +18,7 @@ const Login = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value 
     });
   };
 
@@ -57,6 +57,7 @@ const Login = () => {
 
       if (res.ok) {
         alert(data.message || 'Google login successful');
+        //navigate('/'); // Redirect to main screen
         // Handle successful login, e.g., redirect or save token
       } else {
         alert(data.message || 'Google login failed');

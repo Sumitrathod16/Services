@@ -80,7 +80,7 @@ function App() {
             <>
               <Navbar />
               <Routes>
-                <Route path="/Home" element={<Home />} />
+                <Route path="/" element={<Home />} />
         <Route path="/Documentation" element={<Documentation />} />
         <Route path="/Support" element={<Support />} />
         <Route path="/Explorepage" element={<Explorepage />} /> 
