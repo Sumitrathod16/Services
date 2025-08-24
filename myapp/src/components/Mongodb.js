@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Syllabus.css';
 const syllabusData = [
   {
     id: 1,
@@ -139,110 +140,7 @@ const Syllabus = () => {
 
   return (
     <>
-      <style>
-        {`
-        body {
-          margin: 0;
-          font-family: 'Segoe UI', sans-serif;
-          background-color: #f3f4f6;
-        }
-        .main-container {
-          display: flex;
-          height: 100vh;
-        }
-        .sidebar {
-          width: 220px;
-          background-color: #1f1f1fff;
-          color: white;
-          padding: 1rem;
-        }
-        .sidebar h2 {
-          margin-bottom: 1rem;
-        }
-        .sidebar ul {
-          list-style: none;
-          padding: 0;
-        }
-        .sidebar li {
-          padding: 0.75rem 1rem;
-          border-radius: 8px;
-          cursor: pointer;
-          margin-bottom: 0.5rem;
-        }
-          .sidebar ul li a{
-          text-decoration:none;
-          color:white;
-          }
-        .sidebar li.active, .sidebar li:hover {
-          background-color: #2c2f3e;
-        }
-        .content {
-          flex: 1;
-          background-color: white;
-          padding: 2rem;
-          overflow-y: auto;
-        }
-        .syllabus-card {
-          display: flex;
-          padding: 1rem;
-          border: 1px solid #e5e7eb;
-          border-radius: 12px;
-          margin-bottom: 1rem;
-          background-color: #f9fafb;
-          transition: background 0.2s;
-        }
-        .syllabus-card:hover {
-          background-color: #f3f4f6;
-        }
-        .icon {
-          font-size: 1.8rem;
-          margin-right: 1rem;
-          align-self: flex-start;
-        }
-        .info h3 {
-          margin: 0;
-          font-size: 1.1rem;
-          font-weight: 600;
-        }
-        .info p {
-          margin: 0.4rem 0 0.6rem 0;
-          font-size: 0.9rem;
-          color: #4b5563;
-        }
-        .progress-bar {
-          height: 6px;
-          background-color: #d1d5db;
-          border-radius: 3px;
-          overflow: hidden;
-          width: 100%;
-          margin-top: 0.5rem;
-        }
-        .bar-fill {
-          height: 100%;
-          width: 60%;
-          background-color: #4f46e5;
-        }
-        .clickable {
-          cursor: pointer;
-        }
-        .extra-info {
-          margin-top: 0.5rem;
-          font-size: 0.85rem;
-          color: #374151;
-          background-color: #e5e7eb;
-          padding: 0.8rem;
-          border-radius: 8px;
-        }
-        .chapter-list {
-          margin-top: 0.5rem;
-          padding-left: 1.2rem;
-        }
-        .chapter-list li {
-          margin-bottom: 0.3rem;
-          color: #22223b;
-        }
-        `}
-      </style>
+
       <div className="main-container">
         <aside className="sidebar">
           <h2>Syllabus</h2>

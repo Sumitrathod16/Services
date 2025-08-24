@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-
 const Accordion = ({ items }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const handleClick = (idx) => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
-
-  return (
+return (
     <div className="FAQ" >
         <h1 className="title" style={{
             textAlign:"center",

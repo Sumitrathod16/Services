@@ -177,6 +177,30 @@ const Login = () => {
             margin-top: 10px;
             font:bold;
           }
+            @media (max-width: 480px) {
+  .login-container {
+    margin: 40px 16px;  /* reduce side spacing */
+    padding: 20px;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  .login-desc {
+    font-size: 12px;
+  }
+
+  .login-input {
+  font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .login-btn {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+}
         `}
       </style>
       <div className="login-container">

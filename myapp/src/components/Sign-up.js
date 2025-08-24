@@ -160,6 +160,37 @@ function Signin() {
                     color:black;
                     margin-left:5px;
                     }
+                    /* Mobile Responsive */
+@media (max-width: 600px) {
+  .signin-container {
+    margin: 40px 16px;      /* reduce margins */
+    padding: 20px;          /* smaller padding */
+    max-width: 100%;        /* stretch nicely */
+  }
+
+  .signin-title {
+    font-size: 20px;        /* smaller font */
+  }
+
+  .signin-desc {
+    font-size: 12px;
+  }
+
+  .signin-input {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .signin-btn {
+    font-size: 0.9em;
+    padding: 10px;
+  }
+
+  .already p {
+    font-size: 0.85em;
+  }
+}
+
             `}</style>
 
             <div className="signin-container">

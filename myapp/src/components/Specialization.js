@@ -30,36 +30,53 @@ function Specialization() {
                 }
             .specialization-list {
                 display: flex;
-                flex-direction: row;
-                gap:300px;
+                flex-wrap:wrap;
+                gap:40px;
                 align-items: center;
-                max-width: 600px;
-                justify-content: space-evenly;
+                justify-content: center;
                 list-style-type: none;
                 padding: 0;
-                margin-left:150px;
+                margin:0 auto;
+                max-width:1000px;
                 }
             .specialization-list li {
                 font-size: 1.1em;
                 color: #444;
                 margin: 10px 0;
+                display:flex;
+                align-items:center;
+                gap:10px;
                 }
             .logo {
              
                 width: 50px;
                 height: 50px;
-                margin-left: 30px;
-                margin-right: 10px;
                 vertical-align: middle;
+                transition:transform 0.3s;
                 }
             .logo:hover {
-                transform: scale(1.1);
-                transition: transform 0.3s;
+                transform: scale(1.1)
                 }
             .specialization-list li img:hover{
                transform: translateY(-5px);
-               box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
                filter: drop-shadow(0 0 8px #007bff);
+            }
+              /* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .specialization-title {
+    font-size: 2em;
+  }
+  .specialization-desc {
+    font-size: 1em;
+  }
+  .specialization-list {
+    flex-direction: column;   /* stack items vertically */
+    gap: 20px;
+  }
+  .specialization-list li {
+    font-size: 1em;
+  }
+} 
             
             
 

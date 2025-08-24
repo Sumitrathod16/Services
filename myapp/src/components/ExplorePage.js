@@ -106,6 +106,58 @@ function CodeOutputContainer({ title, code, children }) {
           margin: 10px 0;
           max-width: 80%;
         }
+          /* Add this at the bottom of your styles */
+@media (max-width: 768px) {
+  .code-output-wrapper {
+    padding: 12px;
+    margin: 20px auto;
+  }
+
+  .code-output-wrapper h2 {
+    font-size: 1.2rem;
+  }
+
+  .code-output-container {
+    flex-direction: column;  /* stack code & output vertically */
+    gap: 16px;
+  }
+
+  .code-box,
+  .output-box {
+    min-width: 100%;  /* full width on mobile */
+    font-size: 0.85rem;
+    padding: 12px;
+  }
+
+  .output-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .output-box button,
+  .output-box input {
+    width: 100%;  /* make buttons/inputs full width */
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .quote-box {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem !important; /* smaller title */
+  }
+
+  .output-box button,
+  .output-box input {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
       `}</style>
     </div>
   );

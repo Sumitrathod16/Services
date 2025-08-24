@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
+
 import Navbar from './components/Navbar';
 import Explorepage from './components/ExplorePage'; 
 import Login from './components/Login';
@@ -67,8 +68,12 @@ import Gcpassign from './components/Gcpassign';
 import Cassign from './components/Cassign';
 import Cppassign from './components/Cppassign';
 import Phpassign from './components/Phpassign';
+
 function App() {
   return (
+    
+
+
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -80,7 +85,7 @@ function App() {
             <>
               <Navbar />
               <Routes>
-                <Route path="/Home" element={<Home />} />
+                <Route path="/" element={<Home />} />
         <Route path="/Documentation" element={<Documentation />} />
         <Route path="/Support" element={<Support />} />
         <Route path="/Explorepage" element={<Explorepage />} /> 
@@ -152,7 +157,9 @@ function App() {
       </Routes>
     </Router>
     
+    
       
   );
+  
 }
 export default App;

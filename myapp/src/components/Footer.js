@@ -6,85 +6,86 @@ function Footer()
         <>
         <style>
             {`
-            .Footer{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;  
-                padding: 20px;
-                background-color: #333;
-                color: white;
-                height: 350px;
-                width: 100%;
-                background-color:black;
-                margin-bottom:50px;
+            .Footer {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: space-evenly;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
 
-            }
-                .footer-row{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;    
-                    margin-bottom: 20px;
-                }
-            .Footer ul {
-                list-style: none;   
-                padding: 0;
-                margin: 0;
-            }
-            .Footer ul li {
-                margin: 10px 0;
-            }   
-            .Footer ul li a {
-                color: white;   
-                text-decoration: none;
-            }
-                .Footer ul li :hover{
-                text-decoration: underline;
-                color: #ccc;
-                }
-                .Footer ul li a:hover {
-                text-decoration: underline;
-                color: #ccc;
-            }
-                /*-----Need to pay attention to this part-----*/
-            .footer-container1 ul {
-                text-decoration: none;
-                color: white;
-            }   
-                .footer-container ul li:hover {
-                text-decoration: underline;
-                color: #ccc;
-            }
-            .footer-container1 {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                align-items: flex-start;
-                margin-top: 30px;   
-                padding: 20px;
-            }       
-  .Box1{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin-top: 20px;
-                padding: 20px;
-                background-color: black;
-                border:2px solid white;
-                color: white;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-                width: 200px;   
-                height: 100px;
+.footer-container1 {
+  display: flex;
+  flex-direction: column; /* Stack inside each column */
+  align-items: flex-start;
+  margin: 15px;
+  min-width: 150px; /* Prevent too small on large screens */
+}
 
-                }
-        .Box1 h3 {
-                font-size: 1rem;       
-                color: white;
-                text-align: center;
-                margin: 0;
-                padding: 10px;
-                }
+.Footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Footer ul li {
+  margin: 8px 0;
+}
+
+.Footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.Footer ul li a:hover {
+  text-decoration: underline;
+  color: #ccc;
+}
+
+.Box1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  padding: 15px;
+  border: 2px solid white;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+}
+
+/* -------- RESPONSIVE DESIGN -------- */
+@media (max-width: 768px) {
+  .Footer {
+    flex-direction: column; /* Stack everything */
+    align-items: center;
+    text-align: center;
+    height: auto;
+  }
+
+  .footer-container1 {
+    margin: 10px 0;
+    align-items: center;
+  }
+
+  .Box1 {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .Footer h3 {
+    font-size: 1rem;
+  }
+
+  .Footer ul li {
+    font-size: 0.9rem;
+  }
+}
+
             
                 
             `}
