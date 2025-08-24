@@ -1,13 +1,14 @@
-import React from 'react';            
-import { Link } from 'react-router-dom';
-import CompanyIcon from '../assets/qlogo.svg'; // Adjust the path to your logo
-
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import CompanyIcon from "../assets/qlogo.svg";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
-    <style>
-      {`
+      <style>
+        {`
 * {
   margin: 0;
   padding: 0;
@@ -17,15 +18,30 @@ function Navbar() {
 nav {
   width: 100%;
   height: 60px;
-  background-color:black;
+  background-color: black;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: space-between;
+  padding: 0 20px;
   position: sticky;
-  padding:10px;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.company {
+  height: 50px;
+  width: 60px;
+  pointer-events: none;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 nav ul {
@@ -54,49 +70,79 @@ nav ul li a.active {
   background: red;
   color: #fff;
 }
-.company{
-  height:60px;
-  width:70px;
-  pointer-events: none;
-  margin-right:65rem;
-  
-}
 
-.login-button{
-  background-color:red;
-  padding: 10px 20px;
+.login-button {
+  background-color: red;
+  padding: 8px 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  position:absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  font-size: 15px;
 }
-.login-button a{
+
+.login-button a {
   text-decoration: none;
-  color:white;
+  color: white;
 }
+
 .login-button:hover {
   background-color: darkred;
 }
-      `}
-    </style>
-    <nav className="navbar">
-    <img src={CompanyIcon} alt="company" className="company"/>
-    <ul>
-      
-       <li><Link to="/features">Features</Link></li>
-        <li><Link to="/support">Support</Link></li>
-        <li><Link to="/signup">Sign In</Link></li>
-      </ul>
-      <button className="login-button">
-        <Link to="/Login">Login</Link>
+
+/* 🔹 Mobile View */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none; /* default closed */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: black;
+    padding: 15px 0;
+    gap: 15px;
+  }
+
+  nav ul.open {
+    display: flex; /* open when toggled */
+  }
+
+  .login-button {
+    margin: 10px auto;
+  }
+}
+        `}
+      </style>
+
+      <nav className="navbar">
+        <img src={CompanyIcon} alt="company" className="company" />
+
+        {/* Toggle Button */}
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "✖" : "☰"}
         </button>
-        
-    </nav>
+
+        {/* Links */}
+        <ul className={menuOpen ? "open" : ""}>
+          <li><Link to="/features" onClick={() => setMenuOpen(false)}>Features</Link></li>
+          <li><Link to="/support" onClick={() => setMenuOpen(false)}>Support</Link></li>
+          <li><Link to="/signup" onClick={() => setMenuOpen(false)}>Sign In</Link></li>
+          <li>
+            <button className="login-button" onClick={() => setMenuOpen(false)}>
+              <Link to="/Login">Login</Link>
+            </button>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 }
+
 export default Navbar;

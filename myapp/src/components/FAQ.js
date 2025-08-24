@@ -47,12 +47,12 @@ const FAQAccordion = () => {
      .faq-container {
       max-width: 600px;
       margin: 50px auto;
+      padding:0 16px;
      font-family: Arial, sans-serif;
 }
 
 .accordion {
   border-top: 1px solid;
-  height:400px;
   width:auto;
 }
 
@@ -65,7 +65,7 @@ const FAQAccordion = () => {
 
 .faq-item:hover {
   background: #b9b9b9ff;
-  animation:ease-in-out;
+  
   }
 
 .faq-question {
@@ -73,19 +73,34 @@ const FAQAccordion = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size:1rem;
 }
 
 .faq-answer {
   margin-top: 10px;
   font-size: 0.95rem;
   color: #333;
+  line-height:1.5;
 }
 
+
+ @media (max-width: 480px) {
+  .faq-container {
+    margin: 15px auto;
+    padding: 0 10px;
+  }
+
+  .faq-question {
+    font-size: 0.9rem;
+  }
+
+  .faq-answer {
+    font-size: 0.8rem;
+  }
 .arrow {
   font-size: 1.2rem;
 }
- 
-
+    
 `}
     </style>
     <div className="faq-container">

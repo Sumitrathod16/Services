@@ -231,6 +231,45 @@ body {
             .Explore-icon:active{
             transform:scale(0.9);
             }
+@media (max-width: 768px) {
+  .card-grid {
+    gap: 1rem; /* smaller gap on mobile */
+  }
+
+  .card {
+    height: auto;           /* let content decide height */
+    padding: 1rem;          /* less padding */
+  }
+
+  .card-title {
+    font-size: 1.2rem;      /* smaller headings */
+  }
+
+  .card-tags ul li {
+    font-size: 0.8rem;
+  }
+
+  .img {
+    margin: 10px auto 0 auto; /* center icons on mobile */
+    flex-wrap: wrap;          /* icons wrap if screen is too small */
+    justify-content: center;
+  }
+
+  .Explore-icon {
+    width: 45px;   /* shrink icons */
+    height: 45px;
+    margin: 5px;
+  }
+
+  .header-text h1 {
+    font-size: 1.75rem; /* smaller hero heading */
+  }
+
+  .header-text p {
+    font-size: 0.9rem;
+    padding: 0 10px; /* add breathing room */
+  }
+}
 
     `}
     </style>

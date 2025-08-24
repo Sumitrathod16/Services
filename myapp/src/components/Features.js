@@ -177,7 +177,21 @@ function Features(){
                 text-align: left;
             }
 
-                .feature-item ul li::h {
+      /* Mobile Responsiveness */
+                @media (max-width: 768px) {
+                    .feature-list {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .feature-item {
+                        width: 90%;
+                    }
+
+                    .title {
+                        font-size: 1.6em;
+                    }
+                }
                 
         `}</style>
         </>
