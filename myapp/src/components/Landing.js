@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import userImg from '../assets/user.svg';
 import aiImg from '../assets/ai.svg';
 import codeImg from '../assets/code.svg';
@@ -6,6 +6,35 @@ import trendImg from '../assets/trendesetter.svg';
 import portfolioImg from '../assets/portfolio.svg';
 
 function LandingPage() {
+  // Coding animation logic
+  const codeLines = [
+    "const user = new User('You');",
+    "user.learn('AI', 'ML', 'Web', 'Cloud');",
+    "user.connect(community);",
+    "user.buildPortfolio();",
+    "user.getOpportunities();",
+    "user.levelUp(); // 🚀",
+  ];
+  const [displayed, setDisplayed] = useState("");
+  const [lineIdx, setLineIdx] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
+
+  useEffect(() => {
+    if (lineIdx < codeLines.length) {
+      if (charIdx < codeLines[lineIdx].length) {
+        const timeout = setTimeout(() => {
+          setDisplayed((prev) => prev + codeLines[lineIdx][charIdx]);
+          setCharIdx(charIdx + 1);
+        }, 40);
+        return () => clearTimeout(timeout);
+      } else {
+        setDisplayed((prev) => prev + "\n");
+        setLineIdx(lineIdx + 1);
+        setCharIdx(0);
+      }
+    }
+  }, [charIdx, lineIdx]);
+
   return (
     <>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -104,6 +133,34 @@ function LandingPage() {
           color: #222;
           margin-bottom: 0;
         }
+        .coding-animation {
+          background: #181818;
+          color: #00bfff;
+          font-family: 'Fira Mono', 'Consolas', monospace;
+          font-size: 1.1em;
+          border-radius: 16px;
+          box-shadow: 0 4px 24px #00bfff44;
+          padding: 24px 32px;
+          margin: 48px auto 0 auto;
+          max-width: 540px;
+          min-height: 120px;
+          letter-spacing: 1px;
+          position: relative;
+          overflow: hidden;
+        }
+        .coding-cursor {
+          display: inline-block;
+          width: 10px;
+          height: 1.2em;
+          background: #00bfff;
+          margin-left: 2px;
+          animation: blink 1s steps(2, start) infinite;
+          vertical-align: middle;
+        }
+        @keyframes blink {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
         @media (max-width: 900px) {
           .info-containers { flex-direction: column; align-items: center; gap: 24px; }
         }
@@ -161,6 +218,12 @@ function LandingPage() {
             <h2>Personalized Experience</h2>
             <p>Enjoy a tailored dashboard, progress tracking, and recommendations based on your interests and goals.</p>
           </div>
+        </div>
+        <div className="coding-animation">
+          <pre style={{margin:0, whiteSpace:'pre-wrap'}}>
+            {displayed}
+            <span className="coding-cursor" />
+          </pre>
         </div>
       </div>
     </>
