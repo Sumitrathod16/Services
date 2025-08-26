@@ -4,123 +4,109 @@ import './Syllabus.css';
 const syllabusData = [
   {
     id: 1,
-    title: 'Flask Basics & App structure ',
-    description: '',
-    details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    
+    title: 'Introduction to Dbms',
+    description: 'Fundamental concepts of Dbms',
+    details: '',
+  
     chapters: [
-      "What is Flask",
-      "Setting up Flask",
-      "Application structure",
-      
-]
+    "Database concepts and characteristics",
+    "File system vs. DBMS",
+    "Advantages of DBMS",
+    "Data models: Hierarchical, Network, Relational, Object-Oriented",
+    "DBMS architecture & components"
+    ]
   },
   {
     id: 2,
-    title: 'Routing & views',
-    description: 'Understanding the architecture and function of ANNs',
-    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-
+    title: 'Entity-relationship(ER) Model',
+    description: 'Understanding ER diagrams and keys',
+    details: '',
+  
     chapters: [
-     "Routing",
-     "HTTP methods",
-     "URL Building",
-     "View functions"
-]
+      "Entities, attributes, relationships",
+      "ER diagrams with cardinality & participation",
+      "Weak vs. strong entity sets",
+      "Generalization, specialization, aggregation"
+    ]
   },
   {
     id: 3,
-    title: 'Templates & Static Files',
-    description: '',
-    details: 'This module explains how deep architectures differ and how to train them effectively.',
+    title: 'Relational Model and Relational Algebra',
+    description: 'Exploring relational model and algebra',
+    details: '',
     
     chapters: [
-"Jinja2 templating",
-"Template inheritance",
-"Static files",
-"Rendering templates"
-]
+      "Structure of relational databases",
+      "Keys (primary, candidate, foreign, composite)",
+      "Integrity constraints (domain, entity, referential)",
+      "Relational algebra operations (select, project, join, union, intersection, division)"
+    ]
   },
   {
     id: 4,
-    title: 'Forms & User Input',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Structured Query Language(SQL)',
+    description: 'Understanding SQL',
+    details: '',
     
     chapters: [
-      "HTML Forms handling",
-      "Form validations",
-      "File uploads",
-      "Form-based routing logic"
+     "DDL, DML, DCL, TCL commands",
+     "SQL queries (SELECT, WHERE, GROUP BY, HAVING, ORDER BY)",
+     "Joins (inner, outer, self join)",
+     "Subqueries & nested queries",
+     "Views, indexes, sequences"
     ]
   },
-  {
+    {
     id: 5,
-    title: 'Databases & ORM',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Normalization and Transaction Management',
+    description: 'Understanding normalization and transaction',
+    details: '',
     
     chapters: [
-       "Flask-SQLAlchemy",
-       "Migrations",
-       "Form validations",
-       "File uploads",
-       "Form-based routing logic"
+      "Functional dependencies",
+      "Normal forms (1NF, 2NF, 3NF, BCNF, 4NF, 5NF)",
+      "Transaction properties (ACID)",
+      "Concurrency control (locking, deadlock)",
+      "Recovery techniques"
     ]
   },
-  {
+   {
     id: 6,
-    title: 'Blueprints & Modularization',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-  
+    title: 'Advanced topics in Dbms',
+    description: 'Advanced Dbms',
+    details: '',
+    
     chapters: [
-      "Blueprints",
-      "Registering blueprints",
-      "Factory Pattern",
-      "Reusbility"
+     "NoSQL databases (MongoDB, Cassandra, Redis)",
+     "Distributed databases",
+     "Data warehousing & data mining basics",
+     "Database security & authorization",
+     "Big Data & Cloud databases"
     ]
   },
   {
-    id: 7,
-    title: 'Authentication , APIs & deployment',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-  
-    chapters: [
-       "User Authentication",
-       "REST APIs",
-       "Error handling",
-       "Deplyment"
-    ]
-  },
-  {
-    id:8,
+    id:7,
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:"Flask notes",link:'files/flask_notes.pdf'}
+      {name:"DBMS Notes",link:'files/dbms_notes.pdf'}
     ]
   },
   {
-    id: 9,
-    title: 'Sources',
+    id: 8,
+    title:"Sources",
     description: 'Additional resources for further learning',
     details: 'Links to online courses, books, and articles for deeper understanding.',
     chapters:[
-      "Flask Documentation",
-      "Flask Mega-Tutorial by Miguel Grinberg",
-      "Online Courses (Coursera, Udemy, etc.)",
-      "Books: 'Flask Web Development' by Miguel Grinberg"
+      "Online Courses: Coursera, edX, Udacity",
+       
     ],
-    url:[
-      "https://flask.palletsprojects.com/",
-      "https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world",
-      "https://www.coursera.org/specializations/flask",
-      "https://www.udemy.com/course/flask-tutorial-for-beginners/"
+    url :[
+      "https://www.coursera.org/specializations/html",
+      "https://www.edx.org/professional-certificate/harvardx-data-science",
+      
     ]
   }
-
-  
 ];
 
 const Syllabus = () => {
@@ -135,8 +121,8 @@ const Syllabus = () => {
       <aside className="sidebar">
         <h2>Syllabus</h2>
         <ul>
-          <li><Link to="/Flask">Syllabus</Link></li>
-          <li><Link to="/flaskassign">Assignments</Link></li>
+          <li><Link to="/Dbms">Syllabus</Link></li>
+          <li><Link to="/">Assignments</Link></li>
         </ul>
       </aside>
 

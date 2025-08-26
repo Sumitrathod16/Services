@@ -17,8 +17,7 @@ const syllabusData = [
         "Input/Output functions: printf(), scanf()",
          "Comments in C",
         "Compilation & execution process"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 2,
@@ -36,8 +35,7 @@ const syllabusData = [
       "Conditional (Ternary) operator",
       "Operator precedence and associativity",
       "Type conversion (implicit & explicit)"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 3,
@@ -50,8 +48,7 @@ const syllabusData = [
      "switch-case",
      "Looping statements:for, while, do-while",
      "Jumping statements:break, continue, goto, return"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 4,
@@ -64,8 +61,7 @@ const syllabusData = [
      "Recursion",
      "Scope and lifetime of variables",
      "Storage classes: auto, static, extern, register"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 5,
@@ -79,8 +75,7 @@ const syllabusData = [
     "Multi-dimensional arrays",
     "String handling:",
       "Declaring & initializing strings :String I/O: gets(), puts(), scanf(), printf()String functions: strlen(), strcpy(), strcmp(), strcat(), etc."
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 6,
@@ -95,8 +90,7 @@ const syllabusData = [
        "Pointers and functions",
         "Pointers to pointers",
         "Dynamic memory allocation: malloc(), calloc(), realloc(), free()"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 7,
@@ -112,8 +106,15 @@ const syllabusData = [
          "Unions",
         "Enumerated types (enum)",
       "File handling:File I/O functions: fopen(), fclose(), fgetc(), fputc(), fprintf(), fscanf(), etc.File modes (r, w, a, etc.)"
-    ],
-    notes:"notes.pdf"
+    ]
+  },
+  {
+    id: 4,
+    title: ' Data, AI & Analytics',
+    description: 'Latest advancements and future directions of the field',
+    notes:[
+      {name:"C notes", link:"files/c_notes.pdf"}
+    ]
   },
   {
     id: 8,
@@ -142,81 +143,92 @@ const Syllabus = () => {
   };
 
   return (
-    <>
-      
-      <div className="main-container">
-        <aside className="sidebar">
-          <h2>Syllabus</h2>
-          <ul>
-            <li><Link to="/Clang">Syllabus</Link></li>
-            <li><Link to="/Cassign">Assignments</Link></li>
-          
-          </ul>
-        </aside>
+    <div className="main-container">
+      <aside className="sidebar">
+        <h2>Syllabus</h2>
+        <ul>
+          <li><Link to="/C">Syllabus</Link></li>
+          <li><Link to="/Cassign">Assignments</Link></li>
+        </ul>
+      </aside>
 
-        <section className="content">
-          {syllabusData.map((item) => (
-            <div
-              key={item.id}
-              className="syllabus-card clickable"
-              onClick={() => toggleInfo(item.id)}
-            >
-              <div className="icon">{item.icon}</div>
-              <div className="info">
-                <h3>{item.id}. {item.title}</h3>
-                <p>{item.description}</p>
-                {item.id === 1 && (
-                  <div className="progress-bar">
-                    <div className="bar-fill" />
-                  </div>
-                )}
-                {openId === item.id && (
-                  <div className="extra-info">
-                    <p>{item.details}</p>
+      <section className="content">
+        {syllabusData.map((item) => (
+          <div
+            key={item.id}
+            className="syllabus-card clickable"
+            onClick={() => toggleInfo(item.id)}
+          >
+            <div className="icon">{item.icon}</div>
+            <div className="info">
+              <h3>{item.id}. {item.title}</h3>
+              <p>{item.description}</p>
+
+              {item.id === 1 && (
+                <div className="progress-bar">
+                  <div className="bar-fill" />
+                </div>
+              )}
+
+              {openId === item.id && (
+                <div className="extra-info">
+                  {item.details && <p>{item.details}</p>}
+
+                  {item.chapters && (
                     <ul className="chapter-list">
                       {item.chapters.map((chapter, idx) => (
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                    {item.notes && (
-                      <div style={{ marginTop: "10px" }}>
-                        <a
-                          href={item.notes}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}
-                        >
-                          Download Notes
-                        </a>
-                  </div>
-                )}
-                {item.url && Array.isArray(item.url) && (
-                      <div style={{ marginLeft:"20px",marginTop: "10px" }}>
-                        <strong>Useful Links:</strong>
-                        <ul>
-                        {item.url.map((url, idx) => (
+                  )}
+
+                  {item.notes && Array.isArray(item.notes) && (
+                    <div style={{marginLeft:"20px", marginTop: "10px" }}>
+                      <strong>Download Notes:</strong>
+                      <ul>
+                        {item.notes.map((note, idx) => (
                           <li key={idx}>
                             <a
-                              href={url}
+                              href={note.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              style={{ color: "#4f46e5", textDecoration: "none", display: "block" }}
+                              style={{ color: "#4f46e5", textDecoration: "underline" }}
+                              download
                             >
-                              {url}
+                              {note.name}
                             </a>
                           </li>
                         ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                )}
+                      </ul>
+                    </div>
+                  )}
+
+                  {item.url && Array.isArray(item.url) && (
+                    <div style={{ marginLeft: "20px", marginTop: "10px" }}>
+                      <strong>Useful Links:</strong>
+                      <ul>
+                        {item.url.map((link, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "none" }}
+                            >
+                              {link}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
+              )}
             </div>
-          ))}
-        </section>
-      </div>
-    </>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
 

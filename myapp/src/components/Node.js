@@ -18,8 +18,7 @@ const syllabusData = [
     "REPL (Read-Eval-Print Loop)",
     "NPM (Node Package Manager) and package.json",
     "Installing and updating Node.js and NPM " 
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 2,
@@ -41,8 +40,7 @@ const syllabusData = [
     "EventEmitter and custom events",
     "Streams and piping",
     "Understanding Buffers and handling binary data"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 3,
@@ -59,8 +57,7 @@ const syllabusData = [
     "Setting response headers and status codes",
     "Introduction to HTTPS and TLS",
     "Introduction to WebSockets"  
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 4,
@@ -80,8 +77,7 @@ const syllabusData = [
      "Using Postman for testing APIs",
      "Handling CORS in Express",
     "RESTful API structure using Express"
-    ],
-    notes:"notes.pdf"
+    ]
   },{
   id: 5,
     title: ' Advanced Concepts & Tooling',
@@ -103,11 +99,18 @@ const syllabusData = [
       "Deploying Node.js Apps (Heroku, Vercel, DigitalOcean, etc.)",
       "Performance optimization (Clustering, Load balancing)"
     
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
-    id: 6,
+    id:6,
+    title:'Notes',
+    description:'Notes to understand the concept',
+    notes:[
+      {name:'Node js',link:'files/node_notes.pdf'}
+    ]
+  },
+  {
+    id: 7,
     title: 'Sources',
     description: 'Resources for further learning',
     details: 'Links to official documentation, tutorials, and community resources.',
@@ -137,83 +140,94 @@ const Syllabus = () => {
   };
 
   return (
-    <>
-      
-      <div className="main-container">
-        <aside className="sidebar">
-          <h2>Syllabus</h2>
-          <ul>
-            <li><Link to="/Node">Syllabus</Link></li>
-            <li><Link to="/Nodeassign">Assignment</Link></li>
-        
-          </ul>
-        </aside>
+    <div className="main-container">
+      <aside className="sidebar">
+        <h2>Syllabus</h2>
+        <ul>
+          <li><Link to="/Node">Syllabus</Link></li>
+          <li><Link to="/Nodeassign">Assignments</Link></li>
+        </ul>
+      </aside>
 
-        <section className="content">
-          {syllabusData.map((item) => (
-            <div
-              key={item.id}
-              className="syllabus-card clickable"
-              onClick={() => toggleInfo(item.id)}
-            >
-              <div className="icon">{item.icon}</div>
-              <div className="info">
-                <h3>{item.id}. {item.title}</h3>
-                <p>{item.description}</p>
-                {item.id === 1 && (
-                  <div className="progress-bar">
-                    <div className="bar-fill" />
-                  </div>
-                )}
-                {openId === item.id && (
-                  <div className="extra-info">
-                    <p>{item.details}</p>
+      <section className="content">
+        {syllabusData.map((item) => (
+          <div
+            key={item.id}
+            className="syllabus-card clickable"
+            onClick={() => toggleInfo(item.id)}
+          >
+            <div className="icon">{item.icon}</div>
+            <div className="info">
+              <h3>{item.id}. {item.title}</h3>
+              <p>{item.description}</p>
+
+              {item.id === 1 && (
+                <div className="progress-bar">
+                  <div className="bar-fill" />
+                </div>
+              )}
+
+              {openId === item.id && (
+                <div className="extra-info">
+                  {item.details && <p>{item.details}</p>}
+
+                  {item.chapters && (
                     <ul className="chapter-list">
                       {item.chapters.map((chapter, idx) => (
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                    {item.notes && (
-                      <div style={{ marginTop: "10px" }}>
-                        <a
-                          href={item.notes}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}
-                        >
-                          Download Notes
-                        </a>
-                  </div>
-                )}
-                {item.url && Array.isArray(item.url)&& (
-                  <div style={{marginLeft:"20px",marginTop:"10px"}}>
-                    <strong>Useful Links:</strong>
-                    <ul>
-                      {item.url.map((link, idx) => (
-                        <li key={idx}>
-                          <a
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ color: "#4f46e5", textDecoration: "none" }}
-                          >
-                            {link}
-                          </a>
-                        </li>
-                      ))}
+                  )}
+
+                  {item.notes && Array.isArray(item.notes) && (
+                    <div style={{marginLeft:"20px", marginTop: "10px" }}>
+                      <strong>Download Notes:</strong>
+                      <ul>
+                        {item.notes.map((note, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={note.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "underline" }}
+                              download
+                            >
+                              {note.name}
+                            </a>
+                          </li>
+                        ))}
                       </ul>
-                  </div>
-                )}
+                    </div>
+                  )}
+
+                  {item.url && Array.isArray(item.url) && (
+                    <div style={{ marginLeft: "20px", marginTop: "10px" }}>
+                      <strong>Useful Links:</strong>
+                      <ul>
+                        {item.url.map((link, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "none" }}
+                            >
+                              {link}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                )}
-              
-                </div>
+              )}
             </div>
-          ))}
-        </section>
-      </div>
-    </>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
+
 
 export default Syllabus;

@@ -27,8 +27,7 @@ const syllabusData = [
       "Role-Based Access Control (RBAC), Policies, Blueprints",
       "Security Services: Microsoft Defender for Cloud, Sentinel (SIEM), Key Vault, Firewall, Security Center",
       "Compliance & Governance: Azure Policy, Resource Locks, Management Groups"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 3,
@@ -41,8 +40,7 @@ const syllabusData = [
     "Serverless: Azure Functions, Event Grid, Service Bus",
     "DevOps Tools: Azure DevOps, GitHub Actions, Pipelines, Repos, Boards",
     "Monitoring & Diagnostics: Application Insights, Log Analytics, Azure Monitor"  
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 4,
@@ -54,8 +52,15 @@ const syllabusData = [
     "Data Services: Azure Synapse Analytics, Data Factory, Data Lake, Stream Analytics",
     "AI & Machine Learning: Azure Machine Learning, Cognitive Services, Bot Service",
     "Big Data & IoT: HDInsight, Azure Databricks, IoT Hub, Time Series Insights  "
-    ],
-    notes:"notes.pdf"
+    ]
+  },
+  {
+    id: 4,
+    title: ' Data, AI & Analytics',
+    description: 'Latest advancements and future directions of the field',
+    notes:[
+      {name:'Azure notes',link:'files/azure_notes'}
+    ]
   },
   {
     id: 5,

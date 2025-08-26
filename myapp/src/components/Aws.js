@@ -22,8 +22,7 @@ const syllabusData = [
     "AWS CLI and AWS SDK Basics",
     "AWS Console Navigation",
     "Setting up a Free AWS Account securely"  
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 2,
@@ -52,8 +51,7 @@ const syllabusData = [
       "Security Groups vs NACLs",
       "Elastic IP, VPC Flow Logs",
       "Route 53 (DNS and Domai Management)"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 3,
@@ -77,8 +75,7 @@ const syllabusData = [
     "Lambda Proxy Integration",
     "Step Functions (Serverless Orchestration)",
     "EventBridge and CloudWatch Events  "
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 4,
@@ -98,8 +95,15 @@ const syllabusData = [
     "IAM Best Practices:",
     "Principle of Least Privilege",
     "MFA (Multi-Factor Authentication)"  
+    ]
+  },
+  {
+    id: 4,
+    title: 'DevOps, Monitoring & Security',
+    description: 'Latest advancements and future directions of the field',
+    notes: [
+       { name: "AI Basics", link: "/files/ai_basics.pdf" },
     ],
-    notes:"notes.pdf"
   },
   {
     id:5,
@@ -131,82 +135,92 @@ const Syllabus = () => {
   };
 
   return (
-    <>
+    <div className="main-container">
+      <aside className="sidebar">
+        <h2>Syllabus</h2>
+        <ul>
+          <li><Link to="/Aws">Syllabus</Link></li>
+          <li><Link to="/Awsassign">Assignments</Link></li>
+        </ul>
+      </aside>
 
-      <div className="main-container">
-        <aside className="sidebar">
-          <h2>Syllabus</h2>
-          <ul>
-            <li><Link to="/Aws">Syllabus</Link></li>
-            <li><Link to="/Awsassign">Assignment</Link></li>
-          
-          </ul>
-        </aside>
+      <section className="content">
+        {syllabusData.map((item) => (
+          <div
+            key={item.id}
+            className="syllabus-card clickable"
+            onClick={() => toggleInfo(item.id)}
+          >
+            <div className="icon">{item.icon}</div>
+            <div className="info">
+              <h3>{item.id}. {item.title}</h3>
+              <p>{item.description}</p>
 
-        <section className="content">
-          {syllabusData.map((item) => (
-            <div
-              key={item.id}
-              className="syllabus-card clickable"
-              onClick={() => toggleInfo(item.id)}
-            >
-              <div className="icon">{item.icon}</div>
-              <div className="info">
-                <h3>{item.id}. {item.title}</h3>
-                <p>{item.description}</p>
-                {item.id === 1 && (
-                  <div className="progress-bar">
-                    <div className="bar-fill" />
-                  </div>
-                )}
-                {openId === item.id && (
-                  <div className="extra-info">
-                    <p>{item.details}</p>
+              {item.id === 1 && (
+                <div className="progress-bar">
+                  <div className="bar-fill" />
+                </div>
+              )}
+
+              {openId === item.id && (
+                <div className="extra-info">
+                  {item.details && <p>{item.details}</p>}
+
+                  {item.chapters && (
                     <ul className="chapter-list">
                       {item.chapters.map((chapter, idx) => (
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                    {item.notes && (
-                      <div style={{ marginTop: "10px" }}>
-                        <a
-                          href={item.notes}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}
-                        >
-                          Download Notes
-                        </a>
-                      </div>
-                    )}
-                    {/* Show URLs if present */}
-                    {item.url && Array.isArray(item.url) && (
-                      <div style={{ marginLeft:"20px",marginTop: "10px" }}>
-                        <strong>Useful Links:</strong>
-                        <ul>
-                          {item.url.map((link, idx) => (
-                            <li key={idx}>
-                              <a
-                                href={link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ color: "#4f46e5", textDecoration: "none" }}
-                              >
-                                {link}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+                  )}
+
+                  {item.notes && Array.isArray(item.notes) && (
+                    <div style={{marginLeft:"20px", marginTop: "10px" }}>
+                      <strong>Download Notes:</strong>
+                      <ul>
+                        {item.notes.map((note, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={note.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "underline" }}
+                              download
+                            >
+                              {note.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {item.url && Array.isArray(item.url) && (
+                    <div style={{ marginLeft: "20px", marginTop: "10px" }}>
+                      <strong>Useful Links:</strong>
+                      <ul>
+                        {item.url.map((link, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "none" }}
+                            >
+                              {link}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-          ))}
-        </section>
-      </div>
-    </>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
 

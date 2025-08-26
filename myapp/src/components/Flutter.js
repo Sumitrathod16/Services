@@ -17,7 +17,7 @@ const syllabusData = [
       "Displaying the content on screen",
       "Debugging and testing app with flutter",
     ],
-    notes: "notes.pdf",
+  
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const syllabusData = [
       "Define State",
       "The setState() method",
     ],
-    notes: "notes.pdf",
+    
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const syllabusData = [
       "Form Validation",
       "Submitting form and retrieve data",
     ],
-    notes: "notes.pdf",
+    
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ const syllabusData = [
       "Form Validation",
       "Submitting form and retrieve data",
     ],
-    notes: "notes.pdf",
+    
   },
   {
     id: 5,
@@ -71,7 +71,7 @@ const syllabusData = [
       "You’ll learn about transformers, foundation models, and cutting-edge applications.",
 
     chapters: ["Applying theme data", "Applying custom font"],
-    notes: "notes.pdf",
+  
   },
   {
     id: 6,
@@ -81,7 +81,7 @@ const syllabusData = [
       "You’ll learn about transformers, foundation models, and cutting-edge applications.",
 
     chapters: ["Future Function", "Async and Await"],
-    notes: "notes.pdf",
+  
   },
   {
     id: 7,
@@ -95,7 +95,7 @@ const syllabusData = [
       "Model class and json Parsing",
       "Displaying API data",
     ],
-    notes: "notes.pdf",
+    
   },
   {
     id: 8,
@@ -105,7 +105,7 @@ const syllabusData = [
       "You’ll learn about transformers, foundation models, and cutting-edge applications.",
 
     chapters: ["Navigator and Routes", "Applying push() and pop()"],
-    notes: "notes.pdf",
+    
   },
   {
     id: 9,
@@ -124,8 +124,7 @@ const syllabusData = [
       "GridView",
       "Alert dialogbox",
       "Building views using listview.builder",
-    ],
-    notes: "notes.pdf",
+    ]
   },
   {
     id: 10,
@@ -137,8 +136,7 @@ const syllabusData = [
       "Basic concept of sqlite database",
       "Database Connection",
       "CRUD operation on flutter database",
-    ],
-    notes: "notes.pdf",
+    ]
   },
   {
     id: 11,
@@ -148,10 +146,18 @@ const syllabusData = [
       "You’ll learn about transformers, foundation models, and cutting-edge applications.",
 
     chapters: [],
-    notes: "notes.pdf",
+
   },
   {
-    id: 12,
+      id:12,
+      title:'Notes',
+      description:'Notes to understand the concept',
+      notes:[
+      {name:"Flutter Notes",link:"files/flutter_notes.pdf"}
+      ] 
+  },
+  {
+    id: 13,
     title: "Sources",
     description: "Additional resources for further learning",
     details:
@@ -178,92 +184,92 @@ const Syllabus = () => {
   };
 
   return (
-    <>
-      <div className="main-container">
-        <aside className="sidebar">
-          <h2>Syllabus</h2>
-          <ul>
-            <li>
-              <Link to="/Flutter">Syllabus</Link>
-            </li>
-            <li>
-              <Link to="/Flutterassign">Assignment</Link>
-            </li>
-          </ul>
-        </aside>
+    <div className="main-container">
+      <aside className="sidebar">
+        <h2>Syllabus</h2>
+        <ul>
+          <li><Link to="/Flutter">Syllabus</Link></li>
+          <li><Link to="/Flutterassign">Assignments</Link></li>
+        </ul>
+      </aside>
 
-        <section className="content">
-          {syllabusData.map((item) => (
-            <div
-              key={item.id}
-              className="syllabus-card clickable"
-              onClick={() => toggleInfo(item.id)}
-            >
-              <div className="icon">{item.icon}</div>
-              <div className="info">
-                <h3>
-                  {item.id}. {item.title}
-                </h3>
-                <p>{item.description}</p>
-                {item.id === 1 && (
-                  <div className="progress-bar">
-                    <div className="bar-fill" />
-                  </div>
-                )}
-                {openId === item.id && (
-                  <div className="extra-info">
-                    <p>{item.details}</p>
+      <section className="content">
+        {syllabusData.map((item) => (
+          <div
+            key={item.id}
+            className="syllabus-card clickable"
+            onClick={() => toggleInfo(item.id)}
+          >
+            <div className="icon">{item.icon}</div>
+            <div className="info">
+              <h3>{item.id}. {item.title}</h3>
+              <p>{item.description}</p>
+
+              {item.id === 1 && (
+                <div className="progress-bar">
+                  <div className="bar-fill" />
+                </div>
+              )}
+
+              {openId === item.id && (
+                <div className="extra-info">
+                  {item.details && <p>{item.details}</p>}
+
+                  {item.chapters && (
                     <ul className="chapter-list">
                       {item.chapters.map((chapter, idx) => (
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                    {item.notes && (
-                      <div style={{ marginTop: "10px" }}>
-                        <a
-                          href={item.notes}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{
-                            color: "#4f46e5",
-                            textDecoration: "underline",
-                          }}
-                        >
-                          Download Notes
-                        </a>
-                      </div>
-                    )}
-                    {item.url && Array.isArray(item.url) && (
-                      <div style={{ marginLeft: "20px", marginTop: "10px" }}>
-                        <strong>Useful Links:</strong>
-                        <ul>
-                          {item.url.map((link, index) => (
-                            <li key={index}>
-                              <a
-                                href={link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                  color: "#4f46e5",
-                                  textDecoration: "none",
-                                }}
-                              >
-                                {link}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+                  )}
+
+                  {item.notes && Array.isArray(item.notes) && (
+                    <div style={{marginLeft:"20px", marginTop: "10px" }}>
+                      <strong>Download Notes:</strong>
+                      <ul>
+                        {item.notes.map((note, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={note.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "underline" }}
+                              download
+                            >
+                              {note.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {item.url && Array.isArray(item.url) && (
+                    <div style={{ marginLeft: "20px", marginTop: "10px" }}>
+                      <strong>Useful Links:</strong>
+                      <ul>
+                        {item.url.map((link, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "none" }}
+                            >
+                              {link}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-          ))}
-        </section>
-      </div>
-    </>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
-
 export default Syllabus;

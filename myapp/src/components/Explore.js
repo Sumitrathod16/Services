@@ -407,7 +407,7 @@ body {
                     <h3 className="card-title">Machine Learning</h3>
                     <div className="card-tags">
                     <ul>
-                        <li> <Link to="/ML">ML</Link></li>
+                        <li> <Link to="/Ml">ML</Link></li>
                         <li> <Link to="/Dl">Deep Learning</Link></li>
                         <li> <Link to="/AI">AI</Link></li>
                     </ul>
@@ -444,15 +444,15 @@ body {
                     <h3 className="card-title">Projects</h3>
                     <div className="card-tags">
                     <ul>
-                        <li> <Link to="/Projects">Projects</Link></li>
-                        <li> <Link to="/Portfolio">Portfolio</Link></li>
+                        <li> <Link to="/DBMS">DBMS</Link></li>
+                        <li> <Link to="/SQL">SQL</Link></li>
                         <li> <Link to="/GitHub">GitHub</Link></li>
                     </ul>
                     </div>                   
                 </div>
                 <div className="img">
-                    <img src={ProjectsIcon} alt="Projects" className="Explore-icon" />
-                    <img src={PortfolioIcon} alt="Portfolio" className="Explore-icon" />
+                    <img src={ProjectsIcon} alt="DBMS" className="Explore-icon" />
+                    <img src={PortfolioIcon} alt="SQL" className="Explore-icon" />
                     <img src={GitHubIcon} alt="GitHub" className="Explore-icon" />
             </div>
 </div>
