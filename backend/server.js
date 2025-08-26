@@ -11,13 +11,11 @@ const PORT = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/loginDATA', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log(' Connected to MongoDB'))
-.catch(err => console.error(' MongoDB connection error:', err));
+// MongoDB Atlas Connection
+const mongoURI = "mongodb+srv://phadtareareen:<123123456456>@services.ito6x35.mongodb.net/?retryWrites=true&w=majority&appName=Services";
+mongoose.connect(mongoURI)
+  .then(() => console.log('Connected to MongoDB Atlas'))
+  .catch(err => console.error('MongoDB Atlas connection error:', err));
 
 // User Schema
 const userSchema = new mongoose.Schema({
@@ -76,29 +74,46 @@ app.post('/register', async (req, res) => {
     res.status(201).json({ message: 'User registered successfully' });
   } catch (err) {
     console.error('Error registering user:', err);
-    res.status(500).json({ message: 'Server error. Please try again later.' });
+    res.status(500).json({
+      message: 'Server error. Please try again later.',
+      error: err.message,
+      stack: err.stack
+    });
   }
 });
 
-// Start Server
-  // Login Route
-  app.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-    try {
-      const user = await User.findOne({ email });
-      if (!user) {
-        return res.status(401).json({ message: 'Invalid email or password' });
-      }
-      const isMatch = bcrypt.compare(password, user.password);
-      if (!isMatch) {
-        return res.status(401).json({ message: 'Invalid email or password' });
-      }
-      res.status(200).json({ message: 'Login successful', user: { name: user.name, email: user.email } });
-    } catch (err) {
-      console.error('Error logging in:', err);
-      res.status(500).json({ message: 'Invalid User!! Please try again later.' });
+// Login Route
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid email or password' });
     }
-  });
+
+    const isMatch = await bcrypt.compare(password, user.password); 
+
+    if (!isMatch) {
+      return res.status(401).json({ message: 'Invalid email or password' });
+    }
+
+    res.status(200).json({
+      message: 'Login successful',
+      user: {
+        name: user.name,
+        email: user.email,
+      }
+    });
+  } catch (err) {
+    console.error('Error logging in:', err);
+    res.status(500).json({
+      message: 'Server error. Please try again later.',
+      error: err.message,
+      stack: err.stack
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
