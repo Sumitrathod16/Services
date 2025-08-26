@@ -57,7 +57,7 @@ const Login = () => {
 
       if (res.ok) {
         alert(data.message || 'Google login successful');
-        //navigate('/'); // Redirect to main screen
+        navigate('/home'); // Redirect to home page after Google login
         // Handle successful login, e.g., redirect or save token
       } else {
         alert(data.message || 'Google login failed');
@@ -86,7 +86,7 @@ const Login = () => {
 
         if (res.ok) {
           alert(data.message || 'Login successful');
-          navigate('/'); // Redirect to home or dashboard on successful login
+          navigate('/home'); // Redirect to home page on successful login
         } else {
           alert(data.message || 'Login failed');
         }
