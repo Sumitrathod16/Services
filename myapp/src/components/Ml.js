@@ -14,8 +14,7 @@ const syllabusData = [
       "Performance of measures of classification",
       "Bias-Variance Tradeoff",
       "Regression"
-    ],
-    notes:"notes/introduction to ml.pdf"
+    ]
   },
   {
     id: 2,
@@ -25,8 +24,7 @@ const syllabusData = [
   
     chapters: [
        "Bayesian Belief Networks"
-      ],
-      notes:"notes/bayesian-decision-theory.pdf"
+    ]
   },
   {
     id: 3,
@@ -40,8 +38,7 @@ const syllabusData = [
       "Concept of non-parametric techniques",
       'Density Estimation by Parzen window',
       "Parzon window and k-nearest neighbor algorithm",
-    ],
-    notes:"notes/Parametric approaches and non-parametric approaches.pdf"
+    ]
   },
   {
     id: 4,
@@ -52,8 +49,7 @@ const syllabusData = [
     chapters: [
       "Linear discriminant Functions and perceptron Criteria",
       "Support Vector Machine"
-     ],
-     notes:"notes/Perceptron criteria and Discriminative.pdf"
+     ]
   },
   {
     id: 5,
@@ -66,8 +62,7 @@ const syllabusData = [
       "Decision tree",
       "Hidden Markov Model(HMM)"
 
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 6,
@@ -77,8 +72,7 @@ const syllabusData = [
   
     chapters: [
       "Ensemble Classifiers"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 7,
@@ -89,8 +83,7 @@ const syllabusData = [
       "Dimensionality Problem and Principal Component analysis",
       "Principal Component analysis",
       "Linear Discriminant analysis"
-],
-notes:"notes.pdf"
+]
   },
   {
     id: 8,
@@ -101,8 +94,7 @@ notes:"notes.pdf"
     chapters: [
        "Gaussian Mixture Model and EM algorithm",
       "K-means clustering",
-],
-notes:"notes.pdf"
+]
   },
   {
     id: 9,
@@ -114,11 +106,18 @@ notes:"notes.pdf"
        "Fuzzy k-means clustering",
       "Hierarchical Agglomorative clustering and Mean-shift Clustering"
 
-      ],
-      notes:"notes.pdf"
+      ]
+  },
+  {
+    id:10,
+    title:'Notes',
+    description:'Notes to understand the concept',
+    notes:[
+      {name:'Machine Learning',link:'files/ml_notes.pdf'}
+    ]
   },
 {
-    id: 10,
+    id: 11,
     title: 'Sources',
     description: 'Additional resources for further learning',
     details: 'Links to official documentation, tutorials, and community resources.',
@@ -142,89 +141,101 @@ notes:"notes.pdf"
   
 ];
 
-const Ml = () => {
+const Syllabus = () => {
   const [openId, setOpenId] = useState(null);
-const toggleInfo = (id) => {
+
+  const toggleInfo = (id) => {
     setOpenId(openId === id ? null : id);
   };
 
   return (
-    <>
-    
-      <div className="main-container">
-        <aside className="sidebar">
-          <h2>Syllabus</h2>
-          <ul>
-            <li><Link to="/Ml">Syllabus</Link></li>
-           <li><Link to ="/Assignment">Assignments</Link></li>
-      
-          </ul>
-        </aside>
+    <div className="main-container">
+      <aside className="sidebar">
+        <h2>Syllabus</h2>
+        <ul>
+          <li><Link to="/Ml">Syllabus</Link></li>
+          <li><Link to="/Mlassign">Assignments</Link></li>
+        </ul>
+      </aside>
 
-        <section className="content">
-          {syllabusData.map((item) => (
-            <div
-              key={item.id}
-              className="syllabus-card clickable"
-              onClick={() => toggleInfo(item.id)}
-            >
-              <div className="icon">{item.icon}</div>
-              <div className="info">
-                <h3>{item.id}. {item.title}</h3>
-                <p>{item.description}</p>
-                {item.id === 1 && (
-                  <div className="progress-bar">
-                    <div className="bar-fill" />
-                  </div>
-                )}
-                {openId === item.id && (
-                  <div className="extra-info">
-                    <p>{item.details}</p>
+      <section className="content">
+        {syllabusData.map((item) => (
+          <div
+            key={item.id}
+            className="syllabus-card clickable"
+            onClick={() => toggleInfo(item.id)}
+          >
+            <div className="icon">{item.icon}</div>
+            <div className="info">
+              <h3>{item.id}. {item.title}</h3>
+              <p>{item.description}</p>
+
+              {item.id === 1 && (
+                <div className="progress-bar">
+                  <div className="bar-fill" />
+                </div>
+              )}
+
+              {openId === item.id && (
+                <div className="extra-info">
+                  {item.details && <p>{item.details}</p>}
+
+                  {item.chapters && (
                     <ul className="chapter-list">
                       {item.chapters.map((chapter, idx) => (
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                    {item.notes && (
-                      <div style={{ marginTop: "10px" }}>
-                        <a
-                          href={item.notes}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}
-                        >
-                          Download Notes
-                        </a>
-                  </div>
-                )}
-                {item.url && Array.isArray(item.url) && (
-                  <div style={{marginLeft:"20px", marginTop: "10px" }}>
-                    <strong>Useful Links:</strong>
-                    <ul>
-                      {item.url.map((link, idx) => (
-                        <li key={idx}>
-                          <a
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ color: "#4f46e5", textDecoration: "none" }}
-                          >
-                            {link}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-              </div>
-                )}
+                  )}
+
+                  {item.notes && Array.isArray(item.notes) && (
+                    <div style={{marginLeft:"20px", marginTop: "10px" }}>
+                      <strong>Download Notes:</strong>
+                      <ul>
+                        {item.notes.map((note, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={note.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "underline" }}
+                              download
+                            >
+                              {note.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {item.url && Array.isArray(item.url) && (
+                    <div style={{ marginLeft: "20px", marginTop: "10px" }}>
+                      <strong>Useful Links:</strong>
+                      <ul>
+                        {item.url.map((link, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "none" }}
+                            >
+                              {link}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                )}
-                </div>
-                </div>
-          ))}
-        </section>
-      </div>
-    </>
+              )}
+            </div>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
 
-export default Ml;
+export default Syllabus;

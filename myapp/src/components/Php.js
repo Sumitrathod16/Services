@@ -18,8 +18,7 @@ const syllabusData = [
         "Comments",
          "Output: echo, print",
           "Basic operators: arithmetic, assignment, comparison, logical"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 2,
@@ -32,8 +31,7 @@ const syllabusData = [
     "Looping: for, while, do-while, foreach",
     "Break and continue",
     "Match expression (PHP 8+)"  
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 3,
@@ -50,8 +48,7 @@ const syllabusData = [
      "Arrays: Indexed, associative, and multidimensional arrays",
      "Array functions: array_push(), array_merge(), count(), etc.",
      "Looping through arrays"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 4,
@@ -66,8 +63,7 @@ const syllabusData = [
      "Form validation and sanitization",
      "File upload handling",
      "Security basics: input filtering, escaping HTML, preventing XSS/SQL injection" 
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 5,
@@ -83,8 +79,7 @@ const syllabusData = [
      "File operations:fopen(), fread(), fwrite(), fclose()",
      "File upload basics",
      "File existence and deletion"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 6,
@@ -101,8 +96,7 @@ const syllabusData = [
 "Error handling",
 "Database CRUD operations",
 "Using JOINs in PHP queries"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 7,
@@ -123,8 +117,15 @@ const syllabusData = [
 "Sending emails using mail(), PHPMailer",
 "Introduction to Composer (PHP package manager)",
 "Introduction to MVC frameworks (e.g., Laravel basics)"
-    ],
-    notes:"notes.pdf"
+    ]
+  },
+  {
+    id:8,
+    title:'Notes',
+    description:'Notes to understand the concept',
+    notes:[
+      {name:'PHP',link:'files/php_notes.pdf'}
+    ]
   },
   {
     id: 8,
@@ -157,82 +158,94 @@ const Syllabus = () => {
   };
 
   return (
-    <>
-      
-      <div className="main-container">
-        <aside className="sidebar">
-          <h2>Syllabus</h2>
-          <ul>
-            <li><Link to="/Php">Syllabus</Link></li>
-            <li><Link to="/Phpassign">Assignment</Link></li>
-          
-          </ul>
-        </aside>
+    <div className="main-container">
+      <aside className="sidebar">
+        <h2>Syllabus</h2>
+        <ul>
+          <li><Link to="/Php">Syllabus</Link></li>
+          <li><Link to="/Phpassign">Assignments</Link></li>
+        </ul>
+      </aside>
 
-        <section className="content">
-          {syllabusData.map((item) => (
-            <div
-              key={item.id}
-              className="syllabus-card clickable"
-              onClick={() => toggleInfo(item.id)}
-            >
-              <div className="icon">{item.icon}</div>
-              <div className="info">
-                <h3>{item.id}. {item.title}</h3>
-                <p>{item.description}</p>
-                {item.id === 1 && (
-                  <div className="progress-bar">
-                    <div className="bar-fill" />
-                  </div>
-                )}
-                {openId === item.id && (
-                  <div className="extra-info">
-                    <p>{item.details}</p>
+      <section className="content">
+        {syllabusData.map((item) => (
+          <div
+            key={item.id}
+            className="syllabus-card clickable"
+            onClick={() => toggleInfo(item.id)}
+          >
+            <div className="icon">{item.icon}</div>
+            <div className="info">
+              <h3>{item.id}. {item.title}</h3>
+              <p>{item.description}</p>
+
+              {item.id === 1 && (
+                <div className="progress-bar">
+                  <div className="bar-fill" />
+                </div>
+              )}
+
+              {openId === item.id && (
+                <div className="extra-info">
+                  {item.details && <p>{item.details}</p>}
+
+                  {item.chapters && (
                     <ul className="chapter-list">
                       {item.chapters.map((chapter, idx) => (
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                    {item.notes && (
-                      <div style={{ marginTop: "10px" }}>
-                        <a
-                          href={item.notes}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}
-                        >
-                          Download Notes
-                        </a>
-                  </div>
-                )}
-                {item.url && Array.isArray(item.url) && (
-                      <div style={{ marginLeft:"20px",marginTop: "10px" }}>
-                        <strong>Useful Links:</strong>
-                        <ul>
-                        {item.url.map((url, idx) => (
+                  )}
+
+                  {item.notes && Array.isArray(item.notes) && (
+                    <div style={{marginLeft:"20px", marginTop: "10px" }}>
+                      <strong>Download Notes:</strong>
+                      <ul>
+                        {item.notes.map((note, idx) => (
                           <li key={idx}>
                             <a
-                              href={url}
+                              href={note.link}
                               target="_blank"
                               rel="noopener noreferrer"
-                              style={{ color: "#4f46e5", textDecoration: "none", display: "block" }}
+                              style={{ color: "#4f46e5", textDecoration: "underline" }}
+                              download
                             >
-                              {url}
+                              {note.name}
                             </a>
                           </li>
                         ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                )}
+                      </ul>
+                    </div>
+                  )}
+
+                  {item.url && Array.isArray(item.url) && (
+                    <div style={{ marginLeft: "20px", marginTop: "10px" }}>
+                      <strong>Useful Links:</strong>
+                      <ul>
+                        {item.url.map((link, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "none" }}
+                            >
+                              {link}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
+              )}
             </div>
-          ))}
-        </section>
-      </div>
-    </>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
+
 
 export default Syllabus;

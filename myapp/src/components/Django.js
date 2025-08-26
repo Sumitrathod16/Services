@@ -13,8 +13,7 @@ const syllabusData = [
      "Introduction to Django and its features",
     "Installing Django and setting up a development environment",
      "Creating a simple Django project and app"
-],
-notes:"notes.pdf"
+    ]
   },
   {
     id: 2,
@@ -30,8 +29,7 @@ notes:"notes.pdf"
       "Type casting"
 
 
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 3,
@@ -48,8 +46,7 @@ notes:"notes.pdf"
 
 
 
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 4,
@@ -64,8 +61,7 @@ notes:"notes.pdf"
        "Integrating forms with models"
 
 
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 5,
@@ -78,8 +74,7 @@ notes:"notes.pdf"
       "Customizing the admin panel for specific models",
        "Adding custom actions and filters"
 
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 6,
@@ -92,8 +87,7 @@ notes:"notes.pdf"
           "Managing user sessions and passwords",
           "Configuring permissions and authorization"
 
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 7,
@@ -106,8 +100,7 @@ notes:"notes.pdf"
        "Serializers, views, and authentication for APIs",
        "Consuming APIs in Django applications"
 
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 8,
@@ -121,8 +114,7 @@ notes:"notes.pdf"
       "AJAX and asynchronous behavior in Django applications"
     
 
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 9,
@@ -134,8 +126,7 @@ notes:"notes.pdf"
        "Writing unit tests for Django applications",
       "Debugging techniques and tools",
        "Best practices for testing in Django"
-      ],
-      notes:"notes.pdf"
+    ]
   },
    {
     id: 10,
@@ -150,8 +141,7 @@ notes:"notes.pdf"
         "Scaling Django applications"
 
 
-    ],
-    notes:"notes.pdf"
+    ]
   },
    {
     id: 11,
@@ -165,11 +155,18 @@ notes:"notes.pdf"
       "Caching strategies in Django",
       "Internationalization and localization"
 
-],
-notes:"notes.pdf"
+]
   }, 
   {
-    id: 12,
+    id:12,
+    title:'Notes',
+    description:'Notes to understand the concept',
+    notes:[
+      {name:"Django Notes",link:"files/django_notes.pdf"}
+    ]
+  },
+  {
+    id: 13,
     title: 'Sources',
     description: 'Additional resources for further learning',
     details: 'Links to official documentation, tutorials, and community resources.',
@@ -188,7 +185,6 @@ notes:"notes.pdf"
   }
   
 ];
-
 const Syllabus = () => {
   const [openId, setOpenId] = useState(null);
 
@@ -197,82 +193,92 @@ const Syllabus = () => {
   };
 
   return (
-    <>
-   
-      <div className="main-container">
-        <aside className="sidebar">
-          <h2>Syllabus</h2>
-          <ul>
-            <li><Link to="/Django">Syllabus</Link></li>
-            <li><Link to="/Djassign">Assignment</Link></li>
-          
-          </ul>
-        </aside>
+    <div className="main-container">
+      <aside className="sidebar">
+        <h2>Syllabus</h2>
+        <ul>
+          <li><Link to="/Django">Syllabus</Link></li>
+          <li><Link to="/Djassign">Assignments</Link></li>
+        </ul>
+      </aside>
 
-        <section className="content">
-          {syllabusData.map((item) => (
-            <div
-              key={item.id}
-              className="syllabus-card clickable"
-              onClick={() => toggleInfo(item.id)}
-            >
-              <div className="icon">{item.icon}</div>
-              <div className="info">
-                <h3>{item.id}. {item.title}</h3>
-                <p>{item.description}</p>
-                {item.id === 1 && (
-                  <div className="progress-bar">
-                    <div className="bar-fill" />
-                  </div>
-                )}
-                {openId === item.id && (
-                  <div className="extra-info">
-                    <p>{item.details}</p>
+      <section className="content">
+        {syllabusData.map((item) => (
+          <div
+            key={item.id}
+            className="syllabus-card clickable"
+            onClick={() => toggleInfo(item.id)}
+          >
+            <div className="icon">{item.icon}</div>
+            <div className="info">
+              <h3>{item.id}. {item.title}</h3>
+              <p>{item.description}</p>
+
+              {item.id === 1 && (
+                <div className="progress-bar">
+                  <div className="bar-fill" />
+                </div>
+              )}
+
+              {openId === item.id && (
+                <div className="extra-info">
+                  {item.details && <p>{item.details}</p>}
+
+                  {item.chapters && (
                     <ul className="chapter-list">
                       {item.chapters.map((chapter, idx) => (
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                     {item.notes && (
-                      <div style={{ marginTop: "10px" }}>
-                        <a
-                          href={item.notes}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}
-                        >
-                          Download Notes
-                        </a>
-                  </div>
-                )}
-                {item.url && Array.isArray(item.url) && (
-                  <div style={{ marginLeft:"20px",marginTop: "10px" }}>
-                    <strong>Useful Links:</strong>
-                    <ul>
-                    {item.url.map((url, idx) => (
-                      <li key={idx}>
-                      <a
-                      
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ color: "#4f46e5", textDecoration: "none", display: 'block' }}
-                      >
-                        {url}
-                      </a>
-                      </li>
-                    ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-                )}
+                  )}
+
+                  {item.notes && Array.isArray(item.notes) && (
+                    <div style={{marginLeft:"20px", marginTop: "10px" }}>
+                      <strong>Download Notes:</strong>
+                      <ul>
+                        {item.notes.map((note, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={note.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "underline" }}
+                              download
+                            >
+                              {note.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {item.url && Array.isArray(item.url) && (
+                    <div style={{ marginLeft: "20px", marginTop: "10px" }}>
+                      <strong>Useful Links:</strong>
+                      <ul>
+                        {item.url.map((link, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "none" }}
+                            >
+                              {link}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-            </div>
-          ))}
-        </section>
-      </div>
-    </>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
 

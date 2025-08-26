@@ -4,123 +4,108 @@ import './Syllabus.css';
 const syllabusData = [
   {
     id: 1,
-    title: 'Flask Basics & App structure ',
-    description: '',
-    details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
-    
+    title: 'Introduction to SQL',
+    description: 'Fundamental concepts of SQL',
+    details: '',
+  
     chapters: [
-      "What is Flask",
-      "Setting up Flask",
-      "Application structure",
-      
-]
+"What is SQL?",
+"History & importance of SQL in databases",
+"SQL standards & versions",
+"Types of SQL commands: DDL, DML, DCL, TCL"
+    ]
   },
   {
     id: 2,
-    title: 'Routing & views',
-    description: 'Understanding the architecture and function of ANNs',
-    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
-
+    title: 'Data Definition Language (DDL)',
+    description: 'Understanding DDL',
+    details: '',
+  
     chapters: [
-     "Routing",
-     "HTTP methods",
-     "URL Building",
-     "View functions"
-]
+      "CREATE, ALTER, DROP",
+      "Data types in SQL",
+      "Constraints (PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK, DEFAULT)",
+      "Schema & table creation"
+    ]
   },
   {
     id: 3,
-    title: 'Templates & Static Files',
-    description: '',
-    details: 'This module explains how deep architectures differ and how to train them effectively.',
+    title: 'Data Manipualtion Language(DML)',
+    description: 'Understanding DML',
+    details: '',
     
     chapters: [
-"Jinja2 templating",
-"Template inheritance",
-"Static files",
-"Rendering templates"
-]
+      "INSERT, UPDATE, DELETE",
+      "SELECT basics",
+      "Filtering with WHERE",
+      "Sorting results with ORDER BY",
+      "LIMIT / TOP / ROWNUM"
+    ]
   },
   {
     id: 4,
-    title: 'Forms & User Input',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Joins & Subqueries',
+    description: 'Joins and subqueries',
+    details: '',
     
     chapters: [
-      "HTML Forms handling",
-      "Form validations",
-      "File uploads",
-      "Form-based routing logic"
+      "INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN",
+      "CROSS JOIN, SELF JOIN",
+      "Nested subqueries",
+      "Correlated subqueries",
+      "EXISTS, ANY, ALL"
     ]
   },
-  {
+    {
     id: 5,
-    title: 'Databases & ORM',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
+    title: 'Functions and Grouping',
+    description: 'Functions and Grouping in SQL',
+    details: '',
     
     chapters: [
-       "Flask-SQLAlchemy",
-       "Migrations",
-       "Form validations",
-       "File uploads",
-       "Form-based routing logic"
+      "Aggregate functions (COUNT, SUM, AVG, MIN, MAX)",
+      "GROUP BY and HAVING",
+      "Scalar functions (UPPER, LOWER, LEN, ROUND, DATE functions)",
+      "String functions (CONCAT, SUBSTRING, TRIM)"
     ]
   },
-  {
+   {
     id: 6,
-    title: 'Blueprints & Modularization',
-    description: 'Latest advancements and future directions of the field',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-  
+    title: 'Advanced SQL',
+    description: 'Advance',
+    details: '',
+    
     chapters: [
-      "Blueprints",
-      "Registering blueprints",
-      "Factory Pattern",
-      "Reusbility"
+      "Views (CREATE VIEW, UPDATE VIEW)",
+      "Indexes (Clustered, Non-clustered)",
+      "Stored Procedures & Functions",
+      "Triggers",
+      "Transactions & ACID properties (COMMIT, ROLLBACK, SAVEPOINT)"
     ]
   },
   {
-    id: 7,
-    title: 'Authentication , APIs & deployment',
-    details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',
-  
-    chapters: [
-       "User Authentication",
-       "REST APIs",
-       "Error handling",
-       "Deplyment"
-    ]
-  },
-  {
-    id:8,
+    id:7,
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:"Flask notes",link:'files/flask_notes.pdf'}
+      {name:"Html notes",link:'files/html_notes.pdf'}
     ]
   },
   {
-    id: 9,
-    title: 'Sources',
+    id: 8,
+    title:"Sources",
     description: 'Additional resources for further learning',
     details: 'Links to online courses, books, and articles for deeper understanding.',
     chapters:[
-      "Flask Documentation",
-      "Flask Mega-Tutorial by Miguel Grinberg",
-      "Online Courses (Coursera, Udemy, etc.)",
-      "Books: 'Flask Web Development' by Miguel Grinberg"
+      "Online Courses: Coursera, edX, Udacity",
+       
     ],
-    url:[
-      "https://flask.palletsprojects.com/",
-      "https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world",
-      "https://www.coursera.org/specializations/flask",
-      "https://www.udemy.com/course/flask-tutorial-for-beginners/"
+    url :[
+      "https://www.coursera.org/specializations/html",
+      "https://www.edx.org/professional-certificate/harvardx-data-science",
+      
     ]
   }
-
-  
 ];
 
 const Syllabus = () => {
@@ -135,8 +120,8 @@ const Syllabus = () => {
       <aside className="sidebar">
         <h2>Syllabus</h2>
         <ul>
-          <li><Link to="/Flask">Syllabus</Link></li>
-          <li><Link to="/flaskassign">Assignments</Link></li>
+          <li><Link to="/Sql">Syllabus</Link></li>
+          <li><Link to="/Sqlassign">Assignments</Link></li>
         </ul>
       </aside>
 

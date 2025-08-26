@@ -27,8 +27,7 @@ const syllabusData = [
       "Persistent Disks",
       "Filestore (File storage)",
       "Local SSDs"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 2,
@@ -50,8 +49,7 @@ const syllabusData = [
       "Resource Hierarchy (Org > Folder > Project)",
       "Audit Logs",
       "Policy Intelligence"
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 3,
@@ -75,8 +73,7 @@ const syllabusData = [
     "AutoML",
     "Vision AI, Speech-to-Text, Natural Language AI",
     "Dialogflow (Chatbots)  ",
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
     id: 4,
@@ -96,11 +93,18 @@ const syllabusData = [
    "Cloud Deploy",
    "Monitoring & Logging (Cloud Monitoring, Cloud Logging)",
    "Error Reporting & Debugger"  
-    ],
-    notes:"notes.pdf"
+    ]
   },
   {
-    id: 5,
+    id:5,
+    title:'Notes',
+    description:'Notes to understand the concept',
+    notes:[
+      {name:'Google cloud',link:'files/gcp_notes.pdf'}
+    ]
+  },
+  {
+    id: 6,
     title: 'Sources',
     description: 'Additional resources for further learning',
     details: 'Links to official documentation, tutorials, and community resources.',
@@ -130,81 +134,92 @@ const Syllabus = () => {
   };
 
   return (
-    <>
-      
-      <div className="main-container">
-        <aside className="sidebar">
-          <h2>Syllabus</h2>
-          <ul>
-            <li><Link to="/GCP">Syllabus</Link></li>
-            <li><Link to="/Gcpassign">Assignment</Link></li>
-        
-          </ul>
-        </aside>
+    <div className="main-container">
+      <aside className="sidebar">
+        <h2>Syllabus</h2>
+        <ul>
+          <li><Link to="/Gcp">Syllabus</Link></li>
+          <li><Link to="/Gcpassign">Assignments</Link></li>
+        </ul>
+      </aside>
 
-        <section className="content">
-          {syllabusData.map((item) => (
-            <div
-              key={item.id}
-              className="syllabus-card clickable"
-              onClick={() => toggleInfo(item.id)}
-            >
-              <div className="icon">{item.icon}</div>
-              <div className="info">
-                <h3>{item.id}. {item.title}</h3>
-                <p>{item.description}</p>
-                {item.id === 1 && (
-                  <div className="progress-bar">
-                    <div className="bar-fill" />
-                  </div>
-                )}
-                {openId === item.id && (
-                  <div className="extra-info">
-                    <p>{item.details}</p>
+      <section className="content">
+        {syllabusData.map((item) => (
+          <div
+            key={item.id}
+            className="syllabus-card clickable"
+            onClick={() => toggleInfo(item.id)}
+          >
+            <div className="icon">{item.icon}</div>
+            <div className="info">
+              <h3>{item.id}. {item.title}</h3>
+              <p>{item.description}</p>
+
+              {item.id === 1 && (
+                <div className="progress-bar">
+                  <div className="bar-fill" />
+                </div>
+              )}
+
+              {openId === item.id && (
+                <div className="extra-info">
+                  {item.details && <p>{item.details}</p>}
+
+                  {item.chapters && (
                     <ul className="chapter-list">
                       {item.chapters.map((chapter, idx) => (
                         <li key={idx}>{chapter}</li>
                       ))}
                     </ul>
-                    {item.notes && (
-                      <div style={{ marginTop: "10px" }}>
-                        <a
-                          href={item.notes}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ color: "#4f46e5", textDecoration: "underline" }}
-                        >
-                          Download Notes
-                        </a>
-                  </div>
-                )}
-                {item.url && Array.isArray(item.url) && (
-                  <div style={{marginLeft:"20px", marginTop: "10px" }}>
-                    <strong>Useful Links:</strong>
-                    <ul>
-                      {item.url.map((link, idx) => (
-                        <li key={idx}>
-                          <a
-                            href={link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ color: "#4f46e5", textDecoration: "none" }}
-                          >
-                            {link}
-                          </a>
-                        </li>
-                      ))}
-                   </ul>
-              </div>
-                )}
+                  )}
+
+                  {item.notes && Array.isArray(item.notes) && (
+                    <div style={{marginLeft:"20px", marginTop: "10px" }}>
+                      <strong>Download Notes:</strong>
+                      <ul>
+                        {item.notes.map((note, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={note.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "underline" }}
+                              download
+                            >
+                              {note.name}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {item.url && Array.isArray(item.url) && (
+                    <div style={{ marginLeft: "20px", marginTop: "10px" }}>
+                      <strong>Useful Links:</strong>
+                      <ul>
+                        {item.url.map((link, idx) => (
+                          <li key={idx}>
+                            <a
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#4f46e5", textDecoration: "none" }}
+                            >
+                              {link}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                )}
-                </div>
+              )}
             </div>
-          ))}
-        </section>
-      </div>
-    </>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
 
