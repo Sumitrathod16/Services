@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
-
 import Navbar from './components/Navbar';
 import Explorepage from './components/ExplorePage'; 
 import Login from './components/Login';
@@ -43,8 +42,8 @@ import AI from './components/Ai';
 import C from './components/C';
 import Cpp from './components/C++';
 import Php from './components/Php';
-import Projects from './components/Projects';
-import Portfolio from './components/Portfolio';
+import Dbms from './components/Dbms';
+import Sql from './components/Sql';
 import FAQ from './components/FAQ';
 import Mlassign from './components/Mlassign';
 import Dlassign from './components/Dlassign'; 
@@ -124,8 +123,8 @@ function App() {
         <Route path="/C" element={<C/>}/>
         <Route path="/C++" element={<Cpp/>}/>
         <Route path="/Php" element={<Php/>}/>
-        <Route path="/Projects" element={<Projects/>}/>
-        <Route path="/Portfolio" element={<Portfolio/>}/>
+        <Route path="/Dbms" element={<Dbms/>}/>
+        <Route path="/Sql" element={<Sql/>}/>
         <Route path="/FAQ" element={<FAQ/>}/>
         <Route path="/Assignment" element={<Mlassign/>}/>
         <Route path="/Dlassign" element={<Dlassign/>}/>
@@ -133,7 +132,7 @@ function App() {
         <Route path="/Flutterassign" element={<Flutterassign/>}/>
         <Route path="/Pyassign" element={<Pyassign/>}/>
         <Route path="/Djassign" element={<Djassign/>}/>
-        <Route path="/Flaskassign " element={<Flaskassign/>}/>
+        <Route path="/flaskassign " element={<Flaskassign/>}/>
         <Route path="/Javaassign" element={<Javaassign/>}/>
         <Route path="/Springassign" element={<Springassign/>}/>
         <Route path="/Hiberassign" element={<Hiberassign/>}/>
