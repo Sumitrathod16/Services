@@ -67,6 +67,7 @@ import Gcpassign from './components/Gcpassign';
 import Cassign from './components/Cassign';
 import Cppassign from './components/Cppassign';
 import Phpassign from './components/Phpassign';
+import LandingPage from './components/Landing';
 
 function App() {
   return (
@@ -75,16 +76,17 @@ function App() {
 
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signin />} />
-        {/* All other routes with Navbar and Footer */}
+  <Route path="/" element={<LandingPage />} />
+  <Route path="/login" element={<Login />} />
+  <Route path="/signup" element={<Signin />} />
+  {/* All other routes with Navbar and Footer */}
         <Route
           path="*"
           element={
             <>
               <Navbar />
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
         <Route path="/Documentation" element={<Documentation />} />
         <Route path="/Support" element={<Support />} />
         <Route path="/Explorepage" element={<Explorepage />} /> 
