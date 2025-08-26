@@ -67,6 +67,8 @@ import Gcpassign from './components/Gcpassign';
 import Cassign from './components/Cassign';
 import Cppassign from './components/Cppassign';
 import Phpassign from './components/Phpassign';
+import Dbmsassign from './components/Dbmsassign';
+import Sqlassign from './components/Sqlassign.';
 import LandingPage from './components/Landing';
 
 function App() {
@@ -76,7 +78,7 @@ function App() {
 
     <Router>
       <Routes>
-  <Route path="/" element={<LandingPage />} />
+<Route path="/" element={<LandingPage />} />
   <Route path="/login" element={<Login />} />
   <Route path="/signup" element={<Signin />} />
   {/* All other routes with Navbar and Footer */}
@@ -86,7 +88,7 @@ function App() {
             <>
               <Navbar />
               <Routes>
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={<Home />} />
         <Route path="/Documentation" element={<Documentation />} />
         <Route path="/Support" element={<Support />} />
         <Route path="/Explorepage" element={<Explorepage />} /> 
@@ -128,7 +130,7 @@ function App() {
         <Route path="/Dbms" element={<Dbms/>}/>
         <Route path="/Sql" element={<Sql/>}/>
         <Route path="/FAQ" element={<FAQ/>}/>
-        <Route path="/Assignment" element={<Mlassign/>}/>
+        <Route path="/Mlassign" element={<Mlassign/>}/>
         <Route path="/Dlassign" element={<Dlassign/>}/>
         <Route path="/Aiassign" element={<Aiassign/>}/>
         <Route path="/Flutterassign" element={<Flutterassign/>}/>
@@ -150,6 +152,8 @@ function App() {
         <Route path="/Cassign" element={<Cassign/>}/>
         <Route path="/Cppassign" element={<Cppassign/>}/>
         <Route path="/Phpassign" element={<Phpassign/>}/>
+        <Route path="/Dbmsassign" element={<Dbmsassign/>}/>
+        <Route path="/Sqlassign" element={<Sqlassign/>}/>
               </Routes>
               <Footer />
             </>

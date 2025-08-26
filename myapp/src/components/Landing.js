@@ -41,7 +41,7 @@ function LandingPage() {
       <style>{`
         .landing-bg {
           min-height: 100vh;
-          background: linear-gradient(120deg, #00bfff 0%, #181818 100%);
+          background: linear-gradient(120deg, black 0%, #181818 100%);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -63,7 +63,7 @@ function LandingPage() {
           color: #fff;
           margin-bottom: 18px;
           letter-spacing: 1px;
-          text-shadow: 0 2px 16px #00bfff88;
+          text-shadow: 0 2px 16px:black;
         }
         .landing-desc {
           font-size: 1.2em;
@@ -72,7 +72,7 @@ function LandingPage() {
           line-height: 1.5;
         }
         .cta-btn {
-          background: linear-gradient(90deg, #00bfff 60%, #ff9800 100%);
+          background: linear-gradient(90deg, red 60%, #ff9800 100%);
           color: #fff;
           font-size: 1.1em;
           font-weight: bold;

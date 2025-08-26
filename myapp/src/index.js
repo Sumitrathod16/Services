@@ -8,13 +8,8 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Auth0Provider
-    
-     domain="dev-orih68odghndocgw.us.auth0.com"
-    clientId="jbHFbTLk0p5XLLEQQNIrZhtS1kEitQKv"
-    authorizationParams={{
-      redirect_uri: window.location.origin}}
-      >
+    <Auth0Provider>
+  
     <App />
     </Auth0Provider>
   </React.StrictMode>

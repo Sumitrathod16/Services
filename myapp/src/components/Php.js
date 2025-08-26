@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import './Syllabus.css';
 const syllabusData = [
   {
@@ -124,7 +125,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:'PHP',link:'files/php_notes.pdf'}
+      {name:'PHP',link:'/files/php_notes.pdf'}
     ]
   },
   {
