@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Assign.css';
 const questionsData = [
   {
@@ -57,6 +57,13 @@ const Nodeassign = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [secondsLeft, setSecondsLeft] = useState(1200); // 20 minutes in seconds
+
+  useEffect(() => {
+    if (secondsLeft <= 0) return;
+    const timer = setInterval(() => setSecondsLeft(s => s - 1), 1000);
+    return () => clearInterval(timer);
+  }, [secondsLeft]);
 
   const handleOptionClick = (index) => {
     setSelectedAnswers({ ...selectedAnswers, [currentQuestion]: index });
@@ -104,7 +111,7 @@ const Nodeassign = () => {
           ></div>
         </div>
         <div className="timer">
-          <span>⏱️ Remaining</span> | <span>20 min</span>
+          <span>⏱️ Remaining</span> | <span>{Math.floor(secondsLeft / 60)}:{('0' + secondsLeft % 60).slice(-2)}</span>
         </div>
       </div>
 

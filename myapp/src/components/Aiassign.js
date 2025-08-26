@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './Assign.css';
 const questionsData = [
   {
@@ -52,6 +52,24 @@ const questionsData = [
     answer: 0,
   },
 ];
+
+
+
+function Timer({ initialMinutes = 10 }) {
+  const [secondsLeft, setSecondsLeft] = useState(initialMinutes * 60);
+  useEffect(() => {
+    if (secondsLeft <= 0) return;
+    const timer = setInterval(() => setSecondsLeft(s => s - 1), 1000);
+    return () => clearInterval(timer);
+  }, [secondsLeft]);
+  const min = Math.floor(secondsLeft / 60);
+  const sec = secondsLeft % 60;
+  return (
+    <span style={{ fontWeight: 'bold', color: '#0f0f0fff' }}>
+      {min.toString().padStart(2, '0')}:{sec.toString().padStart(2, '0')}
+    </span>
+  );
+}
 
 const Aiassign = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -107,7 +125,7 @@ const Aiassign = () => {
           ></div>
         </div>
         <div className="timer">
-          <span>⏱️ Remaining</span> | <span>20min</span>
+          <span>⏱️ Remaining</span> | <Timer initialMinutes={10} />
         </div>
       </div>
 
