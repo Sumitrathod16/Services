@@ -106,14 +106,13 @@ function Footer()
                     <li><Link to="/Blog">Blog</Link></li>
                     <li><Link to="/Study">Study </Link></li>      
                     <li><Link to="/Practice">Practice</Link></li>
-                    <li><Link to="/Subjects">Subjects</Link></li>
+                    
                 </ul>
              </div>
             <div className="footer-container1">
             <ul>
                 <h3>Supports</h3>
-                 <li><Link to ="/FAQ">FAQ</Link></li> 
-                 <li><Link to="/">Community</Link></li>   
+                 <li><Link to ="/FAQ">FAQ</Link></li>  
             </ul>    
             </div>   
             <div className="footer-container1">

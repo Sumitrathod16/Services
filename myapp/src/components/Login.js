@@ -5,7 +5,7 @@ import { useAuth } from '../context/authContext';
 
 const Login = () => {
   const auth = useAuth();
-const userLoggedIn = auth?.userLoggedIn ?? false;
+  const userLoggedIn = auth?.userLoggedIn ?? false;
 
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({});
@@ -47,11 +47,11 @@ const userLoggedIn = auth?.userLoggedIn ?? false;
     if (validate()) {
       try {
         await doSignInWithEmailAndPassword(formData.email, formData.password);
-        alert('Login successful');
-        navigate('/home');
+        alert('Login successful!');
+        navigate('/home'); // redirect after login
       } catch (err) {
-        console.error(err.message);
-        alert(err.message);
+        console.error("Login error:", err.message);
+        alert("Login failed: " + err.message);
       }
     }
   };
@@ -60,11 +60,11 @@ const userLoggedIn = auth?.userLoggedIn ?? false;
   const handleGoogleLogin = async () => {
     try {
       await doSignInWithGoogle();
-      alert('Google login successful');
+      alert('Google login successful!');
       navigate('/home');
     } catch (err) {
-      console.error(err.message);
-      alert(err.message);
+      console.error("Google login error:", err.message);
+      alert("Google login failed: " + err.message);
     }
   };
 
@@ -165,43 +165,52 @@ const userLoggedIn = auth?.userLoggedIn ?? false;
           margin-bottom: 5px;
           text-align: left;
         }
+          .info{
+          text-align:center;
+          font-size:15px;
+          }
       
       `}</style>
-    <div className="login-container">
-      <h1 className="login-title">Login</h1>
-      <p className="login-desc">Please enter your credentials or use your Google account.</p>
-      <form className="login-form" onSubmit={handleManualLogin} noValidate>
-        <input
-          className="login-input"
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        {submitted && errors.email && <div className="error-msg">{errors.email}</div>}
+      <div className="login-container">
+        <h1 className="login-title">Login</h1>
+        <p className="login-desc">Please enter your credentials or use your Google account.</p>
+        
+        <form className="login-form" onSubmit={handleManualLogin} noValidate>
+          <input
+            className="login-input"
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          {submitted && errors.email && <div className="error-msg">{errors.email}</div>}
 
-        <input
-          className="login-input"
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-        />
-        {submitted && errors.password && <div className="error-msg">{errors.password}</div>}
+          <input
+            className="login-input"
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+          {submitted && errors.password && <div className="error-msg">{errors.password}</div>}
 
-        <button className="login-btn" type="submit">Login</button>
-      </form>
+          <button className="login-btn" type="submit">Login</button>
+        </form>
 
-      <div className="google-btn-container">
-        <button className="login-btn" onClick={handleGoogleLogin}>Login with Google</button>
+        <div className="google-btn-container">
+          <button className="google-btn" onClick={handleGoogleLogin}>
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
+            Login with Google
+          </button>
+        </div>
+        <p className="info">You can directly login with Google</p>
+
+        {/*<div className="account">
+          <p>Don't have an account? <Link to="/signup">Signup</Link></p>
+        </div>*/}
       </div>
-
-      {/*<div className="account">
-        <p>Don't have an account?<Link to="/signup">Signup</Link></p>
-      </div>*/}
-    </div>
     </>
   );
 };

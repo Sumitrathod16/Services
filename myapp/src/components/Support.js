@@ -9,9 +9,8 @@ function Support(){
                     <h2>Contact Us</h2>
                     <p>
                         <ul>
-                            <li>Email:fjs@gmail.com</li>
-                            <li>Phone: +1234567890</li>
-                            <li>Address: 123 Main St, City, Country</li>
+                            <li>Email:saarshop31@gmail.com</li>
+                            <li>Address: Pune, India</li>
                         </ul>
                     </p>
                 </div>

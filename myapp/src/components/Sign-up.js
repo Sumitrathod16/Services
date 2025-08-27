@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { doCreateUserWithEmailAndPassword, doUpdateUserProfile } from '../firebase/auth'; // Import Firebase auth helpers
+import { useNavigate } from 'react-router-dom';  // ✅ import useNavigate
 
 function Signin() {
+    const navigate = useNavigate(); // ✅ create navigate instance
+
     const [formData, setFormData] = useState({
         name: '',
         mobile: '',
@@ -17,7 +18,6 @@ function Signin() {
     });
 
     const [errors, setErrors] = useState({});
-    const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -44,45 +44,18 @@ function Signin() {
         return newErrors;
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const validationErrors = validate();
-
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
         } else {
             setErrors({});
-            try {
-                // Create user with email/password in Firebase Auth
-                const userCredential = await doCreateUserWithEmailAndPassword(
-                    formData.email,
-                    formData.password
-                );
+            console.log("Form Data Submitted:", formData);
+            alert("Form submitted successfully!");
 
-                // Update user profile with displayName (name)
-                await doUpdateUserProfile({ displayName: formData.name });
-
-                // TODO: Optionally store extended info (mobile, address, etc.) in Firestore or your backend
-
-                alert("Registration successful!");
-                setMessage("Successfully registered!");
-
-                setFormData({
-                    name: '',
-                    mobile: '',
-                    email: '',
-                    password: '',
-                    confirmPassword: '',
-                    address: '',
-                    city: '',
-                    state: '',
-                    country: '',
-                    pincode: ''
-                });
-            } catch (error) {
-                console.error("Firebase Registration Error:", error.message);
-                alert("Failed to register: " + error.message);
-            }
+            // ✅ navigate to login page after success
+            navigate("/login");
         }
     };
 
@@ -90,117 +63,71 @@ function Signin() {
         <>
             <style>
                 {`
-                .signin-container {
-                    max-width: 500px;
-                    margin: 80px auto;
-                    padding: 32px;
-                    background: #fff;
-                    border-radius: 12px;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                    font-family:'Segoe UI',sans-serif;
-                }
+                    .signin-container {
+                        max-width: 400px;
+                        margin: 60px auto;
+                        padding: 2rem;
+                        background: white;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                        text-align: center;
+                    }
 
-                .signin-title {
-                    font-size: 24px;
-                    font-weight:bold;
-                    text-align: center;
-                    margin-bottom:8px;
-                }
+                    .signin-title {
+                        margin-bottom: 1rem;
+                        color: #222;
+                    }
 
-                .signin-desc {
-                    font-size: 14px;
-                    text-align: center;
-                    margin-bottom: 24px;
-                    color: #555;
-                }
+                    .signin-desc {
+                        margin-bottom: 1.5rem;
+                        color: #555;
+                    }
 
-                .signin-form {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 16px;
-                }
+                    .signin-form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                        text-align: left;
+                    }
 
-                .signin-input {
-                    padding: 10px;
-                    font-size: 1em;
-                    border: 1px solid #ccc;
-                    border-radius: 8px;
-                    outline:none;
-                }
-                .signin-input:focus{
-                    border-color:#4f46e5;
-                }
+                    .signin-input {
+                        padding: 0.7rem;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        font-size: 1rem;
+                    }
 
-                .signin-btn {
-                    padding: 10px;
-                    background-color: #4f46e5;
-                    color: white;
-                    border: none;
-                    border-radius: 6px;
-                    cursor: pointer;
-                    transition: background-color 0.3s ease;
-                }
+                    .signin-btn {
+                        padding: 0.7rem;
+                        background: #6361f1;
+                        color: #fff;
+                        border: none;
+                        border-radius: 4px;
+                        font-size: 1rem;
+                        cursor: pointer;
+                    }
 
-                .signin-btn:hover {
-                    background-color: #4338ca;
-                }
+                    .signin-btn:hover {
+                        background: #0056b3;
+                    }
 
-                .error {
-                    color: red;
-                    font-size: 0.85rem;
-                    margin-top: -10px;
-                    margin-bottom: 6px;
-                }
-                .already{
-                    text-align:center;
-                }
-                .already a{
-                    text-decoration:none;
-                    color:#4f46e5;
-                    margin-left:5px;
-                }
-                /* Mobile Responsive */
-                @media (max-width: 600px) {
-                  .signin-container {
-                    margin: 40px 16px;
-                    padding: 20px;
-                    max-width: 100%;
-                  }
-
-                  .signin-title {
-                    font-size: 20px;
-                  }
-
-                  .signin-desc {
-                    font-size: 12px;
-                  }
-
-                  .signin-input {
-                    font-size: 0.9em;
-                    padding: 8px;
-                  }
-
-                  .signin-btn {
-                    font-size: 0.9em;
-                    padding: 10px;
-                  }
-
-                  .already p {
-                    font-size: 0.85em;
-                  }
-                }
+                    .error {
+                        color: red;
+                        font-size: 0.85rem;
+                        margin-top: -0.5rem;
+                        margin-bottom: 0.5rem;
+                    }
                 `}
             </style>
 
             <div className="signin-container">
                 <h1 className="signin-title">Sign In</h1>
                 <p className="signin-desc">Please sign in to continue.</p>
-
                 <form className="signin-form" onSubmit={handleSubmit}>
                     <input className="signin-input" type="text" placeholder="Name" name="name" value={formData.name} onChange={handleChange} />
                     {errors.name && <div className="error">{errors.name}</div>}
 
-                    <input className="signin-input" type="tel" placeholder="Mobile Number" name="mobile" value={formData.mobile} onChange={handleChange} />
+                    <input className="signin-input" type="number" placeholder="Mobile Number" name="mobile" value={formData.mobile} onChange={handleChange} />
                     {errors.mobile && <div className="error">{errors.mobile}</div>}
 
                     <input className="signin-input" type="email" placeholder="Email" name="email" value={formData.email} onChange={handleChange} />
@@ -229,12 +156,6 @@ function Signin() {
 
                     <button className="signin-btn" type="submit">Sign In</button>
                 </form>
-
-                {message && <p style={{ color: 'green', marginTop: '1rem', textAlign: 'center' }}>{message}</p>}
-
-                <div className="already">
-                    <p>Already have an account?<Link to="/login">Log-in</Link></p>
-                </div>
             </div>
         </>
     );
