@@ -166,10 +166,10 @@ const syllabusData = [
   }, 
   {
   id:13,
-  title:'notes',
+  title:'Notes',
   description:'Notes to understand the concept',
   notes:[
-    {name:'Python',link:'files/py_notes.pdf'}
+    {name:'Python',link:'/files/python_notes.pdf'}
   ]
   },
   {
