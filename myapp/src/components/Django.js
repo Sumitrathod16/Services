@@ -162,7 +162,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:"Django Notes",link:"files/django_notes.pdf"}
+      {name:"Django Notes",link:"/files/django_notes.pdf"}
     ]
   },
   {

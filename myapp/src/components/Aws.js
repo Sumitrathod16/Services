@@ -6,7 +6,7 @@ const syllabusData = [
     id: 1,
     title: 'AWS Fundamentals',
     description: 'Fundamental concepts of  learning and its applications',
-    details: 'This section covers the foundations of deep learning, including definitions, types, and how it’s used in modern applications.',
+    details: 'This section covers EC2, S3, VPC, and other core AWS infrastructure services.',
   
     chapters: [
     "What is AWS? Why use it?",
@@ -28,7 +28,7 @@ const syllabusData = [
     id: 2,
     title: ' Compute, Storage & Networking',
     description: 'Understanding the architecture and function of ANNs',
-    details: 'Here, we dive into perceptrons, activation functions, and forward/backward propagation.',
+    details: '',
     
     chapters: [
       "EC2 (Elastic Compute Cloud):",
@@ -98,15 +98,15 @@ const syllabusData = [
     ]
   },
   {
-    id: 4,
-    title: 'DevOps, Monitoring & Security',
-    description: 'Latest advancements and future directions of the field',
+    id: 5,
+    title: 'Notes',
+    description: 'Notes to understand the concept',
     notes: [
-       { name: "AI Basics", link: "/files/ai_basics.pdf" },
+       { name: "Aws Notes", link: "/files/Aws_notes.pdf" },
     ],
   },
   {
-    id:5,
+    id:6,
     title:'Sources',
     description: 'Resources for further learning',
     details: 'You’ll learn about transformers, foundation models, and cutting-edge applications.',

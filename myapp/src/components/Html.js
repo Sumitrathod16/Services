@@ -78,7 +78,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:"Html notes",link:'files/html_notes.pdf'}
+      {name:"Html notes",link:'/files/html_notes.pdf'}
     ]
   },
   {
@@ -88,11 +88,22 @@ const syllabusData = [
     details: 'Links to online courses, books, and articles for deeper understanding.',
     chapters:[
       "Online Courses: Coursera, edX, Udacity",
+    "HTML Tutorials: MDN Web Docs, W3Schools",
+    "Books: 'HTML and CSS: Design and Build Websites' by Jon Duckett"
        
     ],
     url :[
-      "https://www.coursera.org/specializations/html",
-      "https://www.edx.org/professional-certificate/harvardx-data-science",
+       // Courses
+    "https://www.coursera.org/specializations/html",
+    "https://www.edx.org/learn/html5",
+    "https://www.udacity.com/course/intro-to-html-and-css--ud001",
+
+    // Tutorials
+    "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    "https://www.w3schools.com/html/",
+
+    // Book (reference)
+    "https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189"
       
     ]
   }

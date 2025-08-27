@@ -100,7 +100,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:'Google cloud',link:'files/gcp_notes.pdf'}
+      {name:'Google cloud',link:'/files/Gcp_notes.pdf'}
     ]
   },
   {

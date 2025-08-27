@@ -1,40 +1,48 @@
-import React from 'react';
-import { onAuthStateChanged } from "firebase/auth";
+// src/context/authContext.js
+import React, { useContext, useEffect, useState, createContext } from "react";
+import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
-import { useContext, useState, useEffect } from "react";
-const AuthContext = React.createContext();
 
-export const useAuth = ()=>useContext(AuthContext)
+const AuthContext = createContext();
 
-export function AuthProvider({children}){
-    const[currentUser , setCurrentUser] = useState(null);
-    const[userLoggedIn, setUserLoggedIn] = useState(false);
-    const[loading, setloading] = useState(true);
- 
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth, initializeUser);
-        return unsubscribe;
-    },[]
-    )
-    async function initializeUser(user){
-        if(user){
-            setCurrentUser({...user});
-            setUserLoggedIn(true);
-        }else{
-            setCurrentUser(null);
-            setUserLoggedIn(false);
-        }
-        setloading(false);
+export const useAuth = () => useContext(AuthContext);
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, initializeUser);
+    return unsubscribe;
+  }, []);
+
+  const initializeUser = async (user) => {
+    if (user) {
+      setUser({ ...user });
+      setUserLoggedIn(true);
+    } else {
+      setUser(null);
+      setUserLoggedIn(false);
     }
-    const value={
-        currentUser,
-        userLoggedIn,
-        loading
-    }
-    return(
-        <AuthContext.Provider value={value}>
-             {!loading && children}
-             </AuthContext.Provider>    
-)
+    setLoading(false);
+  };
 
+  const logOut = () => {
+    const auth = getAuth();
+    return signOut(auth);
+  };
+
+  const value = {
+    user,
+    userLoggedIn,
+    logOut,
+    loading,
+  };
+
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }

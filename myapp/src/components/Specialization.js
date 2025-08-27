@@ -1,5 +1,5 @@
 import React from "react";
-import truckLogo from "../assets/truck.svg";
+
 import bookLogo from "../assets/book.svg";
 import authorLogo from "../assets/author.svg";
 import trendesetterLogo from "../assets/trendesetter.svg";
@@ -87,7 +87,6 @@ function Specialization() {
             <p className="specialization-desc">Discover our specialized services tailored to your needs.</p>
             <ul className="specialization-list">
                 <li><img src={bookLogo} className="logo" alt="Book Logo"/>Made by elite authors</li>
-                <li><img src={truckLogo} className="logo" alt="Truck Logo"/> Weekly best seller</li>
                 <li><img src={authorLogo} className="logo" alt="Author logo"/> Exclusive Author</li>
                 <li><img src={trendesetterLogo} className="logo" alt="Trendsetter Logo"/> Trendsetter playlists</li>
             </ul>

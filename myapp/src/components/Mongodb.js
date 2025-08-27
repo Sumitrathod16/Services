@@ -112,7 +112,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:'MongoDB',link:'files/mdb_notes.pdf'}
+      {name:'MongoDB',link:'/files/mongodb_notes.pdf'}
     ]
    },
   {

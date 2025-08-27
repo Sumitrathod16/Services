@@ -99,7 +99,7 @@ const syllabusData = [
     title: "Notes",
     description: "Notes of AI to understand the concept",
     notes: [
-      { name: "AI Basics", link: "/files/ai_basics.pdf" },
+      { name: "AI Basics", link: "/files/ai_notes.pdf" },
 
     ]
   },

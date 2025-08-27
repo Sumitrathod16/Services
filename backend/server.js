@@ -12,7 +12,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB Atlas Connection
-const mongoURI = "mongodb+srv://phadtareareen:<123123456456>@services.ito6x35.mongodb.net/?retryWrites=true&w=majority&appName=Services";
+const mongoURI = "mongodb+srv://phadtareareen:123123456456@services.ito6x35.mongodb.net/?retryWrites=true&w=majority&appName=Services";
 mongoose.connect(mongoURI)
   .then(() => console.log('Connected to MongoDB Atlas'))
   .catch(err => console.error('MongoDB Atlas connection error:', err));

@@ -98,7 +98,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:"Flask notes",link:'files/flask_notes.pdf'}
+      {name:"Flask notes",link:'/files/flask_notes.pdf'}
     ]
   },
   {

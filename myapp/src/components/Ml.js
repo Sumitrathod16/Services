@@ -113,7 +113,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:'Machine Learning',link:'files/ml_notes.pdf'}
+      {name:'Machine Learning',link:'/files/ml_notes.pdf'}
     ]
   },
 {

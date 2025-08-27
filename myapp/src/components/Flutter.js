@@ -153,7 +153,7 @@ const syllabusData = [
       title:'Notes',
       description:'Notes to understand the concept',
       notes:[
-      {name:"Flutter Notes",link:"files/flutter_notes.pdf"}
+      {name:"Flutter Notes",link:"/files/flutter_notes.pdf"}
       ] 
   },
   {

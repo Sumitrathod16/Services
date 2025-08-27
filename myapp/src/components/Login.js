@@ -48,7 +48,7 @@ const userLoggedIn = auth?.userLoggedIn ?? false;
       try {
         await doSignInWithEmailAndPassword(formData.email, formData.password);
         alert('Login successful');
-        navigate('/');
+        navigate('/home');
       } catch (err) {
         console.error(err.message);
         alert(err.message);
@@ -61,7 +61,7 @@ const userLoggedIn = auth?.userLoggedIn ?? false;
     try {
       await doSignInWithGoogle();
       alert('Google login successful');
-      navigate('/');
+      navigate('/home');
     } catch (err) {
       console.error(err.message);
       alert(err.message);
@@ -111,7 +111,7 @@ const userLoggedIn = auth?.userLoggedIn ?? false;
           padding: 10px;
           border: none;
           border-radius: 8px;
-          background: #4338ca;
+          background:black;
           color: white;
           font-size: 1rem;
           cursor: pointer;
@@ -119,7 +119,7 @@ const userLoggedIn = auth?.userLoggedIn ?? false;
         }
 
         .login-btn:hover {
-          background:#4338ca;
+          background: #5d0202ff;
         }
 
         .google-btn {
@@ -198,9 +198,9 @@ const userLoggedIn = auth?.userLoggedIn ?? false;
         <button className="login-btn" onClick={handleGoogleLogin}>Login with Google</button>
       </div>
 
-      <div className="account">
+      {/*<div className="account">
         <p>Don't have an account?<Link to="/signup">Signup</Link></p>
-      </div>
+      </div>*/}
     </div>
     </>
   );

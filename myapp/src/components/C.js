@@ -109,15 +109,15 @@ const syllabusData = [
     ]
   },
   {
-    id: 4,
-    title: ' Data, AI & Analytics',
-    description: 'Latest advancements and future directions of the field',
+    id: 8,
+    title: 'Notes',
+    description: 'Notes to understand the concept',
     notes:[
-      {name:"C notes", link:"files/c_notes.pdf"}
+      {name:"C notes", link:"/files/c_notes.pdf"}
     ]
   },
   {
-    id: 8,
+    id: 9,
     title: 'Sources',
     description: 'Additional resources for further learning',
     details: 'Links to official documentation, tutorials, and community resources.',

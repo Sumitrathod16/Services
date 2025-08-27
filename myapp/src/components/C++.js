@@ -106,7 +106,7 @@ const syllabusData = [
   title:'Notes',
   description:'Notes to understand the concept',
   notes:[
-    {name:"C++ Notes",link:"files/cpp_notes.pdf"}
+    {name:"C++ Notes",link:"/files/cpp_notes.pdf"}
   ]
 },
   {

@@ -88,7 +88,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:"Html notes",link:'files/html_notes.pdf'}
+      {name:"Sql notes",link:'/files/sql_notes.pdf'}
     ]
   },
   {
@@ -97,12 +97,25 @@ const syllabusData = [
     description: 'Additional resources for further learning',
     details: 'Links to online courses, books, and articles for deeper understanding.',
     chapters:[
-      "Online Courses: Coursera, edX, Udacity",
+      "Online Courses: Coursera, Udemy, Khan Academy",
+    "SQL Documentation: PostgreSQL, MySQL, W3Schools",
+    "Books: 'Learning SQL' by Alan Beaulieu, 'SQL for Data Analysis'"
        
     ],
     url :[
-      "https://www.coursera.org/specializations/html",
-      "https://www.edx.org/professional-certificate/harvardx-data-science",
+        // Courses
+    "https://www.coursera.org/learn/sql-for-data-science",
+    "https://www.udemy.com/course/the-complete-sql-bootcamp/",
+    "https://www.khanacademy.org/computing/computer-programming/sql",
+
+    // Documentation & Tutorials
+    "https://www.postgresql.org/docs/",
+    "https://dev.mysql.com/doc/",
+    "https://www.w3schools.com/sql/",
+
+    // Books (reference)
+    "https://www.amazon.com/Learning-SQL-Alan-Beaulieu/dp/0596520832",
+    "https://www.oreilly.com/library/view/sql-for-data/9781098455142/"
       
     ]
   }

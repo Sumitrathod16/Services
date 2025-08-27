@@ -19,9 +19,7 @@ import HibernateIcon from '../assets/hibernate.svg'; // Assuming you have a Hibe
 import MLIcon from '../assets/ml.svg'; // Assuming you have a Machine Learning icon
 import DeepLearningIcon from '../assets/dl.svg'; // Assuming you have a Deep Learning
 import AIIcon from '../assets/ai.svg'; // Assuming you have an AI icon
-import ProjectsIcon from '../assets/projects.svg'; // Assuming you have a Projects icon
-import PortfolioIcon from '../assets/portfolio.svg'; // Assuming you have a Portfolio icon
-import GitHubIcon from '../assets/github.svg'; // Assuming you have a GitHub icon
+import SQL from '../assets/sql.svg';
 function Explore(){
 return(
     <>
@@ -446,14 +444,14 @@ body {
                     <ul>
                         <li> <Link to="/DBMS">DBMS</Link></li>
                         <li> <Link to="/SQL">SQL</Link></li>
-                        <li> <Link to="/GitHub">GitHub</Link></li>
+                        
                     </ul>
                     </div>                   
                 </div>
                 <div className="img">
-                    <img src={ProjectsIcon} alt="DBMS" className="Explore-icon" />
-                    <img src={PortfolioIcon} alt="SQL" className="Explore-icon" />
-                    <img src={GitHubIcon} alt="GitHub" className="Explore-icon" />
+                    <img src={SQL} alt="DBMS" className="Explore-icon" />
+                    <img src={SQL} alt="SQL" className="Explore-icon" />
+                    
             </div>
 </div>
         </div>

@@ -119,7 +119,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:"Css Notes",link:"files/css_notes.pdf"}
+      {name:"Css Notes",link:"/files/Css.pdf"}
     ]
   },
   {

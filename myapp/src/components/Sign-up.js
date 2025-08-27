@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { doCreateUserWithEmailAndPassword, doUpdateUserProfile } from '../firebase/auth'; // Import Firebase auth helpers
 
 function Signin() {
     const [formData, setFormData] = useState({
@@ -52,37 +53,35 @@ function Signin() {
         } else {
             setErrors({});
             try {
-                const res = await fetch('http://localhost:3000/register', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
+                // Create user with email/password in Firebase Auth
+                const userCredential = await doCreateUserWithEmailAndPassword(
+                    formData.email,
+                    formData.password
+                );
+
+                // Update user profile with displayName (name)
+                await doUpdateUserProfile({ displayName: formData.name });
+
+                // TODO: Optionally store extended info (mobile, address, etc.) in Firestore or your backend
+
+                alert("Registration successful!");
+                setMessage("Successfully registered!");
+
+                setFormData({
+                    name: '',
+                    mobile: '',
+                    email: '',
+                    password: '',
+                    confirmPassword: '',
+                    address: '',
+                    city: '',
+                    state: '',
+                    country: '',
+                    pincode: ''
                 });
-
-                const data = await res.json();
-                setMessage(data.message);
-
-                if (res.ok) {
-                    alert("Registered successfully!");
-                    setFormData({
-                        name: '',
-                        mobile: '',
-                        email: '',
-                        password: '',
-                        confirmPassword: '',
-                        address: '',
-                        city: '',
-                        state: '',
-                        country: '',
-                        pincode: ''
-                    });
-                } else {
-                    alert(data.message || 'Registration failed');
-                }
-
-            } catch (err) {
-                console.error('Error:', err);
-                setMessage('Something went wrong');
-                alert('Something went wrong while registering.');
+            } catch (error) {
+                console.error("Firebase Registration Error:", error.message);
+                alert("Failed to register: " + error.message);
             }
         }
     };
@@ -127,10 +126,10 @@ function Signin() {
                     border: 1px solid #ccc;
                     border-radius: 8px;
                     outline:none;
-                    }
-                    .signin-input focus{
+                }
+                .signin-input:focus{
                     border-color:#4f46e5;
-                    }
+                }
 
                 .signin-btn {
                     padding: 10px;
@@ -152,46 +151,46 @@ function Signin() {
                     margin-top: -10px;
                     margin-bottom: 6px;
                 }
-                    .already{
+                .already{
                     text-align:center;
                 }
-                    .already a{
+                .already a{
                     text-decoration:none;
-                    color:black;
+                    color:#4f46e5;
                     margin-left:5px;
-                    }
-                    /* Mobile Responsive */
-@media (max-width: 600px) {
-  .signin-container {
-    margin: 40px 16px;      /* reduce margins */
-    padding: 20px;          /* smaller padding */
-    max-width: 100%;        /* stretch nicely */
-  }
+                }
+                /* Mobile Responsive */
+                @media (max-width: 600px) {
+                  .signin-container {
+                    margin: 40px 16px;
+                    padding: 20px;
+                    max-width: 100%;
+                  }
 
-  .signin-title {
-    font-size: 20px;        /* smaller font */
-  }
+                  .signin-title {
+                    font-size: 20px;
+                  }
 
-  .signin-desc {
-    font-size: 12px;
-  }
+                  .signin-desc {
+                    font-size: 12px;
+                  }
 
-  .signin-input {
-    font-size: 0.9em;
-    padding: 8px;
-  }
+                  .signin-input {
+                    font-size: 0.9em;
+                    padding: 8px;
+                  }
 
-  .signin-btn {
-    font-size: 0.9em;
-    padding: 10px;
-  }
+                  .signin-btn {
+                    font-size: 0.9em;
+                    padding: 10px;
+                  }
 
-  .already p {
-    font-size: 0.85em;
-  }
-}
-
-            `}</style>
+                  .already p {
+                    font-size: 0.85em;
+                  }
+                }
+                `}
+            </style>
 
             <div className="signin-container">
                 <h1 className="signin-title">Sign In</h1>
@@ -232,6 +231,7 @@ function Signin() {
                 </form>
 
                 {message && <p style={{ color: 'green', marginTop: '1rem', textAlign: 'center' }}>{message}</p>}
+
                 <div className="already">
                     <p>Already have an account?<Link to="/login">Log-in</Link></p>
                 </div>

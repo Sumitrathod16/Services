@@ -53,7 +53,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:"Deep Learning notes",link:'files/dl_notes.pdf'}
+      {name:"Deep Learning notes",link:'/files/dl_notes.pdf'}
     ]
   },
   {

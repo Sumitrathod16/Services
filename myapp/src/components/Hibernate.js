@@ -99,7 +99,7 @@ const syllabusData = [
     title:'Notes',
     description:"Notes to understand the concept",
     notes:[
-      {name:'Hibernate Notes',link:'files/hibernate_notes.pdf'}
+      {name:'Hibernate Notes',link:'/files/hibernate_notes.pdf'}
     ]
   },
   {

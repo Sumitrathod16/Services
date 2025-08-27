@@ -97,7 +97,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:'Spring',link:'files/spring_notes.pdf'}
+      {name:'Spring',link:'/files/spring_notes.pdf'}
     ]
   },
   {

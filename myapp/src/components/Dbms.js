@@ -89,7 +89,7 @@ const syllabusData = [
     title:'Notes',
     description:'Notes to understand the concept',
     notes:[
-      {name:"DBMS Notes",link:'files/dbms_notes.pdf'}
+      {name:"DBMS Notes",link:'/files/dbms_notes.pdf'}
     ]
   },
   {
@@ -99,11 +99,26 @@ const syllabusData = [
     details: 'Links to online courses, books, and articles for deeper understanding.',
     chapters:[
       "Online Courses: Coursera, edX, Udacity",
+    "DBMS: MySQL, PostgreSQL, Oracle, MongoDB",
+    "Platforms: GitHub, Heroku, Firebase, AWS"
        
     ],
     url :[
-      "https://www.coursera.org/specializations/html",
-      "https://www.edx.org/professional-certificate/harvardx-data-science",
+       // Web Development
+    "https://www.coursera.org/specializations/html",
+    "https://www.edx.org/professional-certificate/harvardx-data-science",
+
+    // DBMS Sources
+    "https://www.coursera.org/learn/database-management",
+    "https://www.udemy.com/course/the-complete-sql-bootcamp/",
+    "https://www.mongodb.com/university/courses/M001/about",
+    "https://www.oracle.com/database/technologies/appdev/learn-oracle-sql.html",
+
+    // Platforms
+    "https://docs.github.com/en/get-started/quickstart",
+    "https://devcenter.heroku.com/start",
+    "https://firebase.google.com/docs",
+    "https://aws.amazon.com/getting-started/"
       
     ]
   }
