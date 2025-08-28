@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../firebase/auth';
+import { doSignInWithEmailAndPassword, doSignInWithGoogle ,doCreateUserWithEmailAndPassword} from '../firebase/auth';
 import { useAuth } from '../context/authContext';
 
 const Login = () => {
@@ -10,6 +10,7 @@ const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [firebaseError, setFirebaseError]= useState("")
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -50,7 +51,7 @@ const Login = () => {
         alert('Login successful!');
         navigate('/home'); // redirect after login
       } catch (err) {
-        console.error("Login error:", err.message);
+        setFirebaseError(err.message);
         alert("Login failed: " + err.message);
       }
     }
@@ -207,9 +208,9 @@ const Login = () => {
         </div>
         <p className="info">You can directly login with Google</p>
 
-        {/*<div className="account">
+        <div className="account">
           <p>Don't have an account? <Link to="/signup">Signup</Link></p>
-        </div>*/}
+        </div>
       </div>
     </>
   );

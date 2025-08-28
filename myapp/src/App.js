@@ -80,8 +80,8 @@ function App() {
       <Routes>
 <Route path="/" element={<LandingPage />} />
   <Route path="/login" element={<Login />} />
- {/*<Route path="/signup" element={<Signin />} />
-  All other routes with Navbar and Footer */}
+ <Route path="/signup" element={<Signin />} />
+  All other routes with Navbar and Footer 
         <Route
           path="*"
           element={

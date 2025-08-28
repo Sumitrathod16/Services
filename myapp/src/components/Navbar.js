@@ -181,7 +181,7 @@ function Navbar() {
             </>
           ) : (
             <>
-              {/*<li><Link to="/signup" onClick={() => setMenuOpen(false)}>Sign In</Link></li>*/}
+              <li><Link to="/signup" onClick={() => setMenuOpen(false)}>Sign up</Link></li>
               <li>
                 <Link to="/login" className="login-button" onClick={() => setMenuOpen(false)}>
                   Login
